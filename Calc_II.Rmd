@@ -1,0 +1,16 @@
+---
+title: "Calculus with Analytical Geometry II"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+A study of the logarithmic and exponential functions, circular functions and their inverses, techniques of integration, improper integrals, infinite series, Taylor polynomial and power series.
+
+__________
