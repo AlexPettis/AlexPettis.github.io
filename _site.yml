@@ -1,0 +1,67 @@
+name: "AlexPettis.github.io"
+output_dir: "."
+navbar:
+  title: "Alex Pettis"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Courses"
+      href: courses.html
+      menu:
+        - text: "Math"
+          href: Math.html
+          menu:
+            - text: "Calculus"
+              menu:
+                - text: "Calculus I"
+                  href: Calc_I.html
+                - text: "Calculus II"
+                  href: Calc_II.html
+                - text: "Calculus III"
+                  href: Calc_III.html
+            - text: "Techniques of Proof"
+              href: Techniques_Proofs.html
+            - text: "Introduction to Linear Algebra"
+              href: Linear_Algebra.html
+            - text: "Computational Mathematics"
+              href: Comp_Math.html
+            - text: "Statistical Data Analysis"
+              menu:
+                - text: "Statistical Data Analysis I"
+                  href: Stat_Data_Analysis_I.html
+                - text: "Statistical Data Analysis II"
+                  href: Stat_Data_Analysis_II.html
+            - text: "Statistical Modeling"
+              href: Statistical_Modeling.html
+            - text: "Other Math Courses"
+              menu:
+                - text: "Abstract Linear Algebra with Applications to Differential Equations"
+                  href: Abstract_Linear_Algebra.html
+                - text: "Introduction to Modern Algebra"
+                  href: Modern_Algebra.html
+        - text: "Computer Science"
+          menu:
+            - text: "Discrete Mathematics"
+              href: Discrete.html
+            - text: "Computer Science"
+              menu:
+                - text: "Computer Science I"
+                  href: CS_I.html
+                - text: "Computer Science II"
+                  href: CS_II.html
+            - text: "Introduction to Computer Systems"
+              href: Intro_Systems.html
+            - text: "Introduction to Theoretical Computer Science"
+              href: Computer_Theory.html
+            - text: "Database"
+              href: Database.html
+    - text: "Resume"
+      href: Resume.html
+
+output:
+  html_document:
+    theme: yeti
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: css.css
