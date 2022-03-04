@@ -1,0 +1,20 @@
+---
+title: "Abstract Linear Algebra"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description^[The proper title for this course is Current Topics in Mathematics. This is a course that is designed by the instructor that can be anything related to mathematics but this time happens to be Abstract Linear Algebra with Applications to Differential Equations.]
+
+I plan to spend approximately half of the semester exploring topics from "abstract" linear algebra. Then the remainder of the semester will be devoted to using algebraic methods to solve differential equations and systems of differential equations. 
+
+Although I will assume familiarity with introductory linear algebra, I will not assume any background from differential equations. Some topics may intersect with group or ring theory (modern algebra), but any background will be covered as needed. Possible topics (in more or less detail according to interest):
+
+Linear Algebra: vector spaces over different fields, infinite dimensional spaces, dual spaces, quotient spaces, Jordan canonical form, the matrix exponential, tensor products, and exterior algebras.
+
+Differential Equations: solving DEs by factoring linear operators, the methods of undetermined coefficients, variation of parameters, and a partial fraction decomposition, technique for solving non-homogeneous linear DEs, using the matrix exponential and variation of parameters for solving systems of DEs, symmetry methods for solving DEs (finding integrating factors and very basic, very applied Lie theory), and (if there is interest), some differential algebra which would including a touch of differential and Galois theory which attempts to answer the question, "When can we solve a differential equation?"
