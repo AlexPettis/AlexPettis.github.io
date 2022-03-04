@@ -1,0 +1,47 @@
+---
+title: "Calculus with Analytical Geometry III"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+A study of parametric equations, vectors, vector-valued functions, function of several variables, double and triple integrals, and vector analysis.
+
+
+## Course Notes
+
+Below is a list of all course notes/handouts some of which may include practice problems with answers.
+
+[Differential Geometry & Line Integrals: Notation & Formulas Review](https://billcookmath.com/courses/math2130-fall2018/math2130-diff_geom_formulas.pdf)
+
+[Differentiability](https://billcookmath.com/courses/math2130-spring2016/math2130-spring2016-differentiability.pdf)
+
+[Quadratic Approximations](https://billcookmath.com/courses/math2130-spring2011/math2130-spring2011-quadratic_approximations.pdf)
+
+[Quadratic Approximations Parctice Problems Solutions](https://billcookmath.com/courses/math2130-spring2011/math2130-spring2011-quadratic_approximations/)^[The Maple worksheet link does not work.]
+
+[Spherical Cap Example](https://billcookmath.com/courses/math2130-fall2018/math2130-fall2018-rect-cyl-sph_example.pdf)
+
+[Examples of Centroids](https://billcookmath.com/courses/math2130-fall2018/math2130-centroid_examples.pdf)
+
+[Triple Integral Example](https://billcookmath.com/courses/math2130-fall2018/math2130-fall2018-triple_integral.pdf)
+
+[Triple Integral Example 2](https://billcookmath.com/courses/math2130-fall2018/math2130-fall2018-triple_integral.pdf)
+
+[Vector Fields Practice Problems](https://billcookmath.com/courses/math2130-fall2019/math2130-fall2019-vector_fields.pdf)
+
+[Double Riemann Sums Practice Problems](https://billcookmath.com/courses/math2130-fall2019/math2130-fall2019-Riemann_sums.pdf)
+
+[Verify Stokes Example](https://billcookmath.com/courses/math2130-summer2020/math2130-summer2020-stokes_example.pdf)
+
+[The Big Theorems](https://billcookmath.com/courses/math2130-fall2019/math2130-fall2019-Stokes.pdf)
+
+[Curl, Divergence, and Form](https://billcookmath.com/courses/math2130-fall2019/math2130-fall2019-div_curl.pdf)
+
+[Vector Calculus Practice Problems](https://billcookmath.com/courses/math2130-fall2018/math2130-vector_calc_problems.pdf)^[Some problems have answers]
