@@ -1,0 +1,16 @@
+---
+title: "Computational Mathematics"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course engages students in mathematical investigations in various computational environments. Students will investigate numerical computation in symbolic systems and spreadsheets as well as traditional programming environments. Topics covered include basic programming structures, computer arithmetic, and mathematical applications. Instructor will choose from applications such as statistical calculations, infinite series estimation, root finding, and integration.
+
+__________
