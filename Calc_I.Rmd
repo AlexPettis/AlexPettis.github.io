@@ -1,0 +1,16 @@
+---
+title: "Calculus with Analytical Geometry I"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+A study of limits, continuity, differentiation, applications of the derivative, the differential, the definite integral, the fundamental theorem, and applications of the definite integral.
+
+__________
