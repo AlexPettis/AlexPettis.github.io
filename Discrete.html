@@ -1,39 +1,441 @@
----
-title: "Discrete Mathematics"
-output:
-  html_document:
-    css: "css.css"
----
+<!DOCTYPE html>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+<html>
 
-## Course Description
+<head>
 
-A study of discrete mathematics as it applies to computer science. Concepts covered include number systems, sets, logic, Boolean algebra, digital circuits, combinatorics, relations, functions, vectors, matrices, graphs, and induction proofs.
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-## Course Handouts
 
-Linked below are some handouts from the course that contain a mixture of notes as well as practice problems.
 
-[Basic Laws About Sums](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Formula_sheet__Basic_laws_about_sums.pdf)
+<title>Discrete Mathematics</title>
 
-[Sound Inference Rules](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Sound%20Inference%20Rules.pdf)
+<script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-[Induction Exercises](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Induction%20Exercises.pdf)
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-[Examples of Proofs About Sets and Functions](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20About%20Sets%20and%20Functions.pdf)
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
-[Proofs in Propositional Logic Homework](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20in%20Propositional%20Logic.pdf)
 
-[Homework 3](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/hw3.pdf)
 
-[Proofs in Propositional Logic Notes](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20in%20Propositional%20Logic%20Notes.pdf)
 
-[Final Exam Review](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Final%20Exam%20Review.pdf)
 
-[Review for Test #3](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/review3.pdf)
 
-__________
+<link rel="stylesheet" href="css.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Alex Pettis</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculus</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Calc_I.html">Calculus I</a>
+            </li>
+            <li>
+              <a href="Calc_II.html">Calculus II</a>
+            </li>
+            <li>
+              <a href="Calc_III.html">Calculus III</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Techniques_Proofs.html">Techniques of Proof</a>
+        </li>
+        <li>
+          <a href="Linear_Algebra.html">Introduction to Linear Algebra</a>
+        </li>
+        <li>
+          <a href="Comp_Math.html">Computational Mathematics</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistical Data Analysis</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Stat_Data_Analysis_I.html">Statistical Data Analysis I</a>
+            </li>
+            <li>
+              <a href="Stat_Data_Analysis_II.html">Statistical Data Analysis II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Statistical_Modeling.html">Statistical Modeling</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Math Courses</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Abstract_Linear_Algebra.html">Abstract Linear Algebra with Applications to Differential Equations</a>
+            </li>
+            <li>
+              <a href="Modern_Algebra.html">Introduction to Modern Algebra</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Discrete.html">Discrete Mathematics</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="CS_I.html">Computer Science I</a>
+            </li>
+            <li>
+              <a href="CS_II.html">Computer Science II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Intro_Systems.html">Introduction to Computer Systems</a>
+        </li>
+        <li>
+          <a href="Computer_Theory.html">Introduction to Theoretical Computer Science</a>
+        </li>
+        <li>
+          <a href="Database.html">Database</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Resume.html">Resume</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Discrete Mathematics</h1>
+
+</div>
+
+
+<div id="course-description" class="section level2">
+<h2>Course Description</h2>
+<p>A study of discrete mathematics as it applies to computer science. Concepts covered include number systems, sets, logic, Boolean algebra, digital circuits, combinatorics, relations, functions, vectors, matrices, graphs, and induction proofs.</p>
+</div>
+<div id="course-handouts" class="section level2">
+<h2>Course Handouts</h2>
+<p>Linked below are some handouts from the course that contain a mixture of notes as well as practice problems.</p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Formula_sheet__Basic_laws_about_sums.pdf">Basic Laws About Sums</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Sound%20Inference%20Rules.pdf">Sound Inference Rules</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Induction%20Exercises.pdf">Induction Exercises</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20About%20Sets%20and%20Functions.pdf">Examples of Proofs About Sets and Functions</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20in%20Propositional%20Logic.pdf">Proofs in Propositional Logic Homework</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/hw3.pdf">Homework 3</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20in%20Propositional%20Logic%20Notes.pdf">Proofs in Propositional Logic Notes</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Final%20Exam%20Review.pdf">Final Exam Review</a></p>
+<p><a href="https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/review3.pdf">Review for Test #3</a></p>
+<hr />
+</div>
+
+<div id="footer" align = "center">
+     <p>
+     <center>
+     <strong>Alex Pettis
+     </strong>
+     </center>
+     <br>
+      <center>Appalachian State University | Fall 22 </br>
+			Mathematics Major, Computer Science and Statistics Minor</br>
+      (704) 526-8883 | <a href="mailto:pettisaj@appstate.edu"> pettisaj@appstate.edu</a> | Mooresville, NC 
+      </center>
+</br>
+</p>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
