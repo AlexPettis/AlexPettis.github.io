@@ -1,0 +1,16 @@
+---
+title: "Modern Algebra"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+Topics covered include equivalence relations, groups, subgroups, homomorphisms, isomorphisms, and a survey of other algebraic structures such as rings, integral domains, and fields.
+
+__________
