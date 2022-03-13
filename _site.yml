@@ -57,6 +57,8 @@ navbar:
               href: Database.html
     - text: "Resume"
       href: Resume.html
+    - text: "Software"
+      href: Software.html
 
 output:
   html_document:

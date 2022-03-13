@@ -13,6 +13,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 A study of parametric equations, vectors, vector-valued functions, function of several variables, double and triple integrals, and vector analysis.
 
+## Course Website
+
+Linked here is website relevant to the the course: https://billcookmath.com/index.html?page=./courses/math2130-summer2021. The website contains videos of course material as well as some other stuff that is somewhat relevant to the course.
+
 
 ## Course Notes
 

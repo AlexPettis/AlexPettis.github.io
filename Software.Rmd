@@ -7,22 +7,27 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+Below is a list of software/programs used in the courses and the links to download them.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Math Softwares
 
-```{r cars}
-summary(cars)
-```
+Softwares used in math classes.
 
-## Including Plots
+[R](https://cran.r-project.org/)
 
-You can also embed plots, for example:
+[R Studio](https://www.rstudio.com/products/rstudio/download/#download)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+[Maple 2021](https://www.maplesoft.com/downloads/SelectPlatform.aspx?hash=2A26EAEB2F5F965A2D718AD7F22829D1)
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Computer Science Softwares
+
+Softwares used in computer science classes.
+
+[BlueJ](https://www.bluej.org/)
+
+[Eclipse](https://www.eclipse.org/eclipseide/)
+
+[Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
+
+[WinSCP](https://winscp.net/eng/index.php)
