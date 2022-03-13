@@ -1,0 +1,16 @@
+---
+title: "Techniques of Proof"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+A study of methods of proof used in mathematics. Formal proof topics include propositional calculus, predicate calculus, and several first order theories. Informal proof topics are drawn from number theory, set theory, and other areas of mathematics. Additional topics include introductions to writing mathematics, searching for mathematical content and sources, and careers in mathematics.
+
+__________
