@@ -1,0 +1,14 @@
+---
+title: "Alex Pettis"
+output:
+  html_document:
+    css: "css.css"
+---
+<figure>
+<img src="./Picture.jpg" alt="Picture" align="left" hspace="20" style="width:200px;height:300px;">
+</figure>
+
+Hello, my name is Alex Pettis and I am currently a Senior in good standing here at Appalachian State University with an expected graduation date of December 2022. My program of study consists of Mathematics with a concentration in General Mathematics with minors in Computer Science and Statistics. My plan after graduation is to continuue my education here at Appalachian State University with hopes of entering the Accelerated Masters Program with a focus on Applied Data Analytics. This leads to a career goal of becoming a Data Analyst.   
+
+
+__________
