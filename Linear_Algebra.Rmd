@@ -1,0 +1,16 @@
+---
+title: "Introduction to Linear Algebra"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+A study of vectors, matrices and linear transformations, principally in two and three dimensions, including treatments of systems of linear equations, determinants, and eigenvalues.
+
+__________
