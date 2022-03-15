@@ -1,0 +1,30 @@
+program bisect_for(a,b,nmax,eps)
+ - finds the root of the external function f(x) 
+  in the interval [a,b]
+
+fa = f(a)
+fb = f(b)
+
+if fa*fb > 0 then
+  output an error message
+  stop
+end if
+error <- b-a
+for i from 1 to nmax 
+  error = error/2
+  m = a + error
+  fm = f(m)
+  if |error| < eps then
+    output the solution m and the number of steps
+    stop
+  end if
+  if fa*fm > 0 then 
+    a = m 
+    fa = fm
+  else
+    b = m 
+    fb =fm
+  end if
+end for
+print root estimate m and warning about number of steps
+end program

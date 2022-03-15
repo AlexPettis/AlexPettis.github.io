@@ -1,0 +1,27 @@
+---
+title: "Integration Python Code"
+output: 
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The files left.pseudo and trapezoid.pseudo have pseudo code that needs to be turned into python code. The main.py file has the solution to the problem
+
+## Left Code 
+
+[Left Code](A8/left.pseudo)
+
+
+## Trapezoid Code
+
+[Trapezoid Code](A8/trapezoid.pseduo)
+
+## Main Code 
+
+[Main Code](A8/main.py)
+
+__________

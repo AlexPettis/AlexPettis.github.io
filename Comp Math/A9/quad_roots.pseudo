@@ -1,0 +1,23 @@
+program quad_root(a,b,c)
+ - finds the roots of the quadratic ax^2+bx+c, 
+  assuming a ≠ 0
+
+if a = 0 then
+  output an error message
+else
+  disc = b^2 - 4ac
+  if disc < 0 then
+    output no real roots
+  else if disc = 0 then
+    output repeated root - b/(2a)
+  else  
+    if b > 0 then
+      t = -b - sqrt(disc)
+      output roots (2c)/t and t/(2a)
+    else  
+      t = -b + sqrt(disc)
+      output roots (2c)/t and t/(2a)
+    end if
+  end if
+end if
+end program

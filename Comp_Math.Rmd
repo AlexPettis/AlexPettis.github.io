@@ -13,4 +13,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This course engages students in mathematical investigations in various computational environments. Students will investigate numerical computation in symbolic systems and spreadsheets as well as traditional programming environments. Topics covered include basic programming structures, computer arithmetic, and mathematical applications. Instructor will choose from applications such as statistical calculations, infinite series estimation, root finding, and integration.
 
+## Example Python Code
+
+The provided python codes are both instructor and student made codes. 
+
+[Differential Equations Python Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Diff_Equations_Python-Code.html)
+
+[Euler's Method Python Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Euler_Python_Code.html)
+
+[Integration Python Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Int_Python_Code.html)
+
+
+[Root Finding Python Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Root_Finding_Code.html)
+
 __________

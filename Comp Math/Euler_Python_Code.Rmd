@@ -1,0 +1,22 @@
+---
+title: "Euler's Method Python Code"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here is some python code for Euler's Method. The two files euler.pseduo and step-test.pseudo are pseudo code and thus need to be turned into python code in the main file.
+
+## Euler Pseudo
+
+[Euler Pseudo](A7/euler.pseudo)
+
+## Step-test Pseudo
+
+[Step-test Pseduo](A7/step-test.pseudo)
+
+## Main
+
+[Main](A7/main.py)
