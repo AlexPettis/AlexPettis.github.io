@@ -1,0 +1,35 @@
+Problem 7:
+
+def stat_calc(A):
+# takes a list, A, as input
+# prints out the mean, standard
+# deviation, and variance
+  n = len(A)
+
+
+Problem 8:
+
+def atan_calc(x,n)
+# uses a procedure involving
+# elliptical functions to find
+# the value of arctan(x)
+# to n bit precision for x in (0,1)
+
+
+Problem 9:
+
+def int_calc(a,b):
+# prints the symbolic solution to
+# the integral from 1 to a of the
+# function x^b.
+
+
+Problem 10
+
+def m_v_mult(A,v):
+# Performs matrix-vector multiplication
+# with an mxn matrix A (stored as rows) 
+# and an n element vector v
+
+  m = len(A)
+  n = len(A[0])

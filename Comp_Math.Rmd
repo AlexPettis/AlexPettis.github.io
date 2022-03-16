@@ -26,4 +26,10 @@ The provided python codes are both instructor and student made codes.
 
 [Root Finding Python Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Root_Finding_Code.html)
 
+[Minimization Python Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Minimization_Python_Code.html)
+
+[Python Code Practice](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Python_Code_Practice.html)
+
+[Random Numbers Code](https://mathr.math.appstate.edu/s/58f8b329c273f92cdd179/files/Website/AlexPettis/Comp%20Math/Random_Numbers_Code.html)
+
 __________

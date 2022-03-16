@@ -1,6 +1,8 @@
 ---
 title: "Euler's Method Python Code"
-output: html_document
+output: 
+  html_document:
+    css: "css.css
 ---
 
 ```{r setup, include=FALSE}
@@ -20,3 +22,5 @@ Here is some python code for Euler's Method. The two files euler.pseduo and step
 ## Main
 
 [Main](A7/main.py)
+
+__________
