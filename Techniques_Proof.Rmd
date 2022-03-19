@@ -13,4 +13,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 A study of methods of proof used in mathematics. Formal proof topics include propositional calculus, predicate calculus, and several first order theories. Informal proof topics are drawn from number theory, set theory, and other areas of mathematics. Additional topics include introductions to writing mathematics, searching for mathematical content and sources, and careers in mathematics.
 
+
+## Course Textbook
+
+The course follows from *[A Primer for Proof and Logic](http://www.appstate.edu/~hirstjl/primer/hirst.pdf)* written by Holly P. Hirst and Jeffery L. Hirst. 
+
+
+## Course Handouts
+
+[System L Handout](https://billcookmath.com/courses/math2510-spring2010/Proofs_in_L.pdf)
+
+[System K Handout](https://billcookmath.com/courses/math2510-spring2010/Proofs_in_K.pdf)
+
+[System L and System K Summary Sheet](https://billcookmath.com/courses/math2110-fall2020/math2110-fall2020-test1-formula_sheet.pdf)
+
+[System E and PA Handout](https://billcookmath.com/courses/math2510-spring2010/Proofs_in_PA.pdf)
+
 __________
