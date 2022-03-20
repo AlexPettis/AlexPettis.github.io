@@ -13,4 +13,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This course covers the design, organization, representation, and manipulation of databases. Topics include the relational model, data definition, data manipulation, queries (SQL), communication and representation (XML), design concepts, security, and integrity.
 
+
+## Team Project
+
+This course required the completion of a team project. The project guidelines are as follows:
+
+a.	Defining the project (one or two pages of description)
+b.	Converting the description to ER model.
+c.	Converting ER to RM.
+d.	Implementing the RM with SQL on MySQL server, i.e. creating a database on MySQL server.
+e.	Building the GUI with PhP or JSP (or any other web language you are familiar with); a website that people could use to have access to your database. 
+
+My team project can be found [here](https://docs.google.com/document/d/1XJna0pNEx3PFrwsLa3fBVTQHQ95pIMZtQE16uCCho2M/edit?usp=sharing)
+
 __________
