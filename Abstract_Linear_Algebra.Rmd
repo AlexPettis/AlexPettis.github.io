@@ -48,6 +48,10 @@ Some of the handouts are are directly related to the course while others are not
 [More Jordan Examples](https://billcookmath.com/courses/math3510-spring2013/math3510-spring2013-Jordan_form.pdf)
 
 
+## Differential Equations Handouts
+
+[Variation of Parameters](https://billcookmath.com/courses/math4010-spring2022/math4010-spring2022-variation.pdf)
+
 
 
 
