@@ -13,4 +13,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 A continuation of STT 2860 with an emphasis on statistical modeling and reproducible reporting using professional tools. Hypothesis testing will be introduced via resampling, and estimation will be introduced via bootstrapping. Cross-validation will be used to evaluate and select models that take into account the bias-variance trade-off. Supervised learning techniques will include linear regression, regression trees, classification trees, and random forests. Unsupervised learning techniques will include hierarchical clustering, k-means, and if time permits an introduction to principal components.
 
-__________
+## Labs
+
+The labs are a series of assignments that combine various modeling techniques used to predict bodyfat. 
+
+[Lab 1](https://stt3860-spring2022.github.io/questioning-and-cleaning-the-bodyfat-data-lab1-AlexPettis/DataCleaningTemplate.html)
+
+[Lab 2]()
+
+## Bookdown Repreductions
+
+The bookdown reproductions are of various DataCamp assignments.
+
+[Correlation and Regression](https://stt3860-spring2022.github.io/reproduction-of-correlation-and-regression-bookdown1-AlexPettis/)
+
+[Multiple and Logistical Regression](https://stt3860-spring2022.github.io/reproduction-of-multiple-and-logistic-regression-bookdown2-AlexPettis/)
+
+[Tree Based Models in R](https://stt3860-spring2022.github.io/reproduction-tree-based-models-in-r-bookdown3-AlexPettis/)
+
+------------------------------------------------------------------------
