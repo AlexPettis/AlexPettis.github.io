@@ -13,4 +13,32 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The goal of this course is to provide students with exposure to a variety of statistical procedures in order to develop their ability to understand statistically based research. As the course will focus on proper data analysis, sufficient practice with solving real problems using real data will be required. A variety of standard statistical methodologies will be covered including multiple regression, the analysis of variance, and the analysis of covariance. Additionally, several computationally intensive methods will be explored including, but not limited to, areas such as robust regression, bootstrapping, and permutation tests. Students will be required to complete several data analysis projects that utilize professional editing tools and demonstrate reproducible statistical research.
 
+
+## Problem Sets
+
+[Problem Set 1](https://stt3851-fall2021.github.io/ps-01-AlexPettis/PS01_source.html)
+
+[Problem Set 2](https://stt3851-fall2021.github.io/ps-02-AlexPettis/PS02_source.html)
+
+[Problem Set 3](https://stt3851-fall2021.github.io/ps-02-AlexPettis/PS02_source.html)
+
+## Labs
+
+[Lab 1](https://stt3851-fall2021.github.io/lab-1-AlexPettis/Lab1.html)
+
+[Lab 2](https://stt3851-fall2021.github.io/lab-2-AlexPettis/WritingAssignment.html)
+
+[Lab 3](https://stt3851-fall2021.github.io/lab-2-AlexPettis/WritingAssignment.html)
+
+## Bookdowns
+
+[Bookdown 1](https://stt3851-fall2021.github.io/bookdown-1-AlexPettis/)
+
+[Bookdown 2](https://stt3851-fall2021.github.io/bookdown-2-AlexPettis/)
+
+## Other
+
+
+[Example Flow Handout](https://mathr.math.appstate.edu/s/58f8b329c273f825b26e0/files/STT3851/example-flow-handout-AlexPettis/ExampleFlow.html)
+
 __________
