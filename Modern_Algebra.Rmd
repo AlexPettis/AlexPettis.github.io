@@ -13,4 +13,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Topics covered include equivalence relations, groups, subgroups, homomorphisms, isomorphisms, and a survey of other algebraic structures such as rings, integral domains, and fields.
 
+
+## Course Handouts
+
+The following are handouts related to the course.
+
+[Examples of Groups Handout](https://billcookmath.com/courses/math3110-spring2010/math3110-spring2010-group_examples.pdf)
+
+[The Euclidean Algorithm and Basic Number Theory](https://billcookmath.com/courses/math2510-spring2015/Euclidean.pdf)
+
+[Fun Function Facts](https://billcookmath.com/courses/math2110-spring2020/math2110-bijective_basics.pdf)
+
+[Even vs. Odd & More](https://billcookmath.com/courses/math4010-spring2014/math4010-spring2014-An.pdf)
+
+[Direct Product Quotient Example](https://billcookmath.com/courses/math3110-spring2021/math3110-spring2021-quotient_example.pdf)
+
+[Ring Definitions](https://billcookmath.com/courses/math3110-spring2009/math3110-spring2009-ring_definitions.pdf)
+
+[Ring Examples](https://billcookmath.com/courses/math3110-spring2009/math3110-spring2009-ring_examples.pdf)
+
 __________
