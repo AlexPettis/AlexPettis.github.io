@@ -4,14 +4,17 @@ output:
   html_document:
     css: "css.css"
 ---
-<figure>
-<img src="./Picture.jpg" alt="Picture" align="left" hspace="20" style="width:200px;height:300px;">
-</figure>
 
-Hello, my name is Alex Pettis and I am currently a Senior in good standing here at Appalachian State University with an expected graduation date of December 2022. My program of study consists of Mathematics with a concentration in General Mathematics with minors in Computer Science and Statistics. My plan after graduation is to continue my education here at Appalachian State University with hopes of entering the Accelerated Masters Program with a focus on Applied Data Analytics. This leads to a career goal of becoming a Data Analyst.   
+<hr>
+
+<center>
+<p><img src="./Picture.jpg" alt="Picture" align="center" hspace="20" style="width:200px;height:300px;"></p>
+</center>
+
+Hello, my name is Alex Pettis and I am currently a Senior in good standing here at Appalachian State University with an expected graduation date of December 2022. My program of study consists of Mathematics with a concentration in General Mathematics with minors in Computer Science and Statistics as well as a certificate in Sports Analytics. My plan after graduation is to continue my education here at Appalachian State University with hopes of entering the Accelerated Masters Program with a focus on Applied Data Analytics. This leads to a career goal of becoming a Data Analyst.   
 
 This website serves as an academic website for all of my relevant courses related to my major, minor, and certificate. Also, it contains my current resume as well as links to download software relevant to the courses. 
 
 This website was last rendered on `r format(Sys.time(), "%A, %B %d, %Y - %X.")`
 
-__________
+<hr>
