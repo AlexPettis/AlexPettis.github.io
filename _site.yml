@@ -25,6 +25,8 @@ navbar:
               href: Linear_Algebra.html
             - text: "Computational Mathematics"
               href: Comp_Math.html
+            - text: "Discrete and Continuous Math Models"
+              href: Math_Models.html
             - text: "Statistical Data Analysis"
               menu:
                 - text: "Statistical Data Analysis I"
@@ -33,6 +35,8 @@ navbar:
                   href: Stat_Data_Analysis_II.html
             - text: "Statistical Modeling"
               href: Statistical_Modeling.html
+            - text: "Introduction to Modeling and Analysis in Sports"
+              href: Sports_Modeling.html
             - text: "Other Math Courses"
               menu:
                 - text: "Abstract Linear Algebra with Applications to Differential Equations"
