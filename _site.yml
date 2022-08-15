@@ -20,7 +20,7 @@ navbar:
                 - text: "Calculus III"
                   href: Calc_III.html
             - text: "Techniques of Proof"
-              href: Techniques_Proofs.html
+              href: Techniques_Proof.html
             - text: "Introduction to Linear Algebra"
               href: Linear_Algebra.html
             - text: "Computational Mathematics"

@@ -52,7 +52,11 @@ Some of the handouts are are directly related to the course while others are not
 
 [Variation of Parameters](https://billcookmath.com/courses/math4010-spring2022/math4010-spring2022-variation.pdf)
 
+[Solving a 3rd Order Non-homogeneous Linear Differential Equation with Constant Coefficients 5 Different Ways](https://billcookmath.com/courses/math4010-spring2022/math4010-spring2022-nonhomDE.pdf)
 
+[Differential Algebra and Liouville's Theorem](https://billcookmath.com/courses/math4010-spring2016/math4010-spring2016-differential_algebra.pdf)
+
+[Some Differential Galois Theory](https://billcookmath.com/courses/math4010-spring2016/math4010-spring2016-differential_galois_theory.pdf)
 
 
 
