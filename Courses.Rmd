@@ -9,51 +9,51 @@ This page houses all the relevant courses I have taken over the years.
 
 Courses I am Currently enrolled in:
 
-* CIS 3731 - Advanced Spreadsheet Analytics
-* ECO 3210 - Economics of Sports
-* MAT 3310 - Discrete and Continuous Math Models
-* STT 4890 - Introduction to Modeling and Analysis in Sports
+* [CIS 3731 - Advanced Spreadsheet Analytics](Spreadsheet_Analytics.html)
+* [ECO 3210 - Economics of Sports](Economics_Sports.html)
+* [MAT 3310 - Discrete and Continuous Math Models](Math_Models.html)
+* [STT 4890 - Introduction to Modeling and Analysis in Sports](Sports_Modeling.html)
 
 
 Previous Courses:
 
 Spring 2022
 
-* MAT 3110 - Introduction to Modern Algebra
-* MAT 4010 - Abstract Linear Algebra with Applications to Differential Equations
-* STT 3860 - Statistical Modeling
+* [MAT 3110 - Introduction to Modern Algebra](Modern_Algebra.html)
+* [MAT 4010 - Abstract Linear Algebra with Applications to Differential Equations](Abstract_Linear_Algebra.html)
+* [STT 3860 - Statistical Modeling](Statistical_Modeling.html)
 
 
 Fall 2021
 
-* MAT 2110 - Techniques of Proofs
-* MAT 2310 - Computational Mathematics
-* STT 3851 - Statistical Data Analysis II
-* CS 3460 - Database
+* [MAT 2110 - Techniques of Proofs](Techniques_Proof.html)
+* [MAT 2310 - Computational Mathematics](Comp_Math.html)
+* [STT 3851 - Statistical Data Analysis II](Stat-Data_Analysis_II.html)
+* [CS 3460 - Database](Database.html)
 
 Summer (Session 2) 2021
 
-* MAT 2310 - Calculus with Analytical Geometry III
+* [MAT 2310 - Calculus with Analytical Geometry III](Calc_III.html)
 
 Spring 2021
 
-* CS 2450 - Introduction to Computer Systems
-* MAT 2440 - Introduction to Linear Algebra
+* [CS 2450 - Introduction to Computer Systems](Intro_Systems.html)
+* [MAT 2440 - Introduction to Linear Algebra](Linear_Algebra.html)
 
 Fall 2020
 
-* CS 2490 - Introduction to Theoretical Computer Science
-* STT 3850 - Statistical Data Analysis I
+* [CS 2490 - Introduction to Theoretical Computer Science](Computer_Theory.html)
+* [STT 3850 - Statistical Data Analysis I](Stat_Data_Analysis_I.html)
 
 Spring 2020
 
-* CS 2440 - Computer Science II
-* MAT 1120 - Calculus with Analytical Geometry II
+* [CS 2440 - Computer Science II](CS_II.html)
+* [MAT 1120 - Calculus with Analytical Geometry II](Calc_II.html)
 
 Fall 2019
 
-* CS 1100 - Discrete Mathematics
-* CS 1440 - Computer Science I
-* MAT 1110 - Calculus with Analytical Geometry I
+* [CS 1100 - Discrete Mathematics](Discrete.html)
+* [CS 1440 - Computer Science I](CS_I.html)
+* [MAT 1110 - Calculus with Analytical Geometry I](Calc_I.html)
 
 __________

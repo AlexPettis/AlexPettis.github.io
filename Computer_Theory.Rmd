@@ -16,5 +16,6 @@ This course provides a rigorous but intuitive introduction to computer theory. T
 
 ## Course Notes
 
+[Introduction to Theoretical Computer Science Notes](https://docs.google.com/document/d/1E4Lh2RE1RyUxb9du2GLdR0SbfDeT_iHl/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
 
 __________

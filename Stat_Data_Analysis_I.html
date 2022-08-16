@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,7 +30,7 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
@@ -249,8 +249,118 @@ $(document).ready(function () {
         <li>
   <a href="index.html">Home</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculus</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Calc_I.html">Calculus I</a>
+            </li>
+            <li>
+              <a href="Calc_II.html">Calculus II</a>
+            </li>
+            <li>
+              <a href="Calc_III.html">Calculus III</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Techniques_Proof.html">Techniques of Proof</a>
+        </li>
+        <li>
+          <a href="Linear_Algebra.html">Introduction to Linear Algebra</a>
+        </li>
+        <li>
+          <a href="Comp_Math.html">Computational Mathematics</a>
+        </li>
+        <li>
+          <a href="Math_Models.html">Discrete and Continuous Math Models</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistical Data Analysis</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Stat_Data_Analysis_I.html">Statistical Data Analysis I</a>
+            </li>
+            <li>
+              <a href="Stat_Data_Analysis_II.html">Statistical Data Analysis II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Statistical_Modeling.html">Statistical Modeling</a>
+        </li>
+        <li>
+          <a href="Sports_Modeling.html">Introduction to Modeling and Analysis in Sports</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Math Courses</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Abstract_Linear_Algebra.html">Abstract Linear Algebra with Applications to Differential Equations</a>
+            </li>
+            <li>
+              <a href="Modern_Algebra.html">Introduction to Modern Algebra</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Discrete.html">Discrete Mathematics</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="CS_I.html">Computer Science I</a>
+            </li>
+            <li>
+              <a href="CS_II.html">Computer Science II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Intro_Systems.html">Introduction to Computer Systems</a>
+        </li>
+        <li>
+          <a href="Computer_Theory.html">Introduction to Theoretical Computer Science</a>
+        </li>
+        <li>
+          <a href="Database.html">Database</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Courses</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Spreadsheet_Analytics.html">Advanced Spreadsheet Analytics</a>
+        </li>
+        <li>
+          <a href="Economics_Sports.html">Economics of Sports</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
 <li>
-  <a href="Courses.html">Courses</a>
+  <a href="Resume.html">Resume</a>
+</li>
+<li>
+  <a href="Software.html">Software</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -290,6 +400,22 @@ Project</a></p>
 <hr />
 </div>
 
+<div id="footer">
+     <p><strong>Alex Pettis</strong></br>
+     Appalachian State University Fall 2022
+			Mathematics Major </br>
+			Computer Science and Statistics Minors </br>
+			Sports Analytics Certificate
+</p>
+      
+        
+        <p>
+    <strong>Contact Information</strong><br />      
+    Phone: (704) 526-8883</br>
+    <a href="mailto:pettisaj@appstate.edu">pettisaj@appstate.edu</a><br>
+    Mooresville, NC 28115 </br>
+		</p> 
+</div>
 
 
 
