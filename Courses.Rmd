@@ -5,16 +5,24 @@ output:
     css: "css.css"
 ---
 
-This page houses all the revelant courses I have taken over the years.
+This page houses all the relevant courses I have taken over the years.
 
 Courses I am Currently enrolled in:
+
+* CIS 3731 - Advanced Spreadsheet Analytics
+* ECO 3210 - Economics of Sports
+* MAT 3310 - Discrete and Continuous Math Models
+* STT 4890 - Introduction to Modeling and Analysis in Sports
+
+
+Previous Courses:
+
+Spring 2022
 
 * MAT 3110 - Introduction to Modern Algebra
 * MAT 4010 - Abstract Linear Algebra with Applications to Differential Equations
 * STT 3860 - Statistical Modeling
 
-
-Previous Courses:
 
 Fall 2021
 
