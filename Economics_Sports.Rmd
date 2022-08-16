@@ -1,0 +1,13 @@
+---
+title: "Economics of Sports"
+output: html_document
+date: '2022-08-15'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+Application of the techniques of microeconomic theory to the sports industry. These employ the tools of three core microeconomic fields - industrial organization, public finance, and labor economics - to the examination of professional and college sports. Topics studied include, but are not limited to, the prevalence of monopoly power in the sports industry, financing of stadiums and teams, growth of union power, salary determination, and the incidence of racial discrimination.

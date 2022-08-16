@@ -3,16 +3,8 @@ title: "Resume"
 output: html_document
 ---
 
-My current resume is as shown below and is linked as a pdf document below. 
-
-<figure>
-<img src="./Resume/Resume.png" alt="Resume" align="center" hspace="20" style="width:1000px;height:1000px;">
-</figure>
-
-____________
-
 Link to Resume Below:
 
-[Alex Pettis Resume .pdf](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Resume/Alex%20Pettis%20Resume.pdf)
+[Resume](https://docs.google.com/document/d/1A_a1jovgaMMnXm43H-V-Kp8toGf-gQJh/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
 
 __________

@@ -59,6 +59,12 @@ navbar:
               href: Computer_Theory.html
             - text: "Database"
               href: Database.html
+        - text: "Other Courses"
+          menu:
+            - text: "Advanced Spreadsheet Analytics"
+              href: Spreadsheet_Analytics.html
+            - text: "Economics of Sports"
+              href: Economics_Sports.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"

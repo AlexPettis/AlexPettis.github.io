@@ -1,0 +1,13 @@
+---
+title: "Advanced Spreadsheet Analytics"
+output: html_document
+date: '2022-08-15'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+The course will help students develop in-depth analytics skills using spreadsheets to effectively analyze and solve real-world business problems and work with various forms of data. The teaching methods will include classroom laboratory based tutorials and case study scenarios involving problems common in real-life business practice, and critical thinking exercises designed to enhance their ability to formulate questions, select and analyze data, recommend solutions, and make significant business decisions.
