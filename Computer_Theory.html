@@ -13,7 +13,7 @@
 
 <title>Introduction to Theoretical Computer Science</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.15/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -142,11 +142,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -390,7 +394,7 @@ machines.</p>
 <div id="course-notes" class="section level2">
 <h2>Course Notes</h2>
 <p><a
-href="https://docs.google.com/document/d/1E4Lh2RE1RyUxb9du2GLdR0SbfDeT_iHl/edit?usp=sharing&amp;ouid=101085786338866865565&amp;rtpof=true&amp;sd=true">Introduction
+href="https://docs.google.com/document/d/1_KBwdpvASrzjfzbHIkgqU-_-QBkYaaWc/edit?usp=sharing&amp;ouid=101085786338866865565&amp;rtpof=true&amp;sd=true">Introduction
 to Theoretical Computer Science Notes</a></p>
 <hr />
 </div>

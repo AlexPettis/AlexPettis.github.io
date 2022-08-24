@@ -13,4 +13,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 An introduction to the process of mathematical modeling. Topics will include an overview of the modeling process as well as graph theory, discrete and continuous dynamics, linear programming, combinatorics, and curve fitting with a particular emphasis on their use in modeling real world situations. It will also contain a treatment of topics from calculus, including the derivative and definite integral with an emphasis on their use in solving real world problems.
 
+
+## Course Notes
+
+The following are course notes,
+
+[Modeling Overview](https://asulearn.appstate.edu/pluginfile.php/3148608/mod_resource/content/1/ModelingOverview.pdf)
+
+
 __________
