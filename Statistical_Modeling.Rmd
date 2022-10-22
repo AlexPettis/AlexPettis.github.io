@@ -31,4 +31,6 @@ The bookdown reproductions are of various DataCamp assignments.
 
 [Tree Based Models in R](https://stt3860-spring2022.github.io/reproduction-tree-based-models-in-r-bookdown3-AlexPettis/)
 
+[Machine Learning with Caret](https://stt3860-spring2022.github.io/reproduction-of-machine-learning-with-caret-bookdown4-AlexPettis/)
+
 ------------------------------------------------------------------------

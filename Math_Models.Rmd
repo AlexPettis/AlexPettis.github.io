@@ -16,7 +16,7 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 ## Course Notes
 
-The following are course notes,
+The following are course notes.
 
 [Modeling Overview](https://asulearn.appstate.edu/pluginfile.php/3148608/mod_resource/content/1/ModelingOverview.pdf)
 
