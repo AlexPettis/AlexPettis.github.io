@@ -28,7 +28,9 @@ The goal of this course is to provide students with exposure to a variety of sta
 
 [Lab 2](https://stt3851-fall2021.github.io/lab-2-AlexPettis/WritingAssignment.html)
 
-[Lab 3](https://stt3851-fall2021.github.io/lab-2-AlexPettis/WritingAssignment.html)
+[Lab 3](https://stt3851-fall2021.github.io/lab-3-AlexPettis/LabChap3.html)
+
+[Lab 4](https://stt3851-fall2021.github.io/lab-4-AlexPettis/LabCrossValidationSC.html)
 
 ## Bookdowns
 

@@ -13,7 +13,7 @@
 
 <title>Statistical Data Analysis II</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -179,8 +179,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -188,16 +188,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -419,8 +412,11 @@ href="https://stt3851-fall2021.github.io/lab-1-AlexPettis/Lab1.html">Lab
 href="https://stt3851-fall2021.github.io/lab-2-AlexPettis/WritingAssignment.html">Lab
 2</a></p>
 <p><a
-href="https://stt3851-fall2021.github.io/lab-2-AlexPettis/WritingAssignment.html">Lab
+href="https://stt3851-fall2021.github.io/lab-3-AlexPettis/LabChap3.html">Lab
 3</a></p>
+<p><a
+href="https://stt3851-fall2021.github.io/lab-4-AlexPettis/LabCrossValidationSC.html">Lab
+4</a></p>
 </div>
 <div id="bookdowns" class="section level2">
 <h2>Bookdowns</h2>

@@ -13,4 +13,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Application of the techniques of microeconomic theory to the sports industry. These employ the tools of three core microeconomic fields - industrial organization, public finance, and labor economics - to the examination of professional and college sports. Topics studied include, but are not limited to, the prevalence of monopoly power in the sports industry, financing of stadiums and teams, growth of union power, salary determination, and the incidence of racial discrimination.
 
+
+## Course Notes and Videos
+
+The following are powerpoints and videos from the course.
+
+[Sports Economics Introduction: Opportunity Cost](https://asulearn.appstate.edu/pluginfile.php/3275479/mod_resource/content/1/Sports%20Opportunity%20Cost.mp4)
+
+[The Story of Babe Ruth and More...](https://asulearn.appstate.edu/pluginfile.php/3275480/mod_resource/content/1/Comparative%20adv.mp4)
+
+[Sports Economics: The Basics of Demand](https://asulearn.appstate.edu/pluginfile.php/3275481/mod_resource/content/1/Demand%201.mp4)
+
+[Sports Consumer Surplus](https://asulearn.appstate.edu/pluginfile.php/3275482/mod_resource/content/1/Sports%20Consumer%20Surplus.mp4)
+
+[PowerPoint--Introduction](https://mathr.math.appstate.edu/s/58f8b329c273f3f89e5cf/files/Website/AlexPettis/Econ%20Sports%20Notes/Sport%20Econ%20Groothuis%20Chapter%201.pdf)
+
+[Sports--Demand]()
+
+[Consumer Surplus]()
+
 __________
