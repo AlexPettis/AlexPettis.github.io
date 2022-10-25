@@ -18,22 +18,22 @@ A study of discrete mathematics as it applies to computer science. Concepts cove
 
 Linked below are some handouts from the course that contain a mixture of notes as well as practice problems.
 
-[Basic Laws About Sums](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Formula_sheet__Basic_laws_about_sums.pdf)
+[Basic Laws About Sums](https://drive.google.com/file/d/1HygeMY5yAGleJSTdsoibINXIaO9D1kbk/view?usp=sharing)
 
-[Sound Inference Rules](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Sound%20Inference%20Rules.pdf)
+[Sound Inference Rules](https://drive.google.com/file/d/1OoesYRhvvDDzX8pELrH3DyYm7urv0t7P/view?usp=sharing)
 
-[Induction Exercises](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Induction%20Exercises.pdf)
+[Induction Exercises](https://drive.google.com/file/d/1cFtWACQgOWe1dQAqhWtGpfLTxSB26Jq7/view?usp=sharing)
 
-[Examples of Proofs About Sets and Functions](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20About%20Sets%20and%20Functions.pdf)
+[Examples of Proofs About Sets and Functions](https://drive.google.com/file/d/1nkR6lZ_YRMUGp2kKlx_fg6SkG9AMtxnn/view?usp=sharing)
 
-[Proofs in Propositional Logic Homework](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20in%20Propositional%20Logic.pdf)
+[Proofs in Propositional Logic Homework](https://drive.google.com/file/d/1BX5YQTb3j8qIXuzSUuiwxELn9ufsSvQd/view?usp=sharing)
 
-[Homework 3](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/hw3.pdf)
+[Homework 3](https://drive.google.com/file/d/152WY3JnqVP7DwikPNsZtskFEzVF3U2CN/view?usp=sharing)
 
-[Proofs in Propositional Logic Notes](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Proofs%20in%20Propositional%20Logic%20Notes.pdf)
+[Proofs in Propositional Logic Notes](https://drive.google.com/file/d/19t4fHp6n5BSqbb7agNlNXWgePe7Llg03/view?usp=sharing)
 
-[Final Exam Review](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/Final%20Exam%20Review.pdf)
+[Final Exam Review](https://drive.google.com/file/d/1dVprpPxzu7je4lDH6F0nk92YXvSr2PHd/view?usp=sharing)
 
-[Review for Test #3](https://mathr.math.appstate.edu/s/58f8bfdd3ae1892cdd179/files/Website/Alex%20Pettis%20Website/Discrete/review3.pdf)
+[Review for Test #3](https://drive.google.com/file/d/1mkr7ul72-BvIvW0cD_C2xWFkECoyqmjX/view?usp=sharing)
 
 __________
