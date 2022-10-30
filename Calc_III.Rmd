@@ -15,7 +15,7 @@ A study of parametric equations, vectors, vector-valued functions, function of s
 
 ## Course Website
 
-Linked here is website relevant to the the course: https://billcookmath.com/index.html?page=./courses/math2130-summer2021. The website contains videos of course material as well as some other stuff that is somewhat relevant to the course.
+Linked here is website relevant to the the course: [BillCookMath](https://billcookmath.com/index.html?page=./courses/math2130-summer2021). The website contains videos of course material as well as some other stuff that is somewhat relevant to the course.
 
 
 ## Course Notes
