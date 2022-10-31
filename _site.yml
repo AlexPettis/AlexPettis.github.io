@@ -10,63 +10,63 @@ navbar:
       menu:
         - text: Undergraduate
           menu:
-        - text: "Math"
-          href: Math.html
-          menu:
-            - text: "Calculus"
-              menu:
-                - text: "Calculus I"
-                  href: Calc_I.html
-                - text: "Calculus II"
-                  href: Calc_II.html
-                - text: "Calculus III"
-                  href: Calc_III.html
-            - text: "Techniques of Proof"
-              href: Techniques_Proof.html
-            - text: "Introduction to Linear Algebra"
-              href: Linear_Algebra.html
-            - text: "Computational Mathematics"
-              href: Comp_Math.html
-            - text: "Discrete and Continuous Math Models"
-              href: Math_Models.html
-            - text: "Statistical Data Analysis"
-              menu:
-                - text: "Statistical Data Analysis I"
-                  href: Stat_Data_Analysis_I.html
-                - text: "Statistical Data Analysis II"
-                  href: Stat_Data_Analysis_II.html
-            - text: "Statistical Modeling"
-              href: Statistical_Modeling.html
-            - text: "Introduction to Modeling and Analysis in Sports"
-              href: Sports_Modeling.html
-            - text: "Other Math Courses"
-              menu:
-                - text: "Abstract Linear Algebra with Applications to Differential Equations"
-                  href: Abstract_Linear_Algebra.html
-                - text: "Introduction to Modern Algebra"
-                  href: Modern_Algebra.html
-        - text: "Computer Science"
-          menu:
-            - text: "Discrete Mathematics"
-              href: Discrete.html
-            - text: "Computer Science"
-              menu:
-                - text: "Computer Science I"
-                  href: CS_I.html
-                - text: "Computer Science II"
-                  href: CS_II.html
-            - text: "Introduction to Computer Systems"
-              href: Intro_Systems.html
-            - text: "Introduction to Theoretical Computer Science"
-              href: Computer_Theory.html
-            - text: "Database"
-              href: Database.html
-        - text: "Other Courses"
-          menu:
-            - text: "Advanced Spreadsheet Analytics"
-              href: Spreadsheet_Analytics.html
-            - text: "Economics of Sports"
-              href: Economics_Sports.html
+          - text: "Math"
+            href: Math.html
+            menu:
+              - text: "Calculus"
+                menu:
+                  - text: "Calculus I"
+                    href: Calc_I.html
+                  - text: "Calculus II"
+                    href: Calc_II.html
+                  - text: "Calculus III"
+                    href: Calc_III.html
+              - text: "Techniques of Proof"
+                href: Techniques_Proof.html
+              - text: "Introduction to Linear Algebra"
+                href: Linear_Algebra.html
+              - text: "Computational Mathematics"
+                href: Comp_Math.html
+              - text: "Discrete and Continuous Math Models"
+                href: Math_Models.html
+              - text: "Statistical Data Analysis"
+                menu:
+                  - text: "Statistical Data Analysis I"
+                    href: Stat_Data_Analysis_I.html
+                  - text: "Statistical Data Analysis II"
+                    href: Stat_Data_Analysis_II.html
+              - text: "Statistical Modeling"
+                href: Statistical_Modeling.html
+              - text: "Introduction to Modeling and Analysis in Sports"
+                href: Sports_Modeling.html
+              - text: "Other Math Courses"
+                menu:
+                  - text: "Abstract Linear Algebra with Applications to Differential Equations"
+                    href: Abstract_Linear_Algebra.html
+                  - text: "Introduction to Modern Algebra"
+                    href: Modern_Algebra.html
+          - text: "Computer Science"
+            menu:
+              - text: "Discrete Mathematics"
+                href: Discrete.html
+              - text: "Computer Science"
+                menu:
+                  - text: "Computer Science I"
+                    href: CS_I.html
+                  - text: "Computer Science II"
+                    href: CS_II.html
+              - text: "Introduction to Computer Systems"
+                href: Intro_Systems.html
+              - text: "Introduction to Theoretical Computer Science"
+                href: Computer_Theory.html
+              - text: "Database"
+                href: Database.html
+          - text: "Other Courses"
+            menu:
+              - text: "Advanced Spreadsheet Analytics"
+                href: Spreadsheet_Analytics.html
+              - text: "Economics of Sports"
+                href: Economics_Sports.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"
