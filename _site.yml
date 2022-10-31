@@ -8,6 +8,8 @@ navbar:
     - text: "Courses"
       href: Courses.html
       menu:
+        - text: Undergraduate
+          menu:
         - text: "Math"
           href: Math.html
           menu:
