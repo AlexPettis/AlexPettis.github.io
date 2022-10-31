@@ -28,5 +28,3 @@ All course notes are linked below as pdfs for easy view. ^[Disclamer all the .ja
 [Chapter 6 - A Second Look at Classes and Objects](https://mathr.math.appstate.edu/s/58f8bfdd3ae187cfcf967/files/Website/Alex%20Pettis%20Website/CS%20I%20Notes/EO_Gaddis_Java_Chapter_06_5e.pdf)
 
 [Chapter 7 - Arrays and the ArrayList Class](https://mathr.math.appstate.edu/s/58f8bfdd3ae187cfcf967/files/Website/Alex%20Pettis%20Website/CS%20I%20Notes/EO_Gaddis_Java_Chapter_07_5e.pdf)
-
-__________

@@ -46,7 +46,7 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 [More on Linear Programming -- My Supplement on Sensitivity](https://asulearn.appstate.edu/pluginfile.php/3148677/mod_resource/content/1/LinearProgramming-part%202.pdf)
 
-[Excel for LArger Problems Note Outline](https://asulearn.appstate.edu/pluginfile.php/3148675/mod_resource/content/2/Week%209-LP%20Excel%20Notes.pdf)
+[Excel for Larger Problems Note Outline](https://asulearn.appstate.edu/pluginfile.php/3148675/mod_resource/content/2/Week%209-LP%20Excel%20Notes.pdf)
 
 
 __________
