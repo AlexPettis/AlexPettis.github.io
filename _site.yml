@@ -39,6 +39,8 @@ navbar:
                 href: Statistical_Modeling.html
               - text: "Introduction to Modeling and Analysis in Sports"
                 href: Sports_Modeling.html
+              - text: "Internship"
+                href: Internship.html
               - text: "Other Math Courses"
                 menu:
                   - text: "Abstract Linear Algebra with Applications to Differential Equations"
