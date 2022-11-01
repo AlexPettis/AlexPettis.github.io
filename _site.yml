@@ -69,6 +69,8 @@ navbar:
                 href: Spreadsheet_Analytics.html
               - text: "Economics of Sports"
                 href: Economics_Sports.html
+        - text: Graduate
+          menu:
     - text: "Resume"
       href: Resume.html
     - text: "Software"
