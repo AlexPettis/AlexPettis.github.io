@@ -20,143 +20,30 @@ The provided python codes are both instructor and student made codes.
 
 ### Differential Equations Python Code
 
-Here is some python code for differential equations. The first python code is an example to use as a reference when completing the rest. 
-
-#### Example
-
-[Example Code](A6/Example.py)
-
-#### Directions
-
-Your job:  
-
-Rumor Spread: This program assumes all necessary information is contained within the function, so there are no arguments to specify.
-
-1) initialize the values of k and Rumor
-
-2) determine the appropriate arguments for the range function.
-
-3) determine the update formula for calculating the new value of R.
-
-4) create the function call and run the program.
-
-
-Coffee Cooling: This program is designed to allow you to run it with different values of k and dt, hence values for those two variables will be the required arguments for the function.
-
-1) initialize the values of t, T, and n (remember that n must be integer!)
-
-2) enter the update values for t and T
-
-3) create the function call and run the program for the values of k and dt requested.
-
-#### Rumor Code
-
-[Rumor Code](A6/rumor.py)
-
-#### Coffee Code
-
-[Coffee Code](A6/coffee.py)
-
-#### Main Code
-
-[Main Code](A6/main.py)
-
+[Differential Equations Python Code](https://docs.google.com/document/d/1YjpBFxgf_STVdgHY4hR8cak1BvmtLN4kchhojTptK6o/edit?usp=sharing)
 
 ### Euler's Method Python Code
 
-Here is some python code for Euler's Method. The two files euler.pseduo and step-test.pseudo are pseudo code and thus need to be turned into python code in the main file.
-
-#### Euler Pseudo
-
-[Euler Pseudo](A7/euler.pseudo)
-
-#### Step-test Pseudo
-
-[Step-test Pseduo](A7/step-test.pseudo)
-
-#### Main
-
-[Main](A7/main.py)
-
+[Euler's Method Python Code](https://docs.google.com/document/d/1m0V8GWzybFYmtRfRA9QztHKm9NT2OB916RwBfhhdAfk/edit?usp=sharing)
 
 ### Integration Python Code
 
-The files left.pseudo and trapezoid.pseudo have pseudo code that needs to be turned into python code. The main.py file has the solution to the problem
-
-#### Left Code 
-
-[Left Code](A8/left.pseudo)
-
-#### Trapezoid Code
-
-[Trapezoid Code](A8/trapezoid.pseduo)
-
-#### Main Code 
-
-[Main Code](A8/main.py)
-
+[Integration Python Code](https://docs.google.com/document/d/1Wj5MGBh4o08Hpi9uGDA3o9aT1Kwi3fFnKEUw-5QqayY/edit?usp=sharing)
 
 ### Root Finding Python Code
 
-The Bisection For, Bisection While, and Quatratic Roots are all pseudo codes that need to be turned into python code in the main file. The purpose of both the bisection for and bisection while is just to make a point that when programming the same result can be achieved using either. 
-
-#### Bisection For Code
-
-[Bisection For Code](A9/bisection_for.pseudo)
-
-#### Bisection While Code
-
-[Bisection While Code](A9/bisection_while.pseudo)
-
-#### Quadratic Roots Code
-
-[Quatratic Roots Code](A9/quad_roots.pseudo)
-
-#### Main Code
-
-[Main Code](A9/main.py)
-
+[Root Finding Python Code](https://docs.google.com/document/d/1qyeZfPjMooInGWbiYCLs036rrxo8Btw1OByb-XBsNMs/edit?usp=sharing)
 
 ### Minimization Python Code
 
-Here is the code for the golden search algorithm.
-
-#### Main Code
-
-[Main Code](A10/main.py)
-
+[Minimization Python Code](https://docs.google.com/document/d/1oHKgVABRDa1pY8ZE-BxaoehoF5t6Hw5kXS-agknlHV0/edit?usp=sharing)
 
 ### Python Code Practice
 
-The following is problems to code for practice.
-
-#### Example Code for Lists
-
-[Example Code for Lists](A11/example.py)
-
-#### Headers for the Problems
-
-[Headers for the Problems](A11/headers_for_the_problems.txt)
-
-#### Main Code
-
-[Main Code](A11/main.py)
-
+[Python Code Practice](https://docs.google.com/document/d/1TukZj8RKVAHapdwu6MHD9bm-SKhuoK_tzLupTdMhmiw/edit?usp=sharing)
 
 ### Random Numbers Code
 
-Here is some code to practice with random numbers.
-
-#### Example Code
-
-[Example Code](A12/example.py)
-
-#### Headers
-
-[Headers](A12/headers.txt)
-
-#### Main Code
-
-[Main Code](A12/main.py)
+[Random Numbers Code](https://docs.google.com/document/d/1J7wXGYBQlKIxEZC9SlH2-WKN4OocMSc5OGnkeNoEu7I/edit?usp=sharing)
 
 __________
