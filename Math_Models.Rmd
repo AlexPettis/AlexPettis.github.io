@@ -32,7 +32,7 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 [Logistic Derivation Details](https://asulearn.appstate.edu/pluginfile.php/3148638/mod_resource/content/1/logistic-solution.pdf)
 
-### Markov Cahins and Other MAtrix Models
+### Markov Cahins and Other Matrix Models
 
 [Supplemental Reading on Markov Chains](https://asulearn.appstate.edu/pluginfile.php/3148655/mod_resource/content/2/Markov%20Chains%20Notes%20Complete.pdf)
 
@@ -48,5 +48,8 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 [Excel for Larger Problems Note Outline](https://asulearn.appstate.edu/pluginfile.php/3148675/mod_resource/content/2/Week%209-LP%20Excel%20Notes.pdf)
 
+### Dealing with Data
+
+[Fitting Notes Outline](https://asulearn.appstate.edu/pluginfile.php/3148690/mod_resource/content/2/Fitting%20Note%20Outline-new.pdf)
 
 __________
