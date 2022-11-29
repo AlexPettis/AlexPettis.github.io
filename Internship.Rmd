@@ -13,4 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This was an analytics internship for the Sports Analytics Certificate using NCAA baseball data from 2019-2022 seasons. The coaches of the Appalachian State University baseball team wanted a 2-d distribution map of where flyballs were. Then I needed to grab the outfield balls. We don’t want the shallow fly balls. Once the correct hit balls were found, then it was a matter of creating a 2- D distribution map of where they happened. Lastly, I need to separate the handedness of the pitcher and batter more formally known as the platoon split.
 
+
+## Code for Project
+
+[Code for Project](https://drive.google.com/file/d/106SmiGWZ-1B45TPx1wR6YnNI4D82uok1/view?usp=sharing)
+
 __________
