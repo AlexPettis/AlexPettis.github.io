@@ -14,6 +14,6 @@ knitr::opts_chunk$set(echo = TRUE)
 An overview of contemporary topics in sports analytics. Topics covered will include but not be limited to:  individual and team performance measures, rankings, game simulation, and strategy assessment.  Examples will be used from football, basketball, baseball, and selected other sports.
 
 
-[Baseball Player Rankings](~/Website/AlexPettis/Sports Modeling/FinalProject.html)
+[Baseball Player Rankings](FinalProject.html)
 
 __________

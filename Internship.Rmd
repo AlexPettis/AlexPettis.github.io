@@ -16,6 +16,6 @@ This was an analytics internship for the Sports Analytics Certificate using NCAA
 
 ## Code for Project
 
-[Code for Project](https://drive.google.com/file/d/106SmiGWZ-1B45TPx1wR6YnNI4D82uok1/view?usp=sharing)
+[Code for Project](Outfield_Alex.html)
 
 __________

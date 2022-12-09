@@ -20,7 +20,7 @@ The provided python codes are both instructor and student made codes.
 
 ### Differential Equations Python Code
 
-[Differential Equations Python Code](https://docs.google.com/document/d/1YjpBFxgf_STVdgHY4hR8cak1BvmtLN4kchhojTptK6o/edit?usp=sharing)
+[Differential Equations Python Code](Website/AlexPettis/Comp%20Math/Diff_Equations_Python-Code.html)
 
 ### Euler's Method Python Code
 
