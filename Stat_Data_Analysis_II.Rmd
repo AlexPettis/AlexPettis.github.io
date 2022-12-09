@@ -40,6 +40,8 @@ The goal of this course is to provide students with exposure to a variety of sta
 
 ## Other
 
-[Example Flow Handout](https://mathr.math.appstate.edu/s/58f8b329c273f825b26e0/files/STT3851/example-flow-handout-AlexPettis/ExampleFlow.html)
+[Example Flow Handout](ExampleFlowwork.html)
+
+[Kaggle Competition Code](Kaggle-Competition.html)
 
 __________

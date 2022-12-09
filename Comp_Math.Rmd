@@ -20,30 +20,30 @@ The provided python codes are both instructor and student made codes.
 
 ### Differential Equations Python Code
 
-[Differential Equations Python Code](Website/AlexPettis/Comp%20Math/Diff_Equations_Python-Code.html)
+[Differential Equations Python Code](Diff_Equations_Python-Code.html)
 
 ### Euler's Method Python Code
 
-[Euler's Method Python Code](https://docs.google.com/document/d/1m0V8GWzybFYmtRfRA9QztHKm9NT2OB916RwBfhhdAfk/edit?usp=sharing)
+[Euler's Method Python Code](Euler_Python_Code.html)
 
 ### Integration Python Code
 
-[Integration Python Code](https://docs.google.com/document/d/1Wj5MGBh4o08Hpi9uGDA3o9aT1Kwi3fFnKEUw-5QqayY/edit?usp=sharing)
+[Integration Python Code](Int_Python_Code.html)
 
 ### Root Finding Python Code
 
-[Root Finding Python Code](https://docs.google.com/document/d/1qyeZfPjMooInGWbiYCLs036rrxo8Btw1OByb-XBsNMs/edit?usp=sharing)
+[Root Finding Python Code](Root_Finding_Code.html)
 
 ### Minimization Python Code
 
-[Minimization Python Code](https://docs.google.com/document/d/1oHKgVABRDa1pY8ZE-BxaoehoF5t6Hw5kXS-agknlHV0/edit?usp=sharing)
+[Minimization Python Code](Minimization_Python_Code.html)
 
 ### Python Code Practice
 
-[Python Code Practice](https://docs.google.com/document/d/1TukZj8RKVAHapdwu6MHD9bm-SKhuoK_tzLupTdMhmiw/edit?usp=sharing)
+[Python Code Practice](Python_Code_Practice.html)
 
 ### Random Numbers Code
 
-[Random Numbers Code](https://docs.google.com/document/d/1J7wXGYBQlKIxEZC9SlH2-WKN4OocMSc5OGnkeNoEu7I/edit?usp=sharing)
+[Random Numbers Code](Random_Numbers_Code.html)
 
 __________

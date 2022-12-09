@@ -62,7 +62,7 @@ Some of the handouts are are directly related to the course while others are not
 
 This is a pdf of the handouts compiled together with a table of contents.
 
-[Complied Handout](https://mathr.math.appstate.edu/s/58f8b329c273f42461355/files/Website/AlexPettis/Abstract_Linear_Algebra_with_Application_to_Differential_Equations_Final.pdf)
+[Complied Handout](Website/AlexPettis/Abstract_Linear_Algebra_with_Application_to_Differential_Equations_Final.pdf)
 
 
 
