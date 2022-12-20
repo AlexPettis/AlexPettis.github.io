@@ -1,0 +1,16 @@
+---
+title: "Markov Chains and Other Matrix Models"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Supplemental Reading on Markov Chains
+
+Supplemental Reading on Leslie Models
+
+P2

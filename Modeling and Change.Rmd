@@ -1,0 +1,19 @@
+---
+title: "Modeling and Change"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This page contains course notes on What is Modeling? and Modeling Change.
+
+
+[Modeling Overview](https://drive.google.com/file/d/1ApD3Db6qZYC6C1oLo861vAImbcxWXENU/view?usp=sharing)
+
+[Discrete Change](https://drive.google.com/file/d/1QbwyKAExa48KMknCZNrxQs3ADTwK1qg8/view?usp=sharing)
+
+[More on Change Notes](https://drive.google.com/file/d/1hlRh1Sgd7nA7TciUv7O8YIvb9T3_HF-_/view?usp=share_link)

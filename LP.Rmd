@@ -1,0 +1,24 @@
+---
+title: "Linear Programming"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Note outline graphical and algebra approaches to LP
+
+Recap of our first week
+
+Supplement on sensitivity
+
+excel for larger problems
+
+K and B using the solver
+
+Chair Problem using the solver
+
+P3

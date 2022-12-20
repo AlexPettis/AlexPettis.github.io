@@ -16,40 +16,16 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 ## Course Notes
 
-### What is Modeling?
+[Modeling and Change](Modeling and Change.html)
 
-[Modeling Overview](https://asulearn.appstate.edu/pluginfile.php/3148608/mod_resource/content/1/ModelingOverview.pdf)
+[Differential Equations](Differential Equations.html)
 
-### Modeling Change
+[Matrix Models](Matrix_Models.html)
 
-[Discrete Change](https://asulearn.appstate.edu/pluginfile.php/3148616/mod_resource/content/1/Week%202%20-%20Discrete%20change%20Note%20Outline.pdf)
+[Linear Programming](LP.html)
 
-[More on Change Notes Outline](https://asulearn.appstate.edu/pluginfile.php/3148623/mod_resource/content/1/Week%203%20-%20More%20on%20Change.pdf)
+[Data](Data.html)
 
-### Differential Equations
-
-[Week 4 Note Outline](https://asulearn.appstate.edu/pluginfile.php/3148637/mod_resource/content/1/DE%20Notes-Yeast.pdf)
-
-[Logistic Derivation Details](https://asulearn.appstate.edu/pluginfile.php/3148638/mod_resource/content/1/logistic-solution.pdf)
-
-### Markov Cahins and Other Matrix Models
-
-[Supplemental Reading on Markov Chains](https://asulearn.appstate.edu/pluginfile.php/3148655/mod_resource/content/2/Markov%20Chains%20Notes%20Complete.pdf)
-
-[Supplemental Reading on Leslie Models](https://asulearn.appstate.edu/pluginfile.php/3148661/mod_resource/content/4/Leslie%20Population%20Models.pdf)
-
-### Linear Programming
-
-[Note Outline - Graphical and Algebra Approaches to LP](https://asulearn.appstate.edu/pluginfile.php/3148670/mod_resource/content/1/Linear%20Programming%20Note%20Outline.pdf)
-
-[Recap of Our First Week](https://asulearn.appstate.edu/pluginfile.php/3666626/mod_resource/content/1/week9%20seque.pdf)
-
-[More on Linear Programming -- My Supplement on Sensitivity](https://asulearn.appstate.edu/pluginfile.php/3148677/mod_resource/content/1/LinearProgramming-part%202.pdf)
-
-[Excel for Larger Problems Note Outline](https://asulearn.appstate.edu/pluginfile.php/3148675/mod_resource/content/2/Week%209-LP%20Excel%20Notes.pdf)
-
-### Dealing with Data
-
-[Fitting Notes Outline](https://asulearn.appstate.edu/pluginfile.php/3148690/mod_resource/content/2/Fitting%20Note%20Outline-new.pdf)
+[Other Stuff](Other_Stuff.html)
 
 __________

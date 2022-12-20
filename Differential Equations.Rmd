@@ -1,0 +1,23 @@
+---
+title: "Differential Equations"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This page contains course notes and supplements related to modeling differential equations as well as a project.
+
+[DE Notes](https://drive.google.com/file/d/1qCGr1fBIFihseNLveiWglu2UDgOziQnl/view?usp=sharing)
+
+[Logistic Derivation Details](https://drive.google.com/file/d/1puwd2cXDeeCygdFTAN5AXIRst50Eb51O/view?usp=sharing)
+
+[Class Examples](https://docs.google.com/spreadsheets/d/1zENGbL9Coa7GBt6PXA2u1ZexoXnp5Wvr/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Building a Model in Insight Maker](https://drive.google.com/file/d/1IzkN9Tsry2cNCdZyzbWjZtNCp485MnZ3/view?usp=sharing)
+
+[Project 1](https://drive.google.com/file/d/1bd7SqwNG2klCzXtdHZYIurg4niQic9dM/view?usp=sharing)
+
