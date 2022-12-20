@@ -13,15 +13,15 @@ The files left.pseudo and trapezoid.pseudo have pseudo code that needs to be tur
 
 ## Left Code 
 
-[Left Code](A8/left.pseudo)
+[Left Code](left.pseudo)
 
 
 ## Trapezoid Code
 
-[Trapezoid Code](A8/trapezoid.pseduo)
+[Trapezoid Code](trapezoid.pseduo)
 
 ## Main Code 
 
-[Main Code](A8/main.py)
+[Main Code](main.py)
 
 __________

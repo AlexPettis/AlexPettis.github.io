@@ -12,14 +12,14 @@ Here is some code to practice with random numbers.
 
 ## Example Code
 
-[Example Code](A12/example.py)
+[Example Code](example.py)
 
 ## Headers
 
-[Headers](A12/headers.txt)
+[Headers](headers.txt)
 
 ## Main Code
 
-[Main Code](A12/main.py)
+[Main Code](main.py)
 
 __________

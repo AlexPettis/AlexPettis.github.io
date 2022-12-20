@@ -9,16 +9,20 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Note outline graphical and algebra approaches to LP
+This page contains course notes and supplements related to modeling using linear programming as well as a project.
 
-Recap of our first week
+[Note Outline Graphical and Algebra Approaches to LP](https://drive.google.com/file/d/1kPFFZM-bsO2EEmKAiPNHOH1YkS9b5KXe/view?usp=sharing)
 
-Supplement on sensitivity
+[Recap of our First Week](https://drive.google.com/file/d/15UgAcphZ2fIKQTmbiRmsmuCswQNB_P2h/view?usp=sharing)
 
-excel for larger problems
+[Supplement on Sensitivity](https://drive.google.com/file/d/1jxGluMWENfIZL5DBzO5EekUglTB_0L88/view?usp=sharing)
 
-K and B using the solver
+[Excel for Larger Problems](https://drive.google.com/file/d/1KerajS2hxNrOt0YwtpUAk0pWX3Lh-oTs/view?usp=sharing)
 
-Chair Problem using the solver
+[K and B using the Solver](https://docs.google.com/spreadsheets/d/15PY4H5FcVXM_Av_F7dgaSGTgmxYtpkpK/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
 
-P3
+[Chair Problem Using the Solver](https://docs.google.com/spreadsheets/d/1GjU-lKb_ZzVjzXa1YbPL54jTf9zI3chb/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Project 3](https://drive.google.com/file/d/1n28Ov4Z94d7W3iY0Eza3QdkofBdhvYRM/view?usp=sharing)
+
+__________

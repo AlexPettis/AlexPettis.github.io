@@ -13,18 +13,18 @@ The Bisection For, Bisection While, and Quatratic Roots are all pseudo codes tha
 
 ## Bisection For Code
 
-[Bisection For Code](A9/bisection_for.pseudo)
+[Bisection For Code](bisection_for.pseudo)
 
 ## Bisection While Code
 
-[Bisection While Code](A9/bisection_while.pseudo)
+[Bisection While Code](bisection_while.pseudo)
 
 ## Quadratic Roots Code
 
-[Quatratic Roots Code](A9/quad_roots.pseudo)
+[Quatratic Roots Code](quad_roots.pseudo)
 
 ## Main Code
 
-[Main Code](A9/main.py)
+[Main Code](main.py)
 
 __________ 

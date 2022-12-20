@@ -13,14 +13,14 @@ The following is problems to code for practice.
 
 ## Example Code for Lists
 
-[Example Code for Lists](A11/example.py)
+[Example Code for Lists](example.py)
 
 ## Headers for the Problems
 
-[Headers for the Problems](A11/headers_for_the_problems.txt)
+[Headers for the Problems](headers_for_the_problems.txt)
 
 ## Main Code
 
-[Main Code](A11/main.py)
+[Main Code](main.py)
 
 __________

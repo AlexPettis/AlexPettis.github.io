@@ -9,8 +9,12 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Supplemental Reading on Markov Chains
+This page contains course notes and supplements related to matrix models as well as a project.
 
-Supplemental Reading on Leslie Models
+[Supplemental Reading on Markov Chains](https://drive.google.com/file/d/12b7GmL5sV-ZWAW3cb4JY323Ele4o-V2E/view?usp=sharing)
 
-P2
+[Supplemental Reading on Leslie Models](https://drive.google.com/file/d/1hYrfEG4m6VdUuGQVmMzf-exYzhlEm9iy/view?usp=sharing)
+
+[Project 2](https://drive.google.com/file/d/1cea54kvPCQNOZZ1iuOztrvuL8baDRGy6/view?usp=sharing)
+
+__________

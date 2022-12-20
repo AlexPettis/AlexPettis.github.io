@@ -16,9 +16,9 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 ## Course Notes
 
-[Modeling and Change](Modeling and Change.html)
+[Modeling and Change](Modeling_Change.html)
 
-[Differential Equations](Differential Equations.html)
+[Differential Equations](Differential_Equations.html)
 
 [Matrix Models](Matrix_Models.html)
 

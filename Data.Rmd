@@ -1,15 +1,20 @@
 ---
 title: "Data"
-output: html_document
-date: '2022-12-19'
+output:
+  html_document:
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Fitting Note Outline
+This page contains course notes and supplements related to data modeling as well as a project.
 
-Excel Fitting
+[Fitting Note Outline](https://drive.google.com/file/d/1MymlkC2ffIkSTbKDGu0qAdIzMYNQIhEE/view?usp=sharing)
 
-P4
+[Excel Fitting](https://docs.google.com/spreadsheets/d/187DNLs5kVDSJ2wTR8rBlB5bc1qlHWZNi/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Project 4](https://drive.google.com/file/d/1_-zEGh83qRbZRfAb-X7bR_Hx94LNn1_S/view?usp=sharing)
+
+__________

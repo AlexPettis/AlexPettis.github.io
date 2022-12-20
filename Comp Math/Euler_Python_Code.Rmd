@@ -13,14 +13,14 @@ Here is some python code for Euler's Method. The two files euler.pseduo and step
 
 ## Euler Pseudo
 
-[Euler Pseudo](A7/euler.pseudo)
+[Euler Pseudo](euler.pseudo)
 
 ## Step-test Pseudo
 
-[Step-test Pseduo](A7/step-test.pseudo)
+[Step-test Pseduo](step-test.pseudo)
 
 ## Main
 
-[Main](A7/main.py)
+[Main](main.py)
 
 __________

@@ -13,7 +13,7 @@ Here is some python code for differential equations. The first python code is an
 
 ## Example
 
-[Example Code](A6/Example.py)
+[Example Code](Example.py)
 
 ## Directions
 
@@ -40,14 +40,14 @@ Coffee Cooling: This program is designed to allow you to run it with different v
 
 ## Rumor Code
 
-[Rumor Code](A6/rumor.py)
+[Rumor Code](rumor.py)
 
 ## Coffee Code
 
-[Coffee Code](A6/coffee.py)
+[Coffee Code](coffee.py)
 
 ## Main Code
 
-[Main Code](A6/main.py)
+[Main Code](main1.py)
 
 __________

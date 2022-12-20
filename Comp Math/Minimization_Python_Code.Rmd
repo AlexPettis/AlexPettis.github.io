@@ -13,6 +13,6 @@ Here is the code for the golden search algorithm.
 
 ## Main Code
 
-[Main Code](A10/main.py)
+[Main Code](main.py)
 
 __________
