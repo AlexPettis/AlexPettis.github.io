@@ -27,4 +27,5 @@ This page contains course notes on What is Modeling? and Modeling Change.
 [Excel - More Change Models](https://docs.google.com/spreadsheets/d/1FvDWbG705HxQ7jfM-pVA1uwIe-i5SzQ1/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
 
 [Excel - Change in Systems](https://docs.google.com/spreadsheets/d/1RmPqhK8PnmsAb74Ds6h62brrjV-H0Ha1/edit?usp=sharing&ouid=101085786338866865565&rtpof=true&sd=true)
+
 __________

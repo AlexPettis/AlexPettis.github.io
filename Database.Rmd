@@ -26,4 +26,11 @@ e.	Building the GUI with PhP or JSP (or any other web language you are familiar 
 
 My team project can be found [here](https://docs.google.com/document/d/1XJna0pNEx3PFrwsLa3fBVTQHQ95pIMZtQE16uCCho2M/edit?usp=sharing)
 
+
+## Course Notes
+
+### Module 2
+
+
+
 __________
