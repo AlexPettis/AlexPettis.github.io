@@ -1,0 +1,16 @@
+---
+title: "Programming for Business Analytics"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course focuses on utilizing a popular programming language in the analytics domain with associated tools for the design and construction of analytics applications. Emphasis is on the use of structured techniques and the integration of application libraries for data extraction, model implementation and visualization.
+
+__________

@@ -1,0 +1,16 @@
+---
+title: "Executive Skills"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+The purpose of this course is to administer assurance of learning activities and provide professional development opportunities.
+
+__________

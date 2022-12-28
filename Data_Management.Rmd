@@ -1,0 +1,16 @@
+---
+title: "Data Management"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course prepares students to understand basic concepts of databases; normalization and denormalization of data in the context of analytics; structured query language (SQL) to extract, manipulate, and transform data for data mining enabled analytical solutions for business problems; use of cloud resources for data storage and access; and emerging trends in data management.
+
+__________

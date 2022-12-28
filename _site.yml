@@ -71,6 +71,14 @@ navbar:
                 href: Economics_Sports.html
         - text: Graduate
           menu:
+                - text: "Data Management"
+                  href: Data_Management.html
+                - text: "Programming for Business Analytics"
+                  href: Programming_Analytics.html
+                - text: "Operation Research"
+                  href: Op_Research.html
+                - text: "Executive Skills"
+                  href: Exec_Skills.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"
