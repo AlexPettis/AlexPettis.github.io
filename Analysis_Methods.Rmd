@@ -1,0 +1,16 @@
+---
+title: "Problem Analysis and Quantitative Methods"
+output: 
+  html_document:
+    css: "css.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+A course designed to provide business students with the quantitative analysis tools required for managerial decision-making. The course covers quantitative concepts such as decision-making under uncertainty, optimization models and applications, and computer simulation. Additionally, the course will cover various statistical methods, including hypothesis testing, analysis of variance, regression analysis, and time series analysis. The emphasis will be on business applications of quantitative methods using computer software and models.
+
+__________
