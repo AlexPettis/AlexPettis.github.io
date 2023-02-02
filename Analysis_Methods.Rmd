@@ -2,7 +2,7 @@
 title: "Problem Analysis and Quantitative Methods"
 output: 
   html_document:
-    css: "css.css
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}

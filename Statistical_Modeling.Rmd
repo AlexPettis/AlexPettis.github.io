@@ -21,6 +21,8 @@ The labs are a series of assignments that combine various modeling techniques us
 
 [Lab 2]()
 
+[Lab 3](https://stt3860-spring2022.github.io/non-linear-models-with-the-bodyfat-data-lab3-AlexPettis/NonLinearModelFittingTutorialTemplate.html)
+
 ## Bookdown Repreductions
 
 The bookdown reproductions are of various DataCamp assignments.
