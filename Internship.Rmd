@@ -16,6 +16,16 @@ This was an analytics internship for the Sports Analytics Certificate using NCAA
 
 ## Code for Project
 
-[Code for Project](Outfield_Alex.html)
+[Code for Project](Outfield_Alex2.html)
+
+## Math
+
+The following links are the math used to determine how far a player needs to walk to reach the optimal spot based on the pitcher. Each player will start from second base and move a certain distance then turn and continue another distance until the spot is reached.
+
+[Right Field](https://www.desmos.com/calculator/q5ja8mxchd)
+
+[Left Field](https://www.desmos.com/calculator/4muz2nmvnm)
+
+[Center Field](https://www.desmos.com/calculator/cjjlsncywu)
 
 __________
