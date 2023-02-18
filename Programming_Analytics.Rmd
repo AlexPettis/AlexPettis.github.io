@@ -13,4 +13,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This course focuses on utilizing a popular programming language in the analytics domain with associated tools for the design and construction of analytics applications. Emphasis is on the use of structured techniques and the integration of application libraries for data extraction, model implementation and visualization.
 
+
+## Programs
+
+The following are python programs.
+
+### BMI
+
+The following calculates BMI using English units and converts them to metric and prints the resulting BMI.
+
+[BMI](BMI.py)
+
+### Paint
+
+Design a program to estimate the gallons of paint needed to paint a wall and the estimated cost of the paint. Assume that one gallon of paint will cover 350 square feet of a wall, each doorway accounts for 14 square feet, and each window accounts for 8.5 square feet. Obtain all other required information from the user. The output of your program must include the total cost to purchase the paint and the number of gallons needed. Additional output may include the square footage of the wall and allowances made. 
+
+[Paint](Paint.py)
+
 __________

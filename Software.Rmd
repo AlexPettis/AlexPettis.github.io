@@ -32,6 +32,16 @@ Softwares used in computer science classes.
 
 [WinSCP](https://winscp.net/eng/index.php)
 
+## Graduate Class Software
+
+Softwares used in graduate classes.
+
+[Visual Studio Code](https://code.visualstudio.com/)
+
+[Anaconda](https://www.anaconda.com/)
+
+[Microsoft SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+
 ## Other Softwares
 
 Softwares used in other classes
