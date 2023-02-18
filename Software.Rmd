@@ -42,6 +42,8 @@ Softwares used in graduate classes.
 
 [Microsoft SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
 
+[MySQL Workbench](http://www.mysql.com/products/workbench/)
+
 ## Other Softwares
 
 Softwares used in other classes
