@@ -2,7 +2,7 @@
 title: "Root Finding Python Code"
 output: 
   html_document:
-    css: "css.css
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
@@ -25,6 +25,6 @@ The Bisection For, Bisection While, and Quatratic Roots are all pseudo codes tha
 
 ## Main Code
 
-[Main Code](main.py)
+[Main Code](main_root.py)
 
 __________ 

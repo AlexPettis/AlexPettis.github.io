@@ -19,7 +19,7 @@ The labs are a series of assignments that combine various modeling techniques us
 
 [Lab 1](https://stt3860-spring2022.github.io/questioning-and-cleaning-the-bodyfat-data-lab1-AlexPettis/DataCleaningTemplate.html)
 
-[Lab 2]()
+[Lab 2](https://stt3860-spring2022.github.io/linear-models-with-the-bodyfat-data-lab2-AlexPettis/LinearModelFittingTutorialTemplate.html)
 
 [Lab 3](https://stt3860-spring2022.github.io/non-linear-models-with-the-bodyfat-data-lab3-AlexPettis/NonLinearModelFittingTutorialTemplate.html)
 

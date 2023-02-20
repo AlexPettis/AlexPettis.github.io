@@ -1,0 +1,49 @@
+# Problem 1
+
+def test_mers(n):
+# tests the python random number
+# generator to see if the numbers
+# appear to be uniformly distributed
+# the counts for each subinterval are 
+# stored in a list called "dist"
+
+  dist = [ 0 for i in range(10)]
+  s = 1234
+  k = 16807
+  j = 2147483647
+  for i in range(n):
+    s = ( k * s ) % j
+    r = s / j
+  
+  
+def test_python(n):
+# tests the python random number
+# generator to see if the numbers
+# appear to be uniformly distributed;
+# the counts for each subinterval are 
+# stored in a list called "dist"
+
+  dist = [ 0 for i in range(10)]
+
+
+# Problem 2
+
+def monte(n):
+# integrates exp(x) from 0 to 1
+# using Monte Carlo
+# methods with n points.
+
+
+# Problem 3
+
+def drunk(n):
+# prints out the results of simulating
+# the drunk walk problem from the text
+
+
+# Problem 4
+
+def double6(n)
+# prints out the results of simulating
+# the rolling double sixes from the text
+

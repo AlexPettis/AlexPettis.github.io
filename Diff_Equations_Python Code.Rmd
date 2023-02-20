@@ -13,7 +13,7 @@ Here is some python code for differential equations. The first python code is an
 
 ## Example
 
-[Example Code](~/Website_1/AlexPettis/Example.py)
+[Example Code](Example.py)
 
 ## Directions
 

@@ -2,7 +2,7 @@
 title: "Python Code Practice"
 output: 
   html_document:
-    css: "css.css
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
@@ -21,6 +21,6 @@ The following is problems to code for practice.
 
 ## Main Code
 
-[Main Code](main.py)
+[Main Code](main_practice.py)
 
 __________

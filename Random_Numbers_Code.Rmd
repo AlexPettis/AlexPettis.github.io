@@ -2,7 +2,7 @@
 title: "Random Numbers Code"
 output: 
   html_document:
-    css: "css.css
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
@@ -12,14 +12,14 @@ Here is some code to practice with random numbers.
 
 ## Example Code
 
-[Example Code](example.py)
+[Example Code](example_random.py)
 
 ## Headers
 
-[Headers](headers.txt)
+[Headers](headers_random.txt)
 
 ## Main Code
 
-[Main Code](main.py)
+[Main Code](main_random.py)
 
 __________

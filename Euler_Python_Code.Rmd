@@ -2,7 +2,7 @@
 title: "Euler's Method Python Code"
 output: 
   html_document:
-    css: "css.css
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
@@ -13,7 +13,7 @@ Here is some python code for Euler's Method. The two files euler.pseduo and step
 
 ## Euler Pseudo
 
-[Euler Pseudo](/home/students/pettisaj/Website_1/AlexPettis/euler.pseudo)
+[Euler Pseudo](euler.pseudo)
 
 ## Step-test Pseudo
 

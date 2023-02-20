@@ -2,7 +2,7 @@
 title: "Integration Python Code"
 output: 
   html_document:
-    css: "css.css
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
@@ -21,6 +21,6 @@ The files left.pseudo and trapezoid.pseudo have pseudo code that needs to be tur
 
 ## Main Code 
 
-[Main Code](main.py)
+[Main Code](main_int.py)
 
 __________
