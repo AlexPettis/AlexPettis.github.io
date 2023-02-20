@@ -13,4 +13,46 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The course will help students develop in-depth analytics skills using spreadsheets to effectively analyze and solve real-world business problems and work with various forms of data. The teaching methods will include classroom laboratory based tutorials and case study scenarios involving problems common in real-life business practice, and critical thinking exercises designed to enhance their ability to formulate questions, select and analyze data, recommend solutions, and make significant business decisions.
 
+## Case Projects
+
+The following documents are case projects that use Microsoft Excel.
+
+### College Town Budget
+
+[College Town Budget Excel](CollegeTownBudgetSolution_Pettis_Alex.xlsx)
+
+[College Town Budget Report](CollegeTownBudgetReport_Pettis_Alex.pdf)
+
+### College Town Budgte Simulation
+
+[College Town Budget Simulation Excel](Town_Budgte_Simulation_Pettis_Alex.xlsx)
+
+[College Town Budget Simulation Report](CollegeTownBudgetReport2_Pettis_Alex.pdf)
+
+### East Coast Trucking
+
+[East Coast Trucking Excel](EastCoastTrucking_Pettis_Alex.xlsx)
+
+[East Coast Trucking Report](EastCoastTruckingReport_Pettis_Alex.pdf)
+
+### Williams Inmvestments
+
+[Williams Investments Excel](WilliamsInvestments_Pettis_Alex.xlsx)
+
+[Williams Investments Report](WilliamsClientReport_Pettis_Alex.pdf)
+
+### Donaion Letter
+
+[Donation Letter Access](DonationLetter_Pettis_Alex.accdb)
+
+[Donation Letter Excel](DonationLetter_Pettis_Alex.xlsx)
+
+[Donation Letter Report](Donation_Letter_Report_Pettis_Alex.pdf)
+
+### Appwich Data Analysis
+
+[Appwich PowerBI](Appwich_Pettis_Alex.pbix)
+
+[Appwich Report](Appwich_Report_Pettis_Alex.pdf)
+
 __________

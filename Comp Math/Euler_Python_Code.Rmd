@@ -13,7 +13,7 @@ Here is some python code for Euler's Method. The two files euler.pseduo and step
 
 ## Euler Pseudo
 
-[Euler Pseudo](euler.pseudo)
+[Euler Pseudo](/home/students/pettisaj/Website_1/AlexPettis/euler.pseudo)
 
 ## Step-test Pseudo
 
