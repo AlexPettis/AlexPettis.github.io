@@ -1,0 +1,343 @@
+---
+title: "King County Housing Data"
+author: "Alex Pettis"
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+output: html_document
+---
+
+```{r, label = "SETUP", echo = FALSE, results= 'hide', message = FALSE, warning = FALSE}
+set.seed(123)
+library(knitr)
+knitr::opts_chunk$set(comment = NA,  fig.align = 'center', fig.height = 5, fig.width = 5, 
+                      warning = FALSE, message = FALSE)
+library(doMC)
+registerDoMC(cores = 12)
+```
+
+Reading the comma separated file from the `input` directory one level up from where this document 
+is stored using the `read.csv()` function.  Variable descriptions were obtained from 
+[King County, Department of Assessments](https://info.kingcounty.gov/assessor/esales/Glossary.aspx?type=r).  
+All feature engineering should be done in one the first code chunks of your document.
+
+```{r, label = "READIN"}
+housedata <- read.csv("../input/stt3851-fall2021/housedata2.csv", 
+                      colClasses = c(id = "character", date = "character", 
+                                     yr_built = "character", zipcode = "factor", grade = "factor"))
+housedata$date <- as.Date(housedata$date, "%Y%m%d")
+housedata$waterfront <- factor(housedata$waterfront, labels = c("No", "Yes"))
+housedata$condition <- factor(housedata$condition, labels = c("poor", "fair", "average", "good", "very good"))
+housedata$yr_renovated <- ifelse(housedata$yr_renovated == 0, housedata$yr_built, housedata$yr_renovated)
+housedata$yr_built <- as.Date(ISOdate(housedata$yr_built, 9, 1))  # Complete Year, Sept 1
+housedata$yr_renovated <- as.Date(ISOdate(housedata$yr_renovated, 9, 1))  # Last renovated Year, Sept 1
+housedata <- housedata[, -1]
+#### Perform same steps with test set
+housedataT <- read.csv("../input/stt3851-fall2021/housedataTEST2.csv", 
+                      colClasses = c(id = "character", date = "character", 
+                                     yr_built = "character", zipcode = "factor", grade = "factor"))
+housedataT$date <- as.Date(housedataT$date, "%Y%m%d")
+housedataT$waterfront <- factor(housedataT$waterfront, labels = c("No", "Yes"))
+housedataT$condition <- factor(housedataT$condition, labels = c("poor", "fair", "average", "good", "very good"))
+housedataT$yr_renovated <- ifelse(housedataT$yr_renovated == 0, housedataT$yr_built, housedataT$yr_renovated)
+housedataT$yr_built <- as.Date(ISOdate(housedataT$yr_built, 9, 1))  # Complete Year, Sept 1
+housedataT$yr_renovated <- as.Date(ISOdate(housedataT$yr_renovated, 9, 1))  # Last renovated Year, Sept 1
+housedataT <- housedataT[, -1]
+```
+
+```{r , message = FALSE, warning = FALSE}
+library(DT)
+datatable(housedata[, 2:10], rownames = FALSE)
+```
+
+Consider predicting the price (`price`) of a house based on a certain feature (`sqft_living`).  Start by graphing the relationship.
+
+```{r}
+library(ggplot2)
+p1 <- ggplot(data = housedata, aes(x = sqft_living, y = price)) + 
+  geom_point() + 
+  theme_bw()
+p1
+```
+
+Overplotting is problematic.  What should we do?
+
+* Consider making the plotting shape smaller.
+* Make the points semitransparent (`alpha`).
+* Bin the data into rectangles.
+* Bin the data into hexagons.
+
+
+### Using `alpha`
+
+```{r}
+p2 <- ggplot(data = housedata, aes(x = sqft_living, y = price)) + 
+        geom_point(alpha = 0.05, color = "blue") + 
+        theme_bw() 
+p2
+```
+
+### Using rectangles
+
+```{r, fig.width = 6}
+p3 <- ggplot(data = housedata, aes(x = sqft_living, y = price)) + 
+        stat_bin2d(bins = 50) + 
+        theme_bw()
+p3
+p4 <- ggplot(data = housedata, aes(x = sqft_living, y = price)) + 
+        stat_bin2d(bins = 50) + 
+        scale_fill_gradient(low = "lightblue", high = "red", 
+                            limits = c(0, 1000)) +
+        theme_bw()
+p4
+```
+
+### Using hexagons
+
+```{r, fig.width = 6}
+p5 <- ggplot(data = housedata, aes(x = sqft_living, y = price)) + 
+        stat_binhex(bins = 50) + 
+        scale_fill_gradient(low = "lightblue", high = "red", 
+                            limits = c(0, 800), breaks = seq(0, 800, by = 200)) +
+        theme_bw()
+p5
+```
+
+**Note**  For both `stat_bin2d` and `stat_binhex`, if you manually specify the range, and there is a bin that falls outside that range because it has too many of too few points, that bin will show up as grey rather than the color at the high or low end of the range. Observe the gray hexagons in the lower left corner of the above graph.
+
+```{r, fig.width = 6}
+p6 <- ggplot(data = housedata, aes(x = sqft_living, y = price)) + 
+        stat_binhex(bins = 50) + 
+        scale_fill_gradient(low = "lightblue", high = "red", 
+                            limits = c(0, 1000), breaks = seq(0, 1000, by = 200)) +
+        theme_bw()
+p6
+```
+
+## Example --- Data Format from Building a Model
+
+```{r}
+library(MASS)
+mod1 <- stepAIC(lm(price ~ . - sqft_basement - grade, data = housedata))
+summary(mod1)
+```
+
+
+## Predicting with Linear Model
+
+```{r}
+
+model_log <- lm(log(price)~., data = housedata)
+plot(model_log, which=2)
+summary(model_log)
+
+```
+
+## Predicting with Multivariate Linear Regression
+
+```{r}
+mod_MV_LR <- lm(price ~ bedrooms + bathrooms + sqft_living + sqft_lot + floors, data = housedata)
+summary(mod_MV_LR)
+```
+
+## Random Forest with Cross Validation
+```{r}
+library(caret)
+set.seed(123)
+myControl <- trainControl(method = "cv", number = 5)
+
+mod_rf <- train(y = housedata$price, x = housedata[ , c(3:15, 17:20)], trControl = myControl, method = "ranger")
+ summary(mod_rf)
+```
+
+## Random Forest with LOOCV
+
+```{r}
+library(caret)
+set.seed(123)
+myControl <- trainControl(method = "LOOCV", number = 5)
+
+mod_rf2 <- train(y = housedata$price, x = housedata[ , c(3:15,17:20)], trControl = myControl, method = "ranger")
+summary(mod_rf2)
+```
+Backwards Elimination
+```{r}
+library(caret)
+myControl5 <- trainControl(method = "cv",
+                           number = 10)
+mod_BE <- train(price ~ sqft_living + sqft_basement, 
+                data = housedata,
+                trControl =myControl5,
+                method = "leapBackward")
+
+mod_BE$results$RMSE  # Training RMSE
+mod_BE
+```
+## Test RMSE
+```{r}
+p <- predict(mod_BE, newdata = housedata_pp)
+RMSE(housedata_pp$price, p)
+```
+
+
+Pre-Processing the data
+```{r}
+pp_housedata <- preProcess(housedata[, c(3:13, 16:20)],
+                           method = c("center", "scale",
+                                      "BoxCox"))
+
+pp_housedata
+```
+
+```{r}
+housedata_pp <- predict(pp_housedata, housedata)
+pp_housedataT <- preProcess(housedataT[, c(2:12, 15:19)],
+                            method = c("center", "scale", "BoxCox"))
+housedata_pp
+```
+
+```{r}
+housedataT_pp <- predict(pp_housedataT, housedataT)
+```
+split the data
+
+```{r}
+set.seed(31)
+
+TRAIN <- createDataPartition(housedata_pp$price,
+                             p = 0.75,
+                             list = FALSE,
+                             times = 1)
+houseTRAIN <- housedata_pp[TRAIN, ]
+houseTEST <- housedata_pp[-TRAIN, ]
+```
+
+##Foward Selection
+```{r}
+
+mod_fs <- train(price ~ ., 
+                data = housedata_pp,
+                trControl = myControl,
+                method = "leapForward")
+mod_fs$results$RMSE
+mod_fs
+
+```
+
+## Test RMSE
+```{r}
+p <- predict(mod_fs, newdata = housedata_pp)
+RMSE(housedata_pp$price, p)
+```
+
+```{r}
+set.seed(321)
+library(caret)
+myControl <- trainControl(method = "cv", number = 10)
+mod_gbm_f <- train(y = housedata_pp$price, x = housedata_pp[ , c(3:13, 16:20)], trControl = myControl, method = "gbm", tuneLength = 18)
+```
+
+```{r}
+set.seed(123)
+myControl <- trainControl(method = "cv", number = 5)
+mod_gbm <- train(price ~ ., 
+                data = housedata_pp,
+                trControl = myControl,
+                method = "gbm",
+                tuneLength = 20)
+```
+
+## Elasticnet
+
+```{r}
+mod_glmnet <- train(price ~ ., 
+                data = housedataT_pp,
+                trControl = myControl,
+                method = "glmnet",
+                tuneLength = 12)
+mod_glmnet
+min(mod_glmnet$results$RMSE)  # Training RMSE
+plot(mod_glmnet)
+```
+
+### Test RMSE
+
+```{r}
+p <- predict(mod_glmnet, newdata = housedata_pp)
+RMSE(housedataT_pp$medv, p) # Test RMSE
+```
+
+## Bagging
+
+```{r}
+library(caret)
+mod_tb <- train(zipcode ~ ., 
+                data = housedataT_pp,
+                trControl = myControl,
+                method = "treebag"
+                )
+mod_tb
+min(mod_tb$results$RMSE)  # Training RMSE
+```
+
+### Support Vector Machine
+
+```{r}
+set.seed(123)
+myControl <- trainControl(method = "cv", number = 5)
+mod_svm <- train(zipcode ~ ., 
+                data = housedata_pp,
+                trControl = myControl,
+                method = "svmRadial",
+                tuneLength = 12)
+mod_svm
+min(mod_svm$results$RMSE)  # Training RMSE
+plot(mod_svm)
+```
+## k-nearest neighbors
+
+```{r}
+set.seed(123)
+myControl <- trainControl(method = "cv", number = 5)
+mod_knn <- train(price ~ ., 
+                data = houseTRAIN,
+                trControl = myControl,
+                method = "knn",
+                tuneLength = 12)
+mod_knn
+min(mod_knn$results$RMSE)  # Training RMSE
+plot(mod_knn)
+```
+
+### Test RMSE
+
+```{r}
+p <- predict(mod_knn, newdata = houseTEST)
+RMSE(houseTEST$price, p) # Test RMSE
+```
+## LASSO
+```{r}
+set.seed(123)
+myControl <- trainControl(method = "cv", number = 5)
+mod_lasso <- train(zipcode ~ ., 
+                data = houseTRAIN,
+                trControl = myControl,
+                method = "glmnet",
+                tuneGrid = expand.grid(alpha = 1, lambda = seq(.01, 2, length = 10))
+)
+mod_lasso
+```
+### Test RMSE
+```{r}
+p <- predict(mod_lasso, newdata=houseTEST)
+RMSE(houseTEST$zipcode, p) # Test RMSE
+```
+
+## Predicting with _TEST_ data
+
+```{r}
+PredictedPrice <- predict(model_log, newdata = housedataT)
+head(PredictedPrice)
+formatSubmission <- data.frame(id = 1:4229, price = PredictedPrice)
+head(formatSubmission)
+write.csv(formatSubmission, "model_log.csv", row.names  = FALSE)
+```
+Download the `Example.csv` file and upload it to kaggle to be evaluated.
