@@ -30,4 +30,56 @@ Design a program to estimate the gallons of paint needed to paint a wall and the
 
 [Paint](Paint.py)
 
+### Growth Rate
+
+A biologist needs a program to predict population growth. The inputs
+are:
+1) The initial number of organisms, as an int
+2) The rate of growth (a real number greater than 1), as a float
+3) The number of hours it takes to achieve this rate, as an int
+4) The number of hours during which the population grows, as an int
+Write a program that takes these inputs and displays a prediction of the
+total population.
+
+[Growth Rate](Growth Rate.py)
+
+
+### Text Files Single Item on a Line
+
+Create a program to process the file data.txt
+Find the following pieces of information about the file:
+
+Total lines in the file
+Min
+Max
+Mean
+Missing (-1)
+
+[Single Item on a Line](PA3.py)
+
+The following text file is the data used to test the program.
+
+[Data](data.txt)
+
+### Text Files Multiple Items on a Line
+
+Construct a program to copy all records with a user entered integer value found in field X4 to a new file.
+
+
+[Multiple Items on a Line](PA4.py)
+
+The following csv file is the data used to test the program.
+
+[Moxy](Moxy.csv)
+
+### TermVector
+
+A term frequency vector is a list of the words found in a document with a count of how many times each word occurs in the document.Create a program to find the term frequency vector of a document stored in a text file.
+
+[TermVector](Term Vector.py)
+
+The following text file is the data used to test the program.
+
+[TheTortoiseAndTheHare](TheTortoiseAndTheHare.txt)
+
 __________
