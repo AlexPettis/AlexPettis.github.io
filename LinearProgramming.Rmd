@@ -1,0 +1,46 @@
+---
+title: "Linear Programming"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This page contains course notes and supplements related to linear programming.
+
+[Introduction to Operations Research](https://drive.google.com/file/d/1LIY6atdcO--hZFnTRADNEcVTynQc5ppF/view?usp=share_link)
+
+[Automotive Article](https://drive.google.com/file/d/1mpPubp1ZMfmf7T9yYs-unXyBkEzllTQj/view?usp=share_link)
+
+[Police Paper](https://drive.google.com/file/d/1zadq2qni-zHis8lLbVkRjnwrbdeBq6Sq/view?usp=share_link)
+
+[Modeling Linear Programming Problems](https://drive.google.com/file/d/1XS-70lJ5YQ2gS_hoSfbbWsEs8NNElNLT/view?usp=share_link)
+
+[Example Model Set Up](https://drive.google.com/file/d/1Y-dS1_3anVt2ArsN62Bsrj3W9GJ8oLnq/view?usp=share_link)
+
+[Example Model Set Up in Excel](https://docs.google.com/spreadsheets/d/119DZPum1Q5ecopdnNyMD97FeoqUZi8so/edit?usp=share_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Barbie and Ken in Excel](https://docs.google.com/spreadsheets/d/1op3sHfTAg6tIAW8RYk4x3cnEVLxIXeOs/edit?usp=share_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Kibbutz in Excel](https://docs.google.com/spreadsheets/d/1yHjhhzCq-YuCiqElW23ObgR5KYOusWtT/edit?usp=share_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Simplex Method Notes](https://drive.google.com/file/d/1rK4PFyBGvWuDqGDbk5k37UTL5RIIFL7o/view?usp=share_link)
+
+[Additional Solved Examples](https://drive.google.com/file/d/1QI939LsnyESfKYxnzxIaTj7tXVqf2JR_/view?usp=share_link)
+
+[Performing Row Operations](https://drive.google.com/file/d/1KCjB_OiqNUlfOhrxo5XNiRMJAfRZCNeT/view?usp=share_link)
+
+[Non-Standard Cases and Graphical Sensitivity](https://drive.google.com/file/d/1cO9DL89t3uWXsEdgQzIK05-nWVT4TLc3/view?usp=share_link)
+
+[Example BM and 2 Phase](https://docs.google.com/spreadsheets/d/1pm9i-PwdOEkmulLgDQspdSIVOj91RpgV/edit?usp=share_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Duality and the Matrix Form of the Simplex Method](https://drive.google.com/file/d/1obKVARGjiUgQRGHEz4kM2U3JuDWT2D8z/view?usp=share_link)
+
+[Barbie and Ken Primal and Dual](https://docs.google.com/spreadsheets/d/1PsEvVH-3U7b_5L-xNECazrD2xJGsp93E/edit?usp=share_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[More on Duality](https://drive.google.com/file/d/1aHdlf2gNtymZmU_mptSxHCOICWHr60NI/view?usp=share_link)
+
+__________
