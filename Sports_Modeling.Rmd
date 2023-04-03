@@ -16,4 +16,6 @@ An overview of contemporary topics in sports analytics. Topics covered will incl
 
 [Baseball Player Rankings](FinalProject.html)
 
+[NCAA Team Rankings](Rankings Assignment.xlsx)
+
 __________
