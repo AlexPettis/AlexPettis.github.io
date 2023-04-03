@@ -11,7 +11,7 @@ output:
 <p><img src="./Picture3.jpg" alt="Picture3" align="center" hspace="20" style="width:250px;height:375px;"></p>
 </center>
 
-Hello, my name is Alex Pettis and I am currently a graduate student at Appalachian State University, set to graduate in Summer 2024 with a Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS and Business Administration - Interdisciplinary Business Concentration, MBA For my undergraduate degree, I pursued Mathematics with a concentration in General Mathematics as well as minors in Computer Science and Statistics, and a certificate in Sports Analytics. 
+Hello, my name is Alex Pettis and I am currently a graduate student at Appalachian State University, set to graduate in Summer 2024 with a Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS and Business Administration - Interdisciplinary Business Concentration, MBA. For my undergraduate degree, I pursued Mathematics with a concentration in General Mathematics as well as minors in Computer Science and Statistics, and a certificate in Sports Analytics. 
 
 My career goal is to become a Data Analyst with a particular focus on either finance, sports, health care, or supply chain industries.
 
