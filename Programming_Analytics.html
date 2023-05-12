@@ -362,20 +362,33 @@ $(document).ready(function () {
     <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Graduate</a>
       <ul class="dropdown-menu" role="menu">
-        <li>
-          <a href="Data_Management.html">Data Management</a>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Analytics</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Data_Management.html">Data Management</a>
+            </li>
+            <li>
+              <a href="Programming_Analytics.html">Programming for Business Analytics</a>
+            </li>
+            <li>
+              <a href="Op_Research.html">Operations Research</a>
+            </li>
+            <li>
+              <a href="Analysis_Methods.html">Problem Analysis and Quantitative Methods</a>
+            </li>
+            <li>
+              <a href="Exec_Skills.html">Executive Skills</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a href="Programming_Analytics.html">Programming for Business Analytics</a>
-        </li>
-        <li>
-          <a href="Op_Research.html">Operations Research</a>
-        </li>
-        <li>
-          <a href="Analysis_Methods.html">Problem Analysis and Quantitative Methods</a>
-        </li>
-        <li>
-          <a href="Exec_Skills.html">Executive Skills</a>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MBA</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Accounting.html">Managerial Accounting</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </li>
@@ -411,6 +424,11 @@ the analytics domain with associated tools for the design and
 construction of analytics applications. Emphasis is on the use of
 structured techniques and the integration of application libraries for
 data extraction, model implementation and visualization.</p>
+</div>
+<div id="cheat-sheet" class="section level2">
+<h2>Cheat Sheet</h2>
+<p>The following document is a cheat sheet for Python 3.</p>
+<p><a href="Python3-Cheatsheet.pdf">Cheat Sheet</a></p>
 </div>
 <div id="programs" class="section level2">
 <h2>Programs</h2>
@@ -469,6 +487,54 @@ file.</p>
 <p><a href="Term%20Vector.py">TermVector</a></p>
 <p>The following text file is the data used to test the program.</p>
 <p><a href="TheTortoiseAndTheHare.txt">TheTortoiseAndTheHare</a></p>
+</div>
+<div id="bmi-with-functions" class="section level3">
+<h3>BMI with Functions</h3>
+<p>Revamp the BMI program: * Include a main function * Move conversions
+to functions * Make a function to do the BMI calculation.</p>
+<p><a href="bmi_original.py">BMI</a></p>
+</div>
+<div id="pandas" class="section level3">
+<h3>Pandas</h3>
+<p>Clean and explore the Boone.csv weather data.</p>
+<p>Tasks:</p>
+<ul>
+<li>Convert fields to correct types</li>
+<li>Drop useless columns</li>
+<li>Rename columns: Remove underscores and use pascal casing</li>
+<li>How much data is missing?</li>
+<li>Look for relationships using corr()</li>
+<li>Save data to boone_clean.csv</li>
+</ul>
+<p><a href="PA7.ipynb">Pandas</a></p>
+<p>The following csv file is the data used.</p>
+<p><a href="Boone.csv">Boone Weather</a></p>
+</div>
+<div id="average-year-weather-data" class="section level3">
+<h3>Average Year Weather Data</h3>
+<p>Utilizing the cleaned Boone weather data, create a dataset
+representing an average year. Impute values as you see fit, but be sure
+you can justify your decisions.</p>
+<p><a href="PA8.ipynb">Average Year Weater</a></p>
+<p>The following csv file is the data used.</p>
+<p><a href="boone_clean.csv">Boone Clean</a></p>
+<p>The following csv file is the results for the year average.</p>
+<p><a href="Average_Year.csv">Average Year</a></p>
+</div>
+<div id="visualizations" class="section level3">
+<h3>Visualizations</h3>
+<p>Using the cleaned data for store 11, create the following visuals in
+a notebook:</p>
+<ul>
+<li>Scatter plot Sales and Labor_Cost</li>
+<li>Line plot Date and Item_Labor</li>
+<li>Create a histogram for a column of your choice.</li>
+<li>Create a bar chart using Bad_Weather_Days and Sales</li>
+</ul>
+<p><a href="PA9.ipynb">Visualizations</a></p>
+<p>The following csv file is the data used to create the
+visualizations.</p>
+<p><a href="Store11_clean.csv">Store 11</a></p>
 <hr />
 </div>
 </div>
@@ -476,8 +542,7 @@ file.</p>
 <div id="footer">
      <p><strong>Alex Pettis</strong></br>
      Appalachian State University | Summer 2024</br>
-		 Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS</br>
-		 Business Administration - Interdisciplinary Business Concentration, MBA</br>
+     MS Applied Data Analytics & MBA</br> 
 </p>
       
         
@@ -499,6 +564,10 @@ Sports Analytics Certificate-->
 Appalachian State University | Summer 24
 MS in Applied Data Analytics and MBA-->
 
+<!--Alex Pettis
+     Appalachian State University | Summer 2024</br>
+     Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS</br>
+     Business Administration - Interdisciplinary Business Concentration, MBA-->
 
 
 

@@ -1,0 +1,16 @@
+---
+title: "Forecasting"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This page contains course notes and supplements related to forecasting.
+
+[]()
+
+[]()

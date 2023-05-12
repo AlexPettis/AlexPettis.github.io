@@ -1,0 +1,16 @@
+---
+title: "Managerial Accounting"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+An examination of accounting information with an emphasis on planning and control, product costing, and income determination. Subjects include, but are not limited to: cost-volume-profit analysis, manufacturing cost systems, budgeting concepts, capital budgeting, relevant costs for decision- making, income tax implications for business decisions and ethics in the field of accounting.
+
+__________

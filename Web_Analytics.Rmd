@@ -1,0 +1,16 @@
+---
+title: "Web Analytics, Data Privacy and Security"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course covers Internet technologies and tools that allow for the collection of consumer data including social networks, perform clickstream analysis, and conduct search engine optimization. In addition, concepts surrounding the privacy of data will be introduced, as well as how to effectively manage the security of information through log and event investigations. Other topics include but not limited to the ethical/moral implications that have emerged from areas like data profiling and relevant issues with data governance as it pertains to compliance and law.
+
+__________

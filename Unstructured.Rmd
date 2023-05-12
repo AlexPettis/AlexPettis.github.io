@@ -1,0 +1,16 @@
+---
+title: "Unstructured Data Analytics"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course covers concepts and technologies that apply to the understanding, collection, and analysis of unstructured data from various resources (such as text, images, etc.). Other topics include, but are not limited to, legal and ethical issues when using public data as well as new emerging technologies and/or other forthcoming techniques applicable to unstructured data analysis.
+
+__________

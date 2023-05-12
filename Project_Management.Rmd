@@ -1,0 +1,16 @@
+---
+title: "Project Management and Visualization"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course will focus on the leadership and presentation skills necessary to properly chose, design, lead and communicate an analytics project to senior business leaders, employees and external stakeholders. The course will include determining the business value of an analytics project; prioritizing various analytics projects and choosing the most important ones; communicating the business value of a project to the project team, clients and senior management; learning the art of making persuasive presentations; learning common presentation and reporting pitfalls. The course will also teach students how to create and deliver effective presentations to technical and non-technical audiences.
+
+__________

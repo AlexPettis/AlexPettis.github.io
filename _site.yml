@@ -72,16 +72,22 @@ navbar:
                 href: Economics_Sports.html
         - text: Graduate
           menu:
-            - text: "Data Management"
-              href: Data_Management.html
-            - text: "Programming for Business Analytics"
-              href: Programming_Analytics.html
-            - text: "Operations Research"
-              href: Op_Research.html
-            - text: "Problem Analysis and Quantitative Methods"
-              href: Analysis_Methods.html
-            - text: "Executive Skills"
-              href: Exec_Skills.html
+            - text: "Analytics"
+              menu:
+                - text: "Data Management"
+                  href: Data_Management.html
+                - text: "Programming for Business Analytics"
+                  href: Programming_Analytics.html
+                - text: "Operations Research"
+                  href: Op_Research.html
+                - text: "Problem Analysis and Quantitative Methods"
+                  href: Analysis_Methods.html
+                - text: "Executive Skills"
+                  href: Exec_Skills.html
+            - text: "MBA"
+              menu:
+                - text: "Managerial Accounting"
+                  href: Accounting.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"

@@ -13,6 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This course focuses on utilizing a popular programming language in the analytics domain with associated tools for the design and construction of analytics applications. Emphasis is on the use of structured techniques and the integration of application libraries for data extraction, model implementation and visualization.
 
+## Cheat Sheet
+
+The following document is a cheat sheet for Python 3.
+
+[Cheat Sheet](Python3-Cheatsheet.pdf)
 
 ## Programs
 
@@ -81,5 +86,63 @@ A term frequency vector is a list of the words found in a document with a count 
 The following text file is the data used to test the program.
 
 [TheTortoiseAndTheHare](TheTortoiseAndTheHare.txt)
+
+### BMI with Functions
+
+Revamp the BMI program:
+* Include a main function
+* Move conversions to functions
+* Make a function to do the BMI calculation.
+
+[BMI](bmi_original.py)
+
+### Pandas
+
+Clean and explore the Boone.csv weather data.
+
+Tasks:
+
+* Convert fields to correct types
+* Drop useless columns
+* Rename columns: Remove underscores and use pascal casing
+* How much data is missing?
+* Look for relationships using corr()
+* Save data to boone_clean.csv
+
+[Pandas](PA7.ipynb)
+
+The following csv file is the data used.
+
+[Boone Weather](Boone.csv)
+
+### Average Year Weather Data
+
+Utilizing the cleaned Boone weather data, create a dataset representing an average year. Impute values as you see fit, but be sure you can justify your decisions.
+
+[Average Year Weater](PA8.ipynb)
+
+The following csv file is the data used.
+
+[Boone Clean](boone_clean.csv)
+
+The following csv file is the results for the year average.
+
+[Average Year](Average_Year.csv)
+
+### Visualizations
+
+
+Using the cleaned data for store 11, create the following visuals in a notebook:
+
+* Scatter plot Sales and Labor_Cost
+* Line plot Date and Item_Labor
+* Create a histogram for a column of your choice.
+* Create a bar chart using Bad_Weather_Days and Sales
+
+[Visualizations](PA9.ipynb)
+
+The following csv file is the data used to create the visualizations.
+
+[Store 11](Store11_clean.csv)
 
 __________
