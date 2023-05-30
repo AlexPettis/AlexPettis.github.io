@@ -84,6 +84,12 @@ navbar:
                   href: Analysis_Methods.html
                 - text: "Executive Skills"
                   href: Exec_Skills.html
+                - text: "Web Analytics, Data Privacy, and Security"                  
+                  href: Web_Analytics.html
+                - text: "Unstructured Data Analytics"
+                  href: Unstructured.html
+                - text: "Project Management"
+                  href: Project_Management.html                  
             - text: "MBA"
               menu:
                 - text: "Managerial Accounting"
