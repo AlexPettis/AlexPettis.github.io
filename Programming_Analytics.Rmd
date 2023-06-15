@@ -131,7 +131,6 @@ The following csv file is the results for the year average.
 
 ### Visualizations
 
-
 Using the cleaned data for store 11, create the following visuals in a notebook:
 
 * Scatter plot Sales and Labor_Cost
