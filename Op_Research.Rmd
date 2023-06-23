@@ -19,4 +19,8 @@ A thorough study of linear programming including duality theory and sensitivity 
 
 [Transportation and Maximum Flow and Minimum Cost Flow](Transportation.html)
 
+[Forecasting](Forecasting.html)
+
+[Decision Analysis](DecisionAnalysis.html)
+
 __________
