@@ -11,6 +11,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This page contains course notes and supplements related to forecasting.
 
-[]()
+[Forecasting Note Outline](https://drive.google.com/file/d/12ZeENbeemD4DB4-mfAT_4PLxwmjbalpG/view?usp=drive_link)
 
-[]()
+[More Forecasting Notes](https://drive.google.com/file/d/1-T7fYx3ECih-vNiIxH0CtivF3gD2iphX/view?usp=drive_link)
+
+[Forecasting in Excel](https://docs.google.com/spreadsheets/d/12_g76Oz756C89AyjxOuCb0zUCwFtoxlB/edit?usp=drive_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Linear Trend Exponential Smoothing](https://docs.google.com/spreadsheets/d/12Uws-AM0D5OeWXTyRfKzcULHMa4xccXz/edit?usp=drive_link&ouid=101085786338866865565&rtpof=true&sd=true)
+
+[Forecasting Supplement](https://drive.google.com/file/d/12NvCxOxCKMKpbGrGpYFgMtaywhI4S61e/view?usp=drive_link)
+
+__________

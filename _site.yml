@@ -7,7 +7,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Courses"
-      href: Courses.html
+      href: Courses.html#courses
       menu:
         - text: Undergraduate
           menu:
@@ -98,6 +98,13 @@ navbar:
       href: Resume.html
     - text: "Software"
       href: Software.html
+    - text: "Courses"
+      href: Courses.html
+    #  menu:
+     #   - text: "Undergraduate"
+      #    href: Courses.html#undergraduate
+       # - text: "Graduate"
+        #  href: Courses.html#graduate
 
 output:
   html_document:

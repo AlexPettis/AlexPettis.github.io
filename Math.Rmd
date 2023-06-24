@@ -1,30 +1,49 @@
 ---
-title: "Math Courses"
-output: html_document
+title: "Courses"
+output:
+  html_document:
+    css: "css.css"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+This page houses all the relevant courses I have taken over the years related to my major of [Math](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11116&returnto=1505), minor in [Statistics](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11114&returnto=1505), and [Sports Analytics Certificate](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11278&returnto=1505).
 
-## R Markdown
+Courses I am Currently enrolled in:
+Fall 2022
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+* [MAT 3310 - Discrete and Continuous Math Models](Math_Models.html)
+* [STT 4890 - Introduction to Modeling and Analysis in Sports](Sports_Modeling.html)
+* [STT 4900 - Internship](Internship.html)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Spring 2022
 
-```{r cars}
-summary(cars)
-```
+* [MAT 3110 - Introduction to Modern Algebra](Modern_Algebra.html)
+* [MAT 4010 - Abstract Linear Algebra with Applications to Differential Equations](Abstract_Linear_Algebra.html)
+* [STT 3860 - Statistical Modeling](Statistical_Modeling.html)
 
-## Including Plots
+Fall 2021
 
-You can also embed plots, for example:
+* [MAT 2110 - Techniques of Proofs](Techniques_Proof.html)
+* [MAT 2310 - Computational Mathematics](Comp_Math.html)
+* [STT 3851 - Statistical Data Analysis II](Stat_Data_Analysis_II.html)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+Summer (Session 2) 2021
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+* [MAT 2310 - Calculus with Analytical Geometry III](Calc_III.html)
+
+Spring 2021
+
+* [MAT 2440 - Introduction to Linear Algebra](Linear_Algebra.html)
+
+Fall 2020
+
+* [STT 3850 - Statistical Data Analysis I](Stat_Data_Analysis_I.html)
+
+Spring 2020
+
+* [MAT 1120 - Calculus with Analytical Geometry II](Calc_II.html)
+
+Fall 2019
+
+* [MAT 1110 - Calculus with Analytical Geometry I](Calc_I.html)
 
 __________

@@ -9,13 +9,33 @@ This page houses all the relevant courses I have taken over the years.
 
 Courses I am Currently enrolled in:
 
+Summer (Session 2) 2023
+
+* [CIS 5450 - Project Management and Visualization](Project_Management.html)
+* [MBA 5320 - Managerial Accounting](Accounting.html)
+
+Previous Courses:
+
+Summer (Session 1) 2023
+
+* [CIS 5845 - Unstructured Data Analytics](Unstructured.html)
+* [MBA 5660 - Web Analytics, Data Privacy, and Security](Web_Analytics.html)
+
+Spring 2023
+
+* [CIS 5630 - Data Management](Data_Management.html)
+* [CIS 5630 - Programming for Business Analytics](Programming_Analytics.html)
+* [MAT 5340 - Introduction to Operations Research](Op_Research.html)
+* [MBA 5200 - Problem Analysis and Quantative Methods](Analysis_Methods.html)
+* [MBA 5820 - Executive Skills](Exec_Skills.html)
+
+Fall 2022
+
 * [CIS 3731 - Advanced Spreadsheet Analytics](Spreadsheet_Analytics.html)
 * [ECO 3210 - Economics of Sports](Economics_Sports.html)
 * [MAT 3310 - Discrete and Continuous Math Models](Math_Models.html)
 * [STT 4890 - Introduction to Modeling and Analysis in Sports](Sports_Modeling.html)
-
-
-Previous Courses:
+* [STT 4900 - Internship](Internship.html)
 
 Spring 2022
 
@@ -23,12 +43,11 @@ Spring 2022
 * [MAT 4010 - Abstract Linear Algebra with Applications to Differential Equations](Abstract_Linear_Algebra.html)
 * [STT 3860 - Statistical Modeling](Statistical_Modeling.html)
 
-
 Fall 2021
 
 * [MAT 2110 - Techniques of Proofs](Techniques_Proof.html)
 * [MAT 2310 - Computational Mathematics](Comp_Math.html)
-* [STT 3851 - Statistical Data Analysis II](Stat-Data_Analysis_II.html)
+* [STT 3851 - Statistical Data Analysis II](Stat_Data_Analysis_II.html)
 * [CS 3460 - Database](Database.html)
 
 Summer (Session 2) 2021

@@ -44,6 +44,8 @@ Softwares used in graduate classes.
 
 [MySQL Workbench](http://www.mysql.com/products/workbench/)
 
+[Alteryx Designer](https://www.alteryx.com/products/alteryx-designer)
+
 ## Other Softwares
 
 Softwares used in other classes
