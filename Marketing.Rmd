@@ -1,0 +1,15 @@
+---
+title: "Marketing Strategy and Application"
+output: html_document
+date: '2023-06-25'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+Through the use of a combination of applied methods such as in-depth case analysis, simulations and/or marketing projects, the student will learn to develop solutions and formulate responses to marketing-oriented problems of the organization in a dynamic, complex, competitive, and global context. This course integrates issues and concepts introduced in other MBA courses.
+
+__________

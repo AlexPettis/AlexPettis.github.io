@@ -44,11 +44,12 @@ navbar:
                 href: Internship.html
               - text: "Other Math Courses"
                 menu:
-                  - text: "Abstract Linear Algebra with Applications to Differential Equations"
-                    href: Abstract_Linear_Algebra.html
                   - text: "Introduction to Modern Algebra"
                     href: Modern_Algebra.html
+                  - text: "Abstract Linear Algebra with Applications to Differential Equations"
+                    href: Abstract_Linear_Algebra.html                    
           - text: "Computer Science"
+            href: CS.html  
             menu:
               - text: "Discrete Mathematics"
                 href: Discrete.html
@@ -73,6 +74,7 @@ navbar:
         - text: Graduate
           menu:
             - text: "Analytics"
+              href: Analytics.html  
               menu:
                 - text: "Data Management"
                   href: Data_Management.html
@@ -91,6 +93,7 @@ navbar:
                 - text: "Project Management"
                   href: Project_Management.html                  
             - text: "MBA"
+              href: MBA.html    
               menu:
                 - text: "Managerial Accounting"
                   href: Accounting.html

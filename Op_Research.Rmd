@@ -21,6 +21,4 @@ A thorough study of linear programming including duality theory and sensitivity 
 
 [Forecasting](Forecasting.html)
 
-[Decision Analysis](DecisionAnalysis.html)
-
 __________

@@ -1,0 +1,31 @@
+---
+title: "Applied Data Analytics Courses"
+output:
+  html_document:
+    css: "css.css"
+---
+
+This page houses all the relevant courses I have taken over the years realted to [Data Analytics](http://bulletin.appstate.edu/preview_program.php?catoid=31&poid=14051).
+
+Courses I am Currently enrolled in:
+
+Summer (Session 2) 2023
+
+* [CIS 5450 - Project Management and Visualization](Project_Management.html)
+
+Previous Courses:
+
+Summer (Session 1) 2023
+
+* [CIS 5845 - Unstructured Data Analytics](Unstructured.html)
+* [MBA 5660 - Web Analytics, Data Privacy, and Security](Web_Analytics.html)
+
+Spring 2023
+
+* [CIS 5630 - Data Management](Data_Management.html)
+* [CIS 5630 - Programming for Business Analytics](Programming_Analytics.html)
+* [MAT 5340 - Introduction to Operations Research](Op_Research.html)
+* [MBA 5200 - Problem Analysis and Quantative Methods](Analysis_Methods.html)
+* [MBA 5820 - Executive Skills](Exec_Skills.html)
+
+__________

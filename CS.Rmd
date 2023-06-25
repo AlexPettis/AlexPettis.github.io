@@ -1,0 +1,33 @@
+---
+title: "Computer Science Courses"
+output:
+  html_document:
+    css: "css.css"
+---
+
+This page houses all the relevant courses I have taken over the years related to my [Computer Science](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=10988&returnto=1505) minor.
+
+Previous Courses:
+
+Fall 2021
+
+* [CS 3460 - Database](Database.html)
+
+Spring 2021
+
+* [CS 2450 - Introduction to Computer Systems](Intro_Systems.html)
+
+Fall 2020
+
+* [CS 2490 - Introduction to Theoretical Computer Science](Computer_Theory.html)
+
+Spring 2020
+
+* [CS 2440 - Computer Science II](CS_II.html)
+
+Fall 2019
+
+* [CS 1100 - Discrete Mathematics](Discrete.html)
+* [CS 1440 - Computer Science I](CS_I.html)
+
+__________

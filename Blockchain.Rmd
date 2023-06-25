@@ -1,0 +1,15 @@
+---
+title: "Global Blockchain for Business"
+output: html_document
+date: '2023-06-25'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course provides an overview of global business blockchain, distributed ledger technologies, and other emerging Web3 applications to students with a business background. Blockchain use cases in technology, business, analytics and enterprise products and institutions from Northern Africa, Sub-Saharan Africa, Latin America, North America, Asia, Europe, and Oceania will be discussed and evaluated. Short-term and long-term social and ethical impact of blockchain based applications will be interpreted.
+
+__________

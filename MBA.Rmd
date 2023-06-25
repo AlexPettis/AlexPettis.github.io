@@ -1,0 +1,23 @@
+---
+title: "MBA Courses"
+output:
+  html_document:
+    css: "css.css"
+---
+
+This page houses all the relevant courses I have taken over the years relevant to my [MBA](http://bulletin.appstate.edu/preview_program.php?catoid=31&poid=14051).
+
+Courses I am Currently enrolled in:
+
+Summer (Session 2) 2023
+
+* [MBA 5320 - Managerial Accounting](Accounting.html)
+
+Previous Courses:
+
+Spring 2023
+
+* [MBA 5200 - Quantative Methods and Problem Analysis](Analysis_Methods.html)
+* [MBA 5820 - Executive Skills](Exec_Skills.html)
+
+__________

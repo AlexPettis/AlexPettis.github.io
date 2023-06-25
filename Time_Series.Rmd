@@ -1,0 +1,15 @@
+---
+title: "Forecasting and Time Series Models"
+output: html_document
+date: '2023-06-25'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+An examination of time series models for purposes of forecasting and performing time series regressions in economics, business, and the social sciences. Topics covered may include ARIMA, VAR, Granger causality, unit roots, spurious regressions, ARCH, and GARCH. Computer software will be utilized in applications.
+
+__________

@@ -1,0 +1,15 @@
+---
+title: "Applied Econometrics"
+output: html_document
+date: '2023-06-25'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+The course introduces statistical methods to analyze data to gain insights and make better decisions. The material focuses on the fundamentals, diagnostics and challenges of regression methods, which are fundamental to understanding causal relationships and trade-offs. The course seeks to equip students to think critically about data and the analyses based on those data, whether conducted by them or someone else. The course enables students to identify opportunities for data analyses to improve insights and decisions making. The course will include hands-on work with data and software.
+
+__________

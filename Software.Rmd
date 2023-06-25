@@ -44,12 +44,10 @@ Softwares used in graduate classes.
 
 [MySQL Workbench](http://www.mysql.com/products/workbench/)
 
-[Alteryx Designer](https://www.alteryx.com/products/alteryx-designer)
+[Alteryx Designer](https://www.alteryx.com/products/alteryx-designer)^[This software is only free for a thirty day free trial.]
 
 ## Other Softwares
 
 Softwares used in other classes
 
 [Power BI](https://www.microsoft.com/en-us/download/confirmation.aspx?id=58494)
-
-__________
