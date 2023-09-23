@@ -46,6 +46,12 @@ Softwares used in graduate classes.
 
 [Alteryx Designer](https://www.alteryx.com/products/alteryx-designer)^[This software is only free for a thirty day free trial.]
 
+[Tableau Desktop](https://www.tableau.com/support/releases)
+
+[Tableau Prep Builder](https://www.tableau.com/support/releases/prep)
+
+[Stata](https://www.stata.com/)
+
 ## Other Softwares
 
 Softwares used in other classes
