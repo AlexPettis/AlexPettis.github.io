@@ -91,12 +91,20 @@ navbar:
                 - text: "Unstructured Data Analytics"
                   href: Unstructured.html
                 - text: "Project Management"
-                  href: Project_Management.html                  
+                  href: Project_Management.html
+                - text: "Forecasting and Time Series Models"
+                  href: Forecasting.html
+                - text: "Applied Econometrics"
+                  href: Econometrics.html
+                - text: "Global Blockchain for Business"
+                  href: Blockchain.html
             - text: "MBA"
               href: MBA.html    
               menu:
                 - text: "Managerial Accounting"
                   href: Accounting.html
+                - text: "Marketing Application and Strategy"
+                  href: Marketing.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"
