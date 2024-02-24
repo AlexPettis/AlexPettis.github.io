@@ -93,7 +93,7 @@ navbar:
                 - text: "Project Management"
                   href: Project_Management.html
                 - text: "Forecasting and Time Series Models"
-                  href: Forecasting.html
+                  href: Time_Series.html
                 - text: "Applied Econometrics"
                   href: Econometrics.html
                 - text: "Global Blockchain for Business"
