@@ -1,7 +1,5 @@
 ---
 title: "Marketing Strategy and Application"
-output: html_document
-date: '2023-06-25'
 ---
 
 ```{r setup, include=FALSE}
