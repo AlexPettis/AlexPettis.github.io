@@ -1,5 +1,8 @@
 ---
 title: "Marketing Strategy and Application"
+output:
+  html_document:
+    css: "css.css"
 ---
 
 ```{r setup, include=FALSE}
