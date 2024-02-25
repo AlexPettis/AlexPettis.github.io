@@ -1,0 +1,16 @@
+---
+title: "Operations and Supply Chain Management"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+Operations and supply chain management involves the transformation of materials and other inputs into products and services. It is one of the primary functions for both manufacturing and service businesses, and works closely with marketing, finance and accounting, engineering and other functions to develop strategic and business plans, and in implementing those plans. Objectives include the production of high-quality products and services to satisfy customer requirements at competitive prices, while effectively utilizing a number of different resources, such as employees, equipment, facilities, and information systems.
+
+__________

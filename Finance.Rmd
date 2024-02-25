@@ -1,0 +1,16 @@
+---
+title: "Managerial Finance"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course provides an in-depth study of the financial functions of a business. Financial theory and techniques for financial decisions are presented. Students are expected to use financial models and/or methods in solving problems. Students will receive exposure to advanced financial management material including financial analysis, capital budgeting, cash flow analysis, capital structure, risk and return valuation.
+
+__________

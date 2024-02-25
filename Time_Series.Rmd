@@ -17,7 +17,7 @@ An examination of time series models for purposes of forecasting and performing 
 
 The following is a course that follows the forecasting process to forecast Nike's Annual Revenue.
 
-[Forecasting Nike's Annual Revenue Presentation](Forecasting Nike's Annual Revenue.pdf)
+[Forecasting Nike's Annual Revenue Presentation](Forecasting_Nike's_Annual_Revenue.pdf)
 
 [Forecasting Nike's Annual Revenue Report](AlexPettis_FinalProject.pdf)
 

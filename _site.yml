@@ -105,6 +105,14 @@ navbar:
                   href: Accounting.html
                 - text: "Marketing Application and Strategy"
                   href: Marketing.html
+                - text: "Economics for Decision-Making"
+                  href: Economics.html
+                - text: "Operations and Supply Chain Management"
+                  href: Supply_Chain.html
+                - text: "Managerial Finance"
+                  href: Finance.html
+                - text: "Strategic Management"
+                  href: Management.html                  
     - text: "Resume"
       href: Resume.html
     - text: "Software"

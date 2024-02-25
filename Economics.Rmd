@@ -1,0 +1,16 @@
+---
+title: "Economics for Decision-Making"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course will examine the analytical techniques used by decision-makers to address such issues as demand analysis and forecasting, production and cost analysis, the strategy and tactics of pricing and output decision, and risk and uncertainty.
+
+__________
