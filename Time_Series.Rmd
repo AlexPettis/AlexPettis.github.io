@@ -13,4 +13,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 An examination of time series models for purposes of forecasting and performing time series regressions in economics, business, and the social sciences. Topics covered may include ARIMA, VAR, Granger causality, unit roots, spurious regressions, ARCH, and GARCH. Computer software will be utilized in applications.
 
+## Course Project
+
+The following is a course that follows the forecasting process to forecast Nike's Annual Revenue.
+
+[Forecasting Nike's Annual Revenue Presentation](Forecasting Nike's Annual Revenue.pdf)
+
+[Forecasting Nike's Annual Revenue Report](AlexPettis_FinalProject.pdf)
+
 __________
