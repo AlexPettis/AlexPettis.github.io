@@ -9,12 +9,26 @@ This page houses all the relevant courses I have taken over the years.
 
 Courses I am Currently enrolled in:
 
+Spring 2024
+
+* [MBA 5110 - Economics for Decision-Making](Economics.html)
+* [MBA 5220 - Operations and Supply Chain Management](Supply_Chain.html)
+* [MBA 5600 - Managerial Finance](Finance.html)
+* [MBA 5750 - Strategic Management](Management.html)
+
+Previous Courses:
+
+Fall 2023
+
+* [CIS 5760 - Global Blockchain for Business](Blockchain.html)
+* [ECO 5720 - Applied Econometrics](Econometrics.html)
+* [ECO 5740 - Forecasting and Time Series Models](Time_Series.html)
+* [MBA 5420 - Marketing Strategy and Applications](Marketing.html)
+
 Summer (Session 2) 2023
 
 * [CIS 5450 - Project Management and Visualization](Project_Management.html)
 * [MBA 5320 - Managerial Accounting](Accounting.html)
-
-Previous Courses:
 
 Summer (Session 1) 2023
 
