@@ -7,7 +7,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Courses"
-      href: Courses.html#courses
+      href: Courses.html
       menu:
         - text: Undergraduate
           menu:
