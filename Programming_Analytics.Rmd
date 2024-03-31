@@ -17,7 +17,7 @@ This course focuses on utilizing a popular programming language in the analytics
 
 The following document is a cheat sheet for Python 3.
 
-[Cheat Sheet](Python3-Cheatsheet.pdf)
+[Cheat Sheet](Programming_Analytics/Python3-Cheatsheet.pdf)
 
 ## Programs
 
@@ -27,13 +27,13 @@ The following are python programs.
 
 The following calculates BMI using English units and converts them to metric and prints the resulting BMI.
 
-[BMI](BMI.py)
+[BMI](Programming_Analytics/BMI.py)
 
 ### Paint
 
 Design a program to estimate the gallons of paint needed to paint a wall and the estimated cost of the paint. Assume that one gallon of paint will cover 350 square feet of a wall, each doorway accounts for 14 square feet, and each window accounts for 8.5 square feet. Obtain all other required information from the user. The output of your program must include the total cost to purchase the paint and the number of gallons needed. Additional output may include the square footage of the wall and allowances made. 
 
-[Paint](Paint.py)
+[Paint](Programming_Analytics/Paint.py)
 
 ### Growth Rate
 
@@ -46,7 +46,7 @@ are:
 Write a program that takes these inputs and displays a prediction of the
 total population.
 
-[Growth Rate](Growth Rate.py)
+[Growth Rate](Programming_Analytics/Growth Rate.py)
 
 
 ### Text Files Single Item on a Line
@@ -60,32 +60,32 @@ Max
 Mean
 Missing (-1)
 
-[Single Item on a Line](PA3.py)
+[Single Item on a Line](Programming_Analytics/PA3.py)
 
 The following text file is the data used to test the program.
 
-[Data](data.txt)
+[Data](Programming_Analytics/data.txt)
 
 ### Text Files Multiple Items on a Line
 
 Construct a program to copy all records with a user entered integer value found in field X4 to a new file.
 
 
-[Multiple Items on a Line](PA4.py)
+[Multiple Items on a Line](Programming_Analytics/PA4.py)
 
 The following csv file is the data used to test the program.
 
-[Moxy](Moxy.csv)
+[Moxy](Programming_Analytics/Moxy.csv)
 
 ### TermVector
 
-A term frequency vector is a list of the words found in a document with a count of how many times each word occurs in the document.Create a program to find the term frequency vector of a document stored in a text file.
+A term frequency vector is a list of the words found in a document with a count of how many times each word occurs in the document. Create a program to find the term frequency vector of a document stored in a text file.
 
-[TermVector](Term Vector.py)
+[TermVector](Programming_Analytics/Term Vector.py)
 
 The following text file is the data used to test the program.
 
-[TheTortoiseAndTheHare](TheTortoiseAndTheHare.txt)
+[TheTortoiseAndTheHare](Programming_Analytics/TheTortoiseAndTheHare.txt)
 
 ### BMI with Functions
 
@@ -94,7 +94,7 @@ Revamp the BMI program:
 * Move conversions to functions
 * Make a function to do the BMI calculation.
 
-[BMI](bmi_original.py)
+[BMI](Programming_Analytics/bmi_original.py)
 
 ### Pandas
 
@@ -109,25 +109,25 @@ Tasks:
 * Look for relationships using corr()
 * Save data to boone_clean.csv
 
-[Pandas](PA7.ipynb)
+[Pandas](Programming_Analytics/PA7.ipynb)
 
 The following csv file is the data used.
 
-[Boone Weather](Boone.csv)
+[Boone Weather](Programming_Analytics/Boone.csv)
 
 ### Average Year Weather Data
 
 Utilizing the cleaned Boone weather data, create a dataset representing an average year. Impute values as you see fit, but be sure you can justify your decisions.
 
-[Average Year Weater](PA8.ipynb)
+[Average Year Weater](Programming_Analytics/PA8.ipynb)
 
 The following csv file is the data used.
 
-[Boone Clean](boone_clean.csv)
+[Boone Clean](Programming_Analytics/boone_clean.csv)
 
 The following csv file is the results for the year average.
 
-[Average Year](Average_Year.csv)
+[Average Year](Programming_Analytics/Average_Year.csv)
 
 ### Visualizations
 
@@ -138,10 +138,10 @@ Using the cleaned data for store 11, create the following visuals in a notebook:
 * Create a histogram for a column of your choice.
 * Create a bar chart using Bad_Weather_Days and Sales
 
-[Visualizations](PA9.ipynb)
+[Visualizations](Programming_Analytics/PA9.ipynb)
 
 The following csv file is the data used to create the visualizations.
 
-[Store 11](Store11_clean.csv)
+[Store 11](Programming_Analytics/Store11_clean.csv)
 
 __________

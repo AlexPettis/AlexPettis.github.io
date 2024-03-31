@@ -19,40 +19,40 @@ The following documents are case projects that use Microsoft Excel.
 
 ### College Town Budget
 
-[College Town Budget Excel](CollegeTownBudgetSolution_Pettis_Alex.xlsx)
+[College Town Budget Excel](Spreadsheet_Analytics/CollegeTownBudgetSolution_Pettis_Alex.xlsx)
 
-[College Town Budget Report](CollegeTownBudgetReport_Pettis_Alex.pdf)
+[College Town Budget Report](Spreadsheet_Analytics/CollegeTownBudgetReport_Pettis_Alex.pdf)
 
 ### College Town Budgte Simulation
 
-[College Town Budget Simulation Excel](Town_Budgte_Simulation_Pettis_Alex.xlsx)
+[College Town Budget Simulation Excel](Spreadsheet_Analytics/Town_Budget_Simulation_Pettis_Alex.xlsx)
 
-[College Town Budget Simulation Report](CollegeTownBudgetReport2_Pettis_Alex.pdf)
+[College Town Budget Simulation Report](Spreadsheet_Analytics/CollegeTownBudgetReport2_Pettis_Alex.pdf)
 
 ### East Coast Trucking
 
-[East Coast Trucking Excel](EastCoastTrucking_Pettis_Alex.xlsx)
+[East Coast Trucking Excel](Spreadsheet_Analytics/EastCoastTrucking_Pettis_Alex.xlsx)
 
-[East Coast Trucking Report](EastCoastTruckingReport_Pettis_Alex.pdf)
+[East Coast Trucking Report](Spreadsheet_Analytics/EastCoastTruckingReport_Pettis_Alex.pdf)
 
 ### Williams Inmvestments
 
-[Williams Investments Excel](WilliamsInvestments_Pettis_Alex.xlsx)
+[Williams Investments Excel](Spreadsheet_Analytics/WilliamsInvestments_Pettis_Alex.xlsx)
 
-[Williams Investments Report](WilliamsClientReport_Pettis_Alex.pdf)
+[Williams Investments Report](Spreadsheet_Analytics/WilliamsClientReport_Pettis_Alex.pdf)
 
 ### Donaion Letter
 
-[Donation Letter Access](DonationLetter_Pettis_Alex.accdb)
+[Donation Letter Access](Spreadsheet_Analytics/DonationLetter_Pettis_Alex.accdb)
 
-[Donation Letter Excel](DonationLetter_Pettis_Alex.xlsx)
+[Donation Letter Excel](Spreadsheet_Analytics/DonationLetter_Pettis_Alex.xlsx)
 
-[Donation Letter Report](Donation_Letter_Report_Pettis_Alex.pdf)
+[Donation Letter Report](Spreadsheet_Analytics/Donation_Letter_Report_Pettis_Alex.pdf)
 
 ### Appwich Data Analysis
 
-[Appwich PowerBI](Appwich_Pettis_Alex.pbix)
+[Appwich PowerBI](Spreadsheet_Analytics/Appwich_Pettis_Alex.pbix)
 
-[Appwich Report](Appwich_Report_Pettis_Alex.pdf)
+[Appwich Report](Spreadsheet_Analytics/Appwich_Report_Pettis_Alex.pdf)
 
 __________
