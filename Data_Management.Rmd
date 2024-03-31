@@ -30,18 +30,18 @@ The following articles talk about data normalization.
 
 The following Powershell and SQL files are examples of inserting a document into powershell, creating a T-SQL script for a cursor, and XML crib sheet for querying an XML document.
 
-[Powershell Document Insert](insert-xmldocument.ps1)
+[Powershell Document Insert](Data_Management/insert-xmldocument.ps1)
 
-[T-SQL Cursor Scaffolding](cursor-scaffolding.sql)
+[T-SQL Cursor Scaffolding](Data_Management/cursor-scaffolding.sql)
 
-[XML Crib Sheet](xml-crib-sheet.sql)
+[XML Crib Sheet](Data_Management/xml-crib-sheet.sql)
 
 ### Emerging Tech Report
 
 The following is an emerging tech report on blockchain.
 
-[Emerging Tech Report](Emerging Technologies Report.pdf)
+[Emerging Tech Report](Data_Management/Emerging Technologies Report.pdf)
 
-[Emerging Tech Presentation](Emerging Technologies Presentation.ppxt)
+[Emerging Tech Presentation](Data_Management/Emerging Technologies Presentation.ppxt)
 
 __________

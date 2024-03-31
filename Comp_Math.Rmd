@@ -32,18 +32,18 @@ The provided python codes are both instructor and student made codes.
 
 ### Root Finding Python Code
 
-[Root Finding Python Code](Comp_Math/Root_Finding_Code.html)
+[Root Finding Python Code](Comp_Math/Root/Root_Finding_Code.html)
 
 ### Minimization Python Code
 
-[Minimization Python Code](Comp_Math/Minimization_Python_Code.html)
+[Minimization Python Code](Comp_Math/Min/Minimization_Python_Code.html)
 
 ### Python Code Practice
 
-[Python Code Practice](Comp_Math/Python_Code_Practice.html)
+[Python Code Practice](Comp_Math/Python_Practice/Python_Code_Practice.html)
 
 ### Random Numbers Code
 
-[Random Numbers Code](Comp_Math/Random_Numbers_Code.html)
+[Random Numbers Code](Comp_Math/Rand/Random_Numbers_Code.html)
 
 __________
