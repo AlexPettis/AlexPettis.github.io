@@ -16,7 +16,7 @@ This was an analytics internship for the Sports Analytics Certificate using NCAA
 
 ## Code for Project
 
-[Code for Project](Outfield_Alex2.html)
+[Code for Project](Internship/Outfield_Alex2.html)
 
 ## Math
 

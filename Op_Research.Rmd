@@ -15,10 +15,10 @@ A thorough study of linear programming including duality theory and sensitivity 
 
 ## Course Notes
 
-[Linear Programming](LinearProgramming.html)
+[Linear Programming](Op_Research/LinearProgramming.html)
 
-[Transportation and Maximum Flow and Minimum Cost Flow](Transportation.html)
+[Transportation and Maximum Flow and Minimum Cost Flow](Op_Research/Transportation.html)
 
-[Forecasting](Forecasting.html)
+[Forecasting](Op_Research/Forecasting.html)
 
 __________
