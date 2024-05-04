@@ -1,0 +1,16 @@
+---
+title: "Applied Analytics Project"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+Students will work on a real world project taking raw data through the preparation, management and analysis phases to the presentation of results and recommendations from the analysis.
+
+__________

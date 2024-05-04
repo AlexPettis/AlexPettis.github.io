@@ -1,0 +1,16 @@
+---
+title: "FinTech/InsureTech"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Description
+
+This course explores the history, current environment, and near-term outlook of financial and risk innovation, as well as delves into the “how to” of several useful technology applications. Topics include: the history and fundamentals of risk analysis and financial innovation; the modern technology landscape and implications for finance, banking, and insurance; and the power of Big Data analytics. The course also exposes students to computer programming languages. Prior programming experience is not required.
+
+__________
