@@ -16,16 +16,16 @@ An introduction to the process of mathematical modeling. Topics will include an 
 
 ## Course Notes
 
-[Modeling and Change](Modeling_Change.html)
+[Modeling and Change](Math_Model/Modeling_Change.html)
 
-[Differential Equations](Differential_Equations.html)
+[Differential Equations](Math_Model/Differential_Equations.html)
 
-[Matrix Models](Matrix_Models.html)
+[Matrix Models](Math_Model/Matrix_Models.html)
 
-[Linear Programming](LP.html)
+[Linear Programming](Math_Model/LP.html)
 
-[Data](Data.html)
+[Data](Math_Model/Data.html)
 
-[Other Stuff](Other_Stuff.html)
+[Other Stuff](Math_Model/Other_Stuff.html)
 
 __________
