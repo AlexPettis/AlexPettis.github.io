@@ -17,6 +17,12 @@ Operations and supply chain management involves the transformation of materials 
 
 This is an assignment that explores regression and exponential smoothing forecast techniques to predict demand for barrels of oil.
 
-[Forecasting Activity](Forecasting Homework Assignment.pdf)
+[Forecasting Activity](Supply_Chain/Forecasting Homework Assignment.pdf)
+
+## Final Project
+
+This is a project that utilizes various tools learned throughout the course to to help improve the airline industry in terms of flight delays.
+
+[Airline Delay Improvements](Supply_Chain/Final Project.pdf)
 
 __________
