@@ -98,6 +98,8 @@ navbar:
                   href: Econometrics.html
                 - text: "Global Blockchain for Business"
                   href: Blockchain.html
+                - text: "Applied Analytics Project"
+                  href: Analytics_Project.html
             - text: "MBA"
               href: MBA.html    
               menu:
@@ -112,7 +114,9 @@ navbar:
                 - text: "Managerial Finance"
                   href: Finance.html
                 - text: "Strategic Management"
-                  href: Management.html                  
+                  href: Management.html
+                - text: "FinTech/InsureTech"
+                  href: FinTech.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"
