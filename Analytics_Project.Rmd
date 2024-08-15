@@ -31,4 +31,10 @@ This is the Final report.
 
 [Final Report](Analytics_Project/Final.pdf)
 
+## Project Code
+
+This is the code for the project.
+
+[Project Code](Analytics_Project/Power_Project.ipynb)
+
 __________
