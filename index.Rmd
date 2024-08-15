@@ -17,6 +17,7 @@ I am actively seeking roles as a Data Analyst, with a particular focus on financ
 
 I have created this website to showcase my coursework, research, and professional experience. Additionally, it contains my current resume and links to download software relevant to the courses.
 
+
 This website was last rendered on `r format(Sys.time(), "%A, %B %d, %Y - %X.")`
 
 <hr>
