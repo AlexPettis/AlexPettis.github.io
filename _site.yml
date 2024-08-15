@@ -1,7 +1,7 @@
 
 name: "AlexPettis.github.io"
 output_dir: "."
-favicon: "C:\\Users\\alexp\\Desktop\\Website\\AlexPettis.github.io\\favicon.ico"
+favicon: "favicon.ico"
 navbar:
   title: "Alex Pettis"
   left:
