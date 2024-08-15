@@ -13,4 +13,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Students will work on a real world project taking raw data through the preparation, management and analysis phases to the presentation of results and recommendations from the analysis.
 
+## Project Proposal
+
+This is the project proposal.
+
+[Project Proposal](Analytics_Project/Project Proposal.pdf)
+
+## Midterm
+
+This is the Midterm report.
+
+[Midterm Report](Analytics_Project/Midterm.pdf)
+
+## Final
+
+This is the Final report.
+
+[Final Report](Analytics_Project/Final.pdf)
+
 __________
