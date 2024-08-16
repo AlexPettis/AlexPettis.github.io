@@ -1,6 +1,5 @@
 ---
 title: "Alex Pettis"
-favicon: "favicon.ico"
 output:
   html_document:
     css: "css.css"
