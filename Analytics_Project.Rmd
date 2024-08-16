@@ -13,6 +13,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Students will work on a real world project taking raw data through the preparation, management and analysis phases to the presentation of results and recommendations from the analysis.
 
+## My Project
+
+For my project, I created machine learning models to try and predict peak energy demand periods.
+
 ## Project Proposal
 
 This is the project proposal.
