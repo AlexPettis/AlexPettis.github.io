@@ -1,0 +1,22 @@
+---
+title: "Searchable Database"
+output:
+  html_document:
+    css: "css.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Database
+
+This database is a collection of items, each with specific features and prices. It includes details like the item name, a description of its characteristics (such as whether it's gluten-free, kosher, or vegan), and its price. You can search for items by name, filter them based on their price range, or select specific features that you’re interested in. The database is designed to help you easily find and compare different items based on what matters most to you.
+
+```{r, echo = FALSE, results ='asis'}
+
+shiny::runApp("Searchable_database/app.R")
+
+```
+
+__________

@@ -7,7 +7,7 @@ output:
 
 This page houses all the relevant courses I have taken over the years related to my major of [Math](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11116&returnto=1505), minor in [Statistics](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11114&returnto=1505), and [Sports Analytics Certificate](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11278&returnto=1505).
 
-Courses I am Currently enrolled in:
+
 Fall 2022
 
 * [MAT 3310 - Discrete and Continuous Math Models](Math_Models.html)

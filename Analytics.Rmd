@@ -5,15 +5,21 @@ output:
     css: "css.css"
 ---
 
-This page houses all the relevant courses I have taken over the years realted to [Data Analytics](http://bulletin.appstate.edu/preview_program.php?catoid=31&poid=14051).
+This page houses all the relevant courses I have taken over the years related to [Data Analytics](http://bulletin.appstate.edu/preview_program.php?catoid=31&poid=14051).
 
-Courses I am Currently enrolled in:
+Summer (Session 1) 2024
+
+* [CIS 5860 - Applied Analytics Project](Analytics_Project.html)
+
+Fall 2023
+
+* [CIS 5760 - Global Blockchain for Business](Blockchain.html)
+* [ECO 5720 - Applied Econometrics](Econometrics.html)
+* [ECO 5740 - Forecasting and Time Series Models](Time_Series.html)
 
 Summer (Session 2) 2023
 
 * [CIS 5450 - Project Management and Visualization](Project_Management.html)
-
-Previous Courses:
 
 Summer (Session 1) 2023
 
