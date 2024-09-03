@@ -15,7 +15,7 @@ This database is a collection of items, each with specific features and prices. 
 
 ```{r, echo = FALSE, results ='asis'}
 
-shiny::runApp("Searchable_database/app.R")
+#shiny::runApp("Searchable_database/app.R")
 
 ```
 

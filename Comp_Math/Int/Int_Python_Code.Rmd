@@ -1,8 +1,10 @@
 ---
 title: "Integration Python Code"
-output: 
+output:
   html_document:
     css: "css.css"
+    include:
+      after_body: "C:\\Users\\alexp\\Desktop\\Website\\AlexPettis.github.io\\footer.html"
 ---
 
 ```{r setup, include=FALSE}

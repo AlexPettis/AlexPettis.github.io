@@ -1,15 +1,17 @@
 ---
 title: "Root Finding Python Code"
-output: 
+output:
   html_document:
     css: "css.css"
+    include:
+      after_body: "C:\\Users\\alexp\\Desktop\\Website\\AlexPettis.github.io\\footer.html"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The Bisection For, Bisection While, and Quatratic Roots are all pseudo codes that need to be turned into python code in the main file. The purpose of both the bisection for and bisection while is just to make a point that when programming the same result can be achieved using either. 
+The Bisection For, Bisection While, and Quadratic Roots are all pseudo codes that need to be turned into python code in the main file. The purpose of both the bisection for and bisection while is just to make a point that when programming the same result can be achieved using either. 
 
 ## Bisection For Code
 
