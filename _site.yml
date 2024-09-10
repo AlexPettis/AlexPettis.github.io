@@ -7,117 +7,117 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Courses"
-      href: Courses.html
+   # - text: "Courses"
+    #  href: Courses.html
       menu:
-        - text: Undergraduate
-          menu:
-          - text: "Math"
-            href: Math.html
+    - text: Undergraduate Courses
+      menu:
+      - text: "Math"
+        href: Math.html
+        menu:
+          - text: "Calculus"
             menu:
-              - text: "Calculus"
-                menu:
-                  - text: "Calculus I"
-                    href: Calc_I.html
-                  - text: "Calculus II"
-                    href: Calc_II.html
-                  - text: "Calculus III"
-                    href: Calc_III.html
-              - text: "Techniques of Proof"
-                href: Techniques_Proof.html
-              - text: "Introduction to Linear Algebra"
-                href: Linear_Algebra.html
-              - text: "Computational Mathematics"
-                href: Comp_Math.html
-              - text: "Discrete and Continuous Math Models"
-                href: Math_Models.html
-              - text: "Statistical Data Analysis"
-                menu:
-                  - text: "Statistical Data Analysis I"
-                    href: Stat_Data_Analysis_I.html
-                  - text: "Statistical Data Analysis II"
-                    href: Stat_Data_Analysis_II.html
-              - text: "Statistical Modeling"
-                href: Statistical_Modeling.html
-              - text: "Introduction to Modeling and Analysis in Sports"
-                href: Sports_Modeling.html
-              - text: "Internship"
-                href: Internship.html
-              - text: "Other Math Courses"
-                menu:
-                  - text: "Introduction to Modern Algebra"
-                    href: Modern_Algebra.html
-                  - text: "Abstract Linear Algebra with Applications to Differential Equations"
-                    href: Abstract_Linear_Algebra.html                    
+              - text: "Calculus I"
+                href: Calc_I.html
+              - text: "Calculus II"
+                href: Calc_II.html
+              - text: "Calculus III"
+                href: Calc_III.html
+          - text: "Techniques of Proof"
+            href: Techniques_Proof.html
+          - text: "Introduction to Linear Algebra"
+            href: Linear_Algebra.html
+          - text: "Computational Mathematics"
+            href: Comp_Math.html
+          - text: "Discrete and Continuous Math Models"
+            href: Math_Models.html
+          - text: "Statistical Data Analysis"
+            menu:
+              - text: "Statistical Data Analysis I"
+                href: Stat_Data_Analysis_I.html
+              - text: "Statistical Data Analysis II"
+                href: Stat_Data_Analysis_II.html
+          - text: "Statistical Modeling"
+            href: Statistical_Modeling.html
+          - text: "Introduction to Modeling and Analysis in Sports"
+            href: Sports_Modeling.html
+          - text: "Internship"
+            href: Internship.html
+          - text: "Other Math Courses"
+            menu:
+              - text: "Introduction to Modern Algebra"
+                href: Modern_Algebra.html
+              - text: "Abstract Linear Algebra with Applications to Differential Equations"
+                href: Abstract_Linear_Algebra.html                    
+      - text: "Computer Science"
+        href: CS.html  
+        menu:
+          - text: "Discrete Mathematics"
+            href: Discrete.html
           - text: "Computer Science"
-            href: CS.html  
             menu:
-              - text: "Discrete Mathematics"
-                href: Discrete.html
-              - text: "Computer Science"
-                menu:
-                  - text: "Computer Science I"
-                    href: CS_I.html
-                  - text: "Computer Science II"
-                    href: CS_II.html
-              - text: "Introduction to Computer Systems"
-                href: Intro_Systems.html
-              - text: "Introduction to Theoretical Computer Science"
-                href: Computer_Theory.html
-              - text: "Database"
-                href: Database.html
-          - text: "Other Courses"
-            menu:
-              - text: "Advanced Spreadsheet Analytics"
-                href: Spreadsheet_Analytics.html
-              - text: "Economics of Sports"
-                href: Economics_Sports.html
-        - text: Graduate
+              - text: "Computer Science I"
+                href: CS_I.html
+              - text: "Computer Science II"
+                href: CS_II.html
+          - text: "Introduction to Computer Systems"
+            href: Intro_Systems.html
+          - text: "Introduction to Theoretical Computer Science"
+            href: Computer_Theory.html
+          - text: "Database"
+            href: Database.html
+      - text: "Other Courses"
+        menu:
+          - text: "Advanced Spreadsheet Analytics"
+            href: Spreadsheet_Analytics.html
+          - text: "Economics of Sports"
+            href: Economics_Sports.html
+    - text: Graduate Courses
+      menu:
+        - text: "Analytics"
+          href: Analytics.html  
           menu:
-            - text: "Analytics"
-              href: Analytics.html  
-              menu:
-                - text: "Data Management"
-                  href: Data_Management.html
-                - text: "Programming for Business Analytics"
-                  href: Programming_Analytics.html
-                - text: "Operations Research"
-                  href: Op_Research.html
-                - text: "Problem Analysis and Quantitative Methods"
-                  href: Analysis_Methods.html
-                - text: "Executive Skills"
-                  href: Exec_Skills.html
-                - text: "Web Analytics, Data Privacy, and Security"                  
-                  href: Web_Analytics.html
-                - text: "Unstructured Data Analytics"
-                  href: Unstructured.html
-                - text: "Project Management"
-                  href: Project_Management.html
-                - text: "Forecasting and Time Series Models"
-                  href: Time_Series.html
-                - text: "Applied Econometrics"
-                  href: Econometrics.html
-                - text: "Global Blockchain for Business"
-                  href: Blockchain.html
-                - text: "Applied Analytics Project"
-                  href: Analytics_Project.html
-            - text: "MBA"
-              href: MBA.html    
-              menu:
-                - text: "Managerial Accounting"
-                  href: Accounting.html
-                - text: "Marketing Application and Strategy"
-                  href: Marketing.html
-                - text: "Economics for Decision-Making"
-                  href: Economics.html
-                - text: "Operations and Supply Chain Management"
-                  href: Supply_Chain.html
-                - text: "Managerial Finance"
-                  href: Finance.html
-                - text: "Strategic Management"
-                  href: Management.html
-                - text: "FinTech/InsureTech"
-                  href: FinTech.html
+            - text: "Data Management"
+              href: Data_Management.html
+            - text: "Programming for Business Analytics"
+              href: Programming_Analytics.html
+            - text: "Operations Research"
+              href: Op_Research.html
+            - text: "Problem Analysis and Quantitative Methods"
+              href: Analysis_Methods.html
+            - text: "Executive Skills"
+              href: Exec_Skills.html
+            - text: "Web Analytics, Data Privacy, and Security"                  
+              href: Web_Analytics.html
+            - text: "Unstructured Data Analytics"
+              href: Unstructured.html
+            - text: "Project Management"
+              href: Project_Management.html
+            - text: "Forecasting and Time Series Models"
+              href: Time_Series.html
+            - text: "Applied Econometrics"
+              href: Econometrics.html
+            - text: "Global Blockchain for Business"
+              href: Blockchain.html
+            - text: "Applied Analytics Project"
+              href: Analytics_Project.html
+        - text: "MBA"
+          href: MBA.html    
+          menu:
+            - text: "Managerial Accounting"
+              href: Accounting.html
+            - text: "Marketing Application and Strategy"
+              href: Marketing.html
+            - text: "Economics for Decision-Making"
+              href: Economics.html
+            - text: "Operations and Supply Chain Management"
+              href: Supply_Chain.html
+            - text: "Managerial Finance"
+              href: Finance.html
+            - text: "Strategic Management"
+              href: Management.html
+            - text: "FinTech/InsureTech"
+              href: FinTech.html
     - text: "Resume"
       href: Resume.html
     - text: "Software"
