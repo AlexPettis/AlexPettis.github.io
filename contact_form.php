@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Set the recipient email address
-    $recipient = "youremail@example.com"; // Replace with your email
+    $recipient = "alexpettis@icloud.com"; // Replace with your email
 
     // Set the email subject
     $subject = "New Contact from $name";
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send the email
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         // Redirect to the Thank You page
-        header("Location: thank_you.html");
+        header("Location: thank_you.Rhtml");
         exit;
     } else {
         // Failure message
