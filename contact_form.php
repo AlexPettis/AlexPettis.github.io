@@ -9,11 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $message = trim($_POST["message"]);
 
-    // Check that all fields are filled out and email is valid
+    // Validate form inputs
     if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($message)) {
         // Return a 400 error if any field is missing or invalid
         http_response_code(400);
-        echo "Please complete the form and try again.";
+        echo "Please complete the form with valid information and try again.";
         exit;
     }
 
@@ -31,22 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Build the email headers
     $email_headers = "From: $name <$email>";
 
-    // Send the email
+    // Try to send the email
     if (mail($recipient, $subject, $email_content, $email_headers)) {
-        // Redirect to the Thank You page
-        header("Location: thank_you.html"); // Corrected the redirection file
+        // Redirect to the Thank You page after email is sent successfully
+        header("Location: thank_you.html");
         exit;
     } else {
-        // Log error to help with debugging
-        file_put_contents('php_error.log', "Mail failed: $email_content\n", FILE_APPEND);
-
-        // Failure message
+        // Display an error message if the email fails to send
         http_response_code(500);
-        echo "Oops! Something went wrong, and we couldn't send your message.";
+        echo "Oops! Something went wrong, and we couldn't send your message. Please try again later.";
+        exit;
     }
 } else {
-    // Return 403 if not a POST request
+    // Return 403 if the request is not a POST request
     http_response_code(403);
-    echo "There was a problem with your submission, please try again.";
+    echo "There was a problem with your submission. Please try again.";
 }
 ?>
