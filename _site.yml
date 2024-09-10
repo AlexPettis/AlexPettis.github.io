@@ -122,6 +122,8 @@ navbar:
       href: Resume.html
     - text: "Software"
       href: Software.html
+    - text: "Contact"
+      href: Contact-Form.html
     #  menu:
      #   - text: "Undergraduate"
       #    href: Courses.html#undergraduate

@@ -1,0 +1,25 @@
+---
+title: "Contact Form"
+output: html_document
+date: "2024-09-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+<form action="contact_form.php" method="POST">
+  <label for="name">Your Name:</label><br>
+  <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
+
+  <label for="email">Your Email:</label><br>
+  <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
+
+  <label for="message">Your Message:</label><br>
+  <textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea><br><br>
+
+  <button type="submit">Send Message</button>
+</form>
+
+__________

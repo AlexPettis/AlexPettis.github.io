@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2024-09-10" />
 
-<title>Marketing Strategy and Application</title>
+<title>Contact Form</title>
 
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -453,21 +454,25 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Marketing Strategy and Application</h1>
+<h1 class="title toc-ignore">Contact Form</h1>
+<h4 class="date">2024-09-10</h4>
 
 </div>
 
 
-<div id="course-description" class="section level2">
-<h2>Course Description</h2>
-<p>Through the use of a combination of applied methods such as in-depth
-case analysis, simulations and/or marketing projects, the student will
-learn to develop solutions and formulate responses to marketing-oriented
-problems of the organization in a dynamic, complex, competitive, and
-global context. This course integrates issues and concepts introduced in
-other MBA courses.</p>
+<form action="contact_form.php" method="POST">
+<p><label for="name">Your Name:</label><br>
+<input type="text" id="name" name="name" placeholder="Your name" required><br><br></p>
+<p><label for="email">Your Email:</label><br>
+<input type="email" id="email" name="email" placeholder="Your email" required><br><br></p>
+<label for="message">Your Message:</label><br>
+<textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+<p><br><br></p>
+<button type="submit">
+Send Message
+</button>
+</form>
 <hr />
-</div>
 
 <!--div id="footer">
      <p><strong>Alex Pettis</strong></br>
