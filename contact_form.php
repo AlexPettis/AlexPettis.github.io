@@ -1,4 +1,5 @@
 <?php
+// Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -8,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $message = trim($_POST["message"]);
 
-    // Check that all fields are filled out
+    // Check that all fields are filled out and email is valid
     if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($message)) {
         // Return a 400 error if any field is missing or invalid
         http_response_code(400);
@@ -33,15 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send the email
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         // Redirect to the Thank You page
-        header("Location: thank_you.Rhtml");
+        header("Location: thank_you.html"); // Corrected the redirection file
         exit;
     } else {
+        // Log error to help with debugging
+        file_put_contents('php_error.log', "Mail failed: $email_content\n", FILE_APPEND);
+
         // Failure message
         http_response_code(500);
         echo "Oops! Something went wrong, and we couldn't send your message.";
     }
 } else {
-    // Not a POST request
+    // Return 403 if not a POST request
     http_response_code(403);
     echo "There was a problem with your submission, please try again.";
 }
