@@ -20,36 +20,5 @@ I have created this website to showcase my coursework, research, and professiona
 
 This website was last rendered on `r format(Sys.time(), "%A, %B %d, %Y - %X.")`
 
-```{r, results='asis', echo=FALSE}
-cat('<p>This site has been viewed <span id="site-views"></span> times.</p>
-<script>
-// Check if the user has already been counted in this session
-if (!localStorage.getItem("site-visit-counted")) {
-    // Increment the global view counter
-    fetch("https://api.countapi.xyz/hit/yourdomain.com/global-counter")
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("site-views").innerText = data.value;
-        
-        // Mark that the user has been counted in localStorage
-        localStorage.setItem("site-visit-counted", "true");
-    })
-    .catch(error => {
-        console.error("Error fetching view count:", error);
-    });
-} else {
-    // Just retrieve the current view count without incrementing it
-    fetch("https://api.countapi.xyz/get/yourdomain.com/global-counter")
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("site-views").innerText = data.value;
-    })
-    .catch(error => {
-        console.error("Error fetching view count:", error);
-    });
-}
-</script>')
-```
-
 <hr>
 
