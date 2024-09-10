@@ -20,4 +20,26 @@ I have created this website to showcase my coursework, research, and professiona
 
 This website was last rendered on `r format(Sys.time(), "%A, %B %d, %Y - %X.")`
 
+```{r, results='asis', echo=FALSE}
+cat('<p>This site has been viewed <span id="site-views"></span> times.</p>
+<script>
+// Check if the user has already been counted in this session
+if (!localStorage.getItem("site-visit-counted")) {
+    // Fetch the global view counter
+    fetch("https://api.countapi.xyz/hit/yourdomain.com/global-counter").then(response => response.json()).then(data => {
+        document.getElementById("site-views").innerText = data.value;
+    });
+
+    // Mark that the user has been counted
+    localStorage.setItem("site-visit-counted", "true");
+} else {
+    // If the user has already been counted, just retrieve the current count without incrementing
+    fetch("https://api.countapi.xyz/get/yourdomain.com/global-counter").then(response => response.json()).then(data => {
+        document.getElementById("site-views").innerText = data.value;
+    });
+}
+</script>')
+```
+
 <hr>
+

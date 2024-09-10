@@ -472,8 +472,28 @@ focus on finance, sports, health care, or supply chain industries.</p>
 <p>I have created this website to showcase my coursework, research, and
 professional experience. Additionally, it contains my current resume and
 links to download software relevant to the courses.</p>
-<p>This website was last rendered on Friday, September 06, 2024 -
-11:32:37 AM.</p>
+<p>This website was last rendered on Monday, September 09, 2024 -
+8:29:16 PM.</p>
+<p>
+This site has been viewed <span id="site-views"></span> times.
+</p>
+<script>
+// Check if the user has already been counted in this session
+if (!localStorage.getItem("site-visit-counted")) {
+    // Fetch the global view counter
+    fetch("https://api.countapi.xyz/hit/yourdomain.com/global-counter").then(response => response.json()).then(data => {
+        document.getElementById("site-views").innerText = data.value;
+    });
+
+    // Mark that the user has been counted
+    localStorage.setItem("site-visit-counted", "true");
+} else {
+    // If the user has already been counted, just retrieve the current count without incrementing
+    fetch("https://api.countapi.xyz/get/yourdomain.com/global-counter").then(response => response.json()).then(data => {
+        document.getElementById("site-views").innerText = data.value;
+    });
+}
+</script>
 <hr>
 
 <!--div id="footer">
