@@ -123,7 +123,7 @@ navbar:
     - text: "Software"
       href: Software.html
     - text: "Contact"
-      href: Contact-Form.html
+      href: Contact_Form.html
     #  menu:
      #   - text: "Undergraduate"
       #    href: Courses.html#undergraduate
