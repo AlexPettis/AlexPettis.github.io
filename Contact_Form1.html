@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!-- Adding inline styles for spacing between form elements -->
+    <style>
+        form div {
+            margin-bottom: 15px; /* Adds spacing between form fields */
+        }
+
+        label {
+            display: block; /* Forces labels to be on a new line */
+            margin-bottom: 5px; /* Adds some spacing between the label and input field */
+        }
+
+        input, select, textarea {
+            width: 100%; /* Makes input fields, dropdowns, and textareas take full width */
+            padding: 8px; /* Adds padding inside the input fields */
+        }
+
+        button {
+            padding: 10px 20px; /* Adds padding to the submit button */
+            background-color: #4CAF50; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* Removes border */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Button hover effect */
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const otherOption = document.getElementById("howDidYouFindMe").value;
+            const otherText = document.getElementById("otherText").value.trim();
+
+            if (otherOption === "other" && otherText === "") {
+                alert("Please specify how you found me.");
+                return false;
+            }
+
+            // Redirect to thank you page after validation success
+            window.location.href = 'thankyou.html';
+            return false;  // Prevent actual form submission for demonstration purposes
+        }
+
+        function toggleOtherField() {
+            const dropdown = document.getElementById("howDidYouFindMe");
+            const otherField = document.getElementById("otherField");
+
+            if (dropdown.value === "other") {
+                otherField.style.display = "block";
+            } else {
+                otherField.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>Contact Form</h2>
+<form onsubmit="return validateForm()">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+        <label for="howDidYouFindMe">How did you find me?</label>
+        <select id="howDidYouFindMe" name="howDidYouFindMe" onchange="toggleOtherField()" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="jobApplication">Job Application</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div id="otherField" style="display: none;">
+        <label for="otherText">Please specify:</label>
+        <input type="text" id="otherText" name="otherText">
+    </div>
+
+    <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+</body>
+</html>
