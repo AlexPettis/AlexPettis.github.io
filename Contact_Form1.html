@@ -4,34 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <!-- Adding inline styles for spacing between form elements -->
-    <style>
-        form div {
-            margin-bottom: 15px; /* Adds spacing between form fields */
-        }
-
-        label {
-            display: block; /* Forces labels to be on a new line */
-            margin-bottom: 5px; /* Adds some spacing between the label and input field */
-        }
-
-        input, select, textarea {
-            width: 100%; /* Makes input fields, dropdowns, and textareas take full width */
-            padding: 8px; /* Adds padding inside the input fields */
-        }
-
-        button {
-            padding: 10px 20px; /* Adds padding to the submit button */
-            background-color: #4CAF50; /* Button background color */
-            color: white; /* Button text color */
-            border: none; /* Removes border */
-            cursor: pointer; /* Changes cursor to pointer on hover */
-        }
-
-        button:hover {
-            background-color: #45a049; /* Button hover effect */
-        }
-    </style>
+    <link rel="stylesheet" href="css.css">
     <script>
         function validateForm() {
             const otherOption = document.getElementById("howDidYouFindMe").value;
@@ -41,10 +14,7 @@
                 alert("Please specify how you found me.");
                 return false;
             }
-
-            // Redirect to thank you page after validation success
-            window.location.href = 'thankyou.html';
-            return false;  // Prevent actual form submission for demonstration purposes
+            return true;
         }
 
         function toggleOtherField() {
@@ -59,23 +29,23 @@
         }
     </script>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
 
-<h2>Contact Form</h2>
-<form onsubmit="return validateForm()">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+<h2 style="text-align: center; margin-bottom: 20px;">Contact Form</h2>
+<form action="send_email.php" method="POST" onsubmit="return validateForm()" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+    <div style="margin-bottom: 15px;">
+        <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; box-sizing: border-box;">
     </div>
 
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <div style="margin-bottom: 15px;">
+        <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box;">
     </div>
 
-    <div>
-        <label for="howDidYouFindMe">How did you find me?</label>
-        <select id="howDidYouFindMe" name="howDidYouFindMe" onchange="toggleOtherField()" required>
+    <div style="margin-bottom: 15px;">
+        <label for="howDidYouFindMe" style="display: block; margin-bottom: 5px;">How did you find me?</label>
+        <select id="howDidYouFindMe" name="howDidYouFindMe" onchange="toggleOtherField()" required style="width: 100%; padding: 8px; box-sizing: border-box;">
             <option value="" disabled selected>Select an option</option>
             <option value="linkedin">LinkedIn</option>
             <option value="jobApplication">Job Application</option>
@@ -83,18 +53,18 @@
         </select>
     </div>
 
-    <div id="otherField" style="display: none;">
-        <label for="otherText">Please specify:</label>
-        <input type="text" id="otherText" name="otherText">
+    <div id="otherField" style="display: none; margin-bottom: 15px;">
+        <label for="otherText" style="display: block; margin-bottom: 5px;">Please specify:</label>
+        <input type="text" id="otherText" name="otherText" style="width: 100%; padding: 8px; box-sizing: border-box;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="message" style="display: block; margin-bottom: 5px;">Message:</label>
+        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; box-sizing: border-box;"></textarea>
     </div>
 
     <div>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-    </div>
-
-    <div>
-        <button type="submit">Submit</button>
+        <button type="submit" style="padding: 10px 15px; font-size: 16px; border: none; border-radius: 4px; background-color: #007BFF; color: #fff; cursor: pointer;">Submit</button>
     </div>
 </form>
 
