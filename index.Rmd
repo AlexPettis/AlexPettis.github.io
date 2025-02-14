@@ -8,7 +8,7 @@ output:
 <hr>
 
 <center>
-<p><img src="./Pictures/Picture3.jpg" alt="Picture3" align="center" hspace="20" style="width:250px;height:375px;"></p>
+<p><img src="./Pictures/Picture4.jpg" alt="Picture4" align="center" hspace="20" style="width:250px;height:375px;"></p>
 </center>
 
 Hello, my name is Alex Pettis, and I recently graduated from Appalachian State University in Summer 2024 with dual Master’s degrees in Applied Data Analytics and Business Administration. For my undergraduate degree, I pursued Mathematics with a concentration in General Mathematics, along with minors in Computer Science and Statistics, and a certificate in Sports Analytics.
