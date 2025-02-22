@@ -129,6 +129,9 @@ navbar:
       #    href: Courses.html#undergraduate
        # - text: "Graduate"
         #  href: Courses.html#graduate
+    - text: "Blog Posts"
+      href: Blog_Posts.html
+
 
 output:
   html_document:

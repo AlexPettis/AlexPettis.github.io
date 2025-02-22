@@ -1,0 +1,16 @@
+---
+title: "Blog Posts"
+output: html_document
+---
+
+## Welcome to My Blog
+
+Here, I share insights on analytics, data science, and technology. Check out my latest posts below!
+
+### Recent Posts
+
+[Welcome to My Analytics Blog!](intro_blog.html) - (2/22/25)
+
+* A quick introduction to why I started this blog and what you can expect from future posts.
+
+__________
