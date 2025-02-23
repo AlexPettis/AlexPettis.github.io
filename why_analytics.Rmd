@@ -1,0 +1,20 @@
+---
+title: "My Journey: From Computer Science to Data Analytics and an MBA (2/24/25)"
+output: html_document
+---
+
+I’ve always loved computers. Whether it was exploring new software, experimenting with different programs, or simply understanding how technology worked, I was fascinated by the possibilities they offered. So when I started college at Appalachian State University, majoring in computer science felt like the perfect choice.
+
+For two years, I focused on programming, algorithms, and software development. However, COVID-19 and online learning changed the experience, and over time, I realized that deep technical coding wasn’t what I wanted to do long-term. I understand its value, but I didn’t want to be in a field where heavy programming was the primary focus. I was more drawn to the diverse aspects of analytics.
+
+Early in my college journey, I also started earning a minor in mathematics and a certificate in data science to complement my computer science degree. When I decided to pivot away from computer science, I wanted to make the most of the credits I had already earned. After speaking with professors about alternative paths, I decided to switch my major to mathematics. However, I still had a strong interest in technology, so I continued pursuing my computer science minor.
+
+Later in my studies, I realized that adding a statistics minor would be beneficial, as it required virtually no extra coursework beyond the math classes I was already taking. This allowed me to further strengthen my analytical skills without extending my time in school. Around the same time, I also decided to switch from the data science certificate to the sports analytics certificate, since sports analytics had always intrigued me as a way to apply data science principles in an exciting domain.
+
+During my earlier coursework, I focused on mastering Excel, R, and Python, along with the essential math and statistical concepts that underpin data analysis. Although these courses taught me a great deal, I soon realized that there was much more to learn in the rapidly evolving field of data analytics. This insight motivated me to pursue a Master of Science in Applied Data Analytics—to dive deeper into machine learning, predictive modeling, and data-driven decision-making. Plus, since I was set to graduate a semester early, I saw it as a great opportunity to continue learning while still experiencing a full four years of college life.
+
+The MBA came into the picture a bit later. Initially, I had considered it as an additional degree alongside my analytics master’s, but I wasn’t fully committed. After a few months in the program and discussions with peers, I realized how valuable it could be. I had very little formal business knowledge, and since I knew I would be working for a business, it made sense to gain a deeper understanding of how companies operate. What sealed the deal was that earning the MBA required only about six additional classes, so it didn’t add too much extra work. I saw it as a way to stand out in the job market—having both technical expertise and business acumen would allow me to bridge the gap between data-driven insights and strategic decision-making.
+
+Looking back, my academic journey has been full of unexpected turns, but each step has shaped my skills and perspective. My love for computers never changed—I just found a different way to apply it. Choosing math over computer science, continuing with a computer science minor, adding a statistics minor, and switching to a sports analytics certificate were all decisions driven by a desire to learn, adapt, and position myself for success in a rapidly evolving field. I’m excited to see where this path takes me next!
+
+__________
