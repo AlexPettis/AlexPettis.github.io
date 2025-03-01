@@ -3,6 +3,8 @@ title: "My Journey: From Computer Science to Data Analytics and an MBA (2/24/25)
 output: html_document
 ---
 
+__________
+
 I’ve always loved computers. Whether it was exploring new software, experimenting with different programs, or simply understanding how technology worked, I was fascinated by the possibilities they offered. So when I started college at Appalachian State University, majoring in computer science felt like the perfect choice.
 
 For two years, I focused on programming, algorithms, and software development. However, COVID-19 and online learning changed the experience, and over time, I realized that deep technical coding wasn’t what I wanted to do long-term. I understand its value, but I didn’t want to be in a field where heavy programming was the primary focus. I was more drawn to the diverse aspects of analytics.

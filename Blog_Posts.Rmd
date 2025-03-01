@@ -17,4 +17,11 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A look into how I transitioned from computer science to mathematics, pursued analytics, and added an MBA to bridge the gap between data and business.
 
+```{r, echo = FALSE}
+#[Data Analyst vs. Business Analyst: What’s the Difference?](da_vs_ba.html) - (3/7/25)
+
+#* A dive into the differences between Data Analysts and Business Analysts, outlining their responsibilities, skills, and tools, and offering guidance on choosing the right career path.
+
+```
+
 __________
