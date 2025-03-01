@@ -5,12 +5,29 @@ output: html_document
 
 ## Resume
 
-[Resume](https://docs.google.com/document/d/1lIcrZnNPSQdC4ksCCkjftzla7BuOkmtR/edit?usp=drive_link&ouid=117351534724931406708&rtpof=true&sd=true)
+[Click Here to See My Full Resume](https://docs.google.com/document/d/1lIcrZnNPSQdC4ksCCkjftzla7BuOkmtR/edit?usp=drive_link&ouid=117351534724931406708&rtpof=true&sd=true)
 
 
 ## Professional Summary
 
 Results-driven data analyst with expertise in predictive modeling, machine learning, and statistical analysis. Skilled in leveraging Python, R, SQL, and advanced Excel to extract insights, optimize processes, and support data-driven decision-making. Strong background in energy forecasting and sports analytics, with experience integrating diverse datasets to uncover trends and improve performance. Proficient in data visualization using Tableau and Power BI to effectively communicate complex findings. Earned a Master of Science in Applied Data Analytics and an MBA, with hands-on experience in both academic and industry settings.
+
+## Key Skills
+
+* **Computer Programming:** Python, R, SQL
+* **Data Analysis & Modeling:** Data Analytics, Data Cleansing, Data Modeling, Databases
+* **Statistical & Predictive Techniques:** Statistical Models, Predictive Analytics, Forecasting Models, Machine Learning
+* **Data Visualization & Reporting:** Dashboard Reporting, Data Visualization, Tableau, Power BI, Alteryx
+* **Software & Tools:** Microsoft Excel, Microsoft Office, LaTeX Typesetting, R-Studio
+* Project Management
+
+## Key Highlights
+
+* **Advanced Data Analysis & Interpretation:** Proficient in using Python, R, and SQL to conduct complex statistical analysis, uncovering trends and anomalies to inform data-driven decisions.
+* **Machine Learning & Predictive Modeling Expertise:** Experienced in building and applying machine learning models, time series forecasting, and text analytics to extract actionable insights from structured and unstructured data.
+* **Data Visualization & Reporting:** Skilled in designing impactful visualizations with Tableau and Power BI, as well as creating dynamic web-based dashboards with HTML/PHP to effectively communicate key insights.
+* **Agile Project Delivery:** Knowledgeable in Agile and Scrum methodologies, with strong organizational skills and the ability to manage projects efficiently while maintaining focus on deadlines and deliverables.
+* **Tools & Techniques Mastery:** Experienced with Alteryx, Stata, Google Analytics, and advanced Excel for data transformation, anomaly detection, and comprehensive reporting.
 
 __________
 

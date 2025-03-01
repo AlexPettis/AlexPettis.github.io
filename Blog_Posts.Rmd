@@ -14,9 +14,9 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 * A quick introduction to why I started this blog and what you can expect from future posts.
 
 ```{r, echo=FALSE}
-#[My Journey: From Computer Science to Data Analytics and an MBA](why_analytics.html) - (2/24/25)
+[My Journey: From Computer Science to Data Analytics and an MBA](why_analytics.html) - (2/28/25)
 
-#* A look into how I transitioned from computer science to mathematics, pursued analytics, and added an MBA to bridge the gap between data and business.
+* A look into how I transitioned from computer science to mathematics, pursued analytics, and added an MBA to bridge the gap between data and business.
 ```
 
 __________
