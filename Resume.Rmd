@@ -3,7 +3,7 @@ title: "Resume"
 output: html_document
 ---
 
-## Resume
+## See My Resume
 
 [Click Here to See My Full Resume](https://docs.google.com/document/d/1lIcrZnNPSQdC4ksCCkjftzla7BuOkmtR/edit?usp=drive_link&ouid=117351534724931406708&rtpof=true&sd=true)
 
