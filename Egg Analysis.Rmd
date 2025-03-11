@@ -2,11 +2,11 @@
 title: "Egg Price Descriptive Analysis"
 output:
   html_document:
+    runtime: shiny
     css: "css.css"
 ---
 
-
-```{r}
+```{r, warning = FALSE, message = FALSE, echo = FALSE}
 library(shiny)
 library(shinyWidgets)
 library(plotly)
