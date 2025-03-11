@@ -1,0 +1,132 @@
+---
+title: "Egg Price Descriptive Analysis"
+output:
+  html_document:
+    css: "css.css"
+---
+
+
+```{r}
+library(shiny)
+library(shinyWidgets)
+library(plotly)
+library(DT)
+library(dplyr)
+library(readr)
+library(zoo)  # Don't forget to load zoo for rollmean function
+
+# Load the data
+price <- read_csv("/Users/alex/Desktop/Egg Prices.csv")
+
+# Clean and prepare the data
+price <- price %>% 
+  rename(Date = observation_date, Price = APU0000708111) %>% 
+  mutate(Date = as.Date(Date), 
+         Rolling_Avg = zoo::rollmean(Price, k = 3, fill = NA, align = "right"))
+
+# Calculate summary statistics and add count and standard deviation
+summary_stats <- data.frame(
+  Statistic = c("Count", "Mean", "Std", "Min", "25%", "50%", "75%", "Max"),
+  Value = c(
+    nrow(price), # Count
+    round(mean(price$Price, na.rm = TRUE), 6), # Mean
+    round(sd(price$Price, na.rm = TRUE), 6), # Standard Deviation
+    round(min(price$Price, na.rm = TRUE), 6), # Min
+    round(quantile(price$Price, 0.25, na.rm = TRUE), 6), # 25%
+    round(median(price$Price, na.rm = TRUE), 6), # 50% (Median)
+    round(quantile(price$Price, 0.75, na.rm = TRUE), 6), # 75%
+    round(max(price$Price, na.rm = TRUE), 6) # Max
+  )
+)
+
+# Define UI
+ui <- fluidPage(
+  titlePanel("Egg Price Dashboard"),
+
+  # Summary Statistics Table
+  fluidRow(
+    column(12, tags$strong(h3("Summary Statistics", align = "center"))),
+    column(12, DTOutput("summary_table"), align = "center"),
+    tags$br(),  # Add space after the summary table
+    tags$br()   # Add additional space between the title and the summary table
+  ),
+
+  # Line Plot
+  fluidRow(
+    column(12, tags$br(), tags$strong(h3("Egg Price Over Time", align = "center"))),  # Add bold title with extra space
+    column(12, plotlyOutput("line_plot")),
+    tags$br()  # Add space after line plot
+  ),
+
+  # Histogram
+  fluidRow(
+    column(12, tags$br(), tags$strong(h3("Distribution of Egg Prices", align = "center"))),  # Add bold title with extra space
+    column(12, plotlyOutput("histogram")),
+    tags$br()  # Add space after histogram
+  ),
+
+  # Box Plot
+  fluidRow(
+    column(12, tags$br(), tags$strong(h3("Box Plot of Egg Prices", align = "center"))),  # Add bold title with extra space
+    column(12, plotlyOutput("box_plot")),
+    tags$br()  # Add space after box plot
+  ),
+
+  # Moving Average Plot
+  fluidRow(
+    column(12, tags$br(), tags$strong(h3("Egg Price with 3-Month Moving Average", align = "center"))),  # Add bold title with extra space
+    column(12, plotlyOutput("moving_avg_plot")),
+    tags$br()  # Add space after moving average plot
+  )
+)
+
+# Define Server Logic
+server <- function(input, output) {
+
+  # Render Summary Table
+  output$summary_table <- renderDT({
+    datatable(summary_stats, options = list(dom = 't'), rownames = FALSE)
+  })
+
+  # Line Plot (Egg Price Over Time)
+  output$line_plot <- renderPlotly({
+    plot_ly(price, x = ~Date, y = ~Price, type = 'scatter', mode = 'lines',
+            name = "Price per Carton") %>%
+      layout(#title = "Egg Price Over Time",
+             xaxis = list(title = "Date"),
+             yaxis = list(title = "Price per Carton ($)"))
+  })
+
+  # Histogram (Distribution of Egg Prices)
+  output$histogram <- renderPlotly({
+    plot_ly(price, x = ~Price, type = 'histogram', nbinsx = 5) %>%
+      layout(#title = "Distribution of Egg Prices",
+             xaxis = list(#title = "Price per Carton ($)", 
+               tickvals = c(1, 2, 3, 4, 5)),
+             yaxis = list(title = "Frequency"))
+  })
+
+ # Box Plot (Vertical)
+  output$box_plot <- renderPlotly({
+  plot_ly(price, x = ~Price, type = 'box', name = "Price per Carton") %>%
+    layout(
+      xaxis = list(title = "Price per Carton ($)"),
+      yaxis = list(title = "")  # Remove the redundant y-axis title
+    )
+})
+
+  # Moving Average Plot
+  output$moving_avg_plot <- renderPlotly({
+    plot_ly(price, x = ~Date, y = ~Price, type = 'scatter', mode = 'lines', name = 'Actual Price', line = list(color = 'blue')) %>%
+      add_trace(y = ~Rolling_Avg, mode = 'lines', name = '3-Month Moving Average', line = list(color = 'red')) %>%
+      layout(#title = "Egg Price with 3-Month Moving Average",
+             xaxis = list(title = "Date"),
+             yaxis = list(title = "Price per Carton ($)"))
+  })
+}
+
+# Run the App
+shinyApp(ui = ui, server = server)
+
+
+```
