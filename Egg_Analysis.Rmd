@@ -1,0 +1,214 @@
+---
+title: "Eggcellent Analysis: Cracking the Code Behind Rising Egg Prices – Part 1"
+output:
+  html_document:
+    css: "css.css"
+---
+
+Eggs are a breakfast staple in many households, whether scrambled, fried, or used in baking. They’ve been a reliable and affordable source of protein for decades, but if you’ve noticed prices climbing over the years, you’re not alone. A deep dive into historical egg prices reveals a steady increase, punctuated by sharp spikes—especially after 2020. Let’s break down the trends, examine price distribution, and consider what the future holds.
+
+In this 4-part series, we’ll break down the trends, examine price distribution, and consider what the future holds for egg prices. Whether you're a consumer feeling the pinch at the checkout or just curious about what’s driving these price surges, we’ve got the insights you're looking for. Let’s crack into the details!
+
+The dataset we're working with for this part of the analysis covers monthly egg price data, starting from 1980. With this data, we can uncover patterns and fluctuations over time, helping us understand how egg prices have evolved and what factors might be driving these changes.
+
+```{r, echo = FALSE}
+library(reticulate)
+use_condaenv("base", required = TRUE)  # Change "base" to your actual Conda environment name
+
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import dash
+from dash import dcc, html
+import plotly.express as px
+from prettytable import PrettyTable
+from tabulate import tabulate
+
+```
+
+```{python, echo = FALSE, include = FALSE}
+
+price = pd.read_csv(r"C:\Users\alexp\Desktop\Egg Price.csv")
+
+price.info()
+
+```
+
+```{python, echo = FALSE, include = FALSE}
+
+price = price.rename(columns = {'observation_date':'Date', 'APU0000708111':'Price'})
+
+price.head()
+
+```
+
+```{python, echo = FALSE, include = FALSE}
+
+price['Date'] = pd.to_datetime(price['Date'])
+
+```
+
+```{python, echo = FALSE, include = FALSE}
+
+price.info()
+
+```
+
+## Descriptive Statistics
+
+To better understand the changes in egg prices, here are some key summary statistics:
+
+```{python, echo = FALSE}
+
+# Generate describe output
+summary = price.describe()
+
+# Convert to DataFrame correctly
+summary_df = pd.DataFrame(summary).reset_index()
+
+# Print nicely formatted table
+print(tabulate(summary_df, headers="keys", tablefmt="pipe", floatfmt=".2f"))
+```
+These statistics reveal that most egg prices cluster around $1.00–$1.50, with occasional extreme values pushing prices much higher.
+
+## Egg Prices Over Time: A Steady Climb with Surprising Spikes
+
+Looking at long-term price data, egg prices remained relatively stable for decades before experiencing dramatic fluctuations in recent years.
+
+```{python, fig.width = 12, fig.height = 6, echo = FALSE}
+
+# Set seaborn style
+sns.set_style("whitegrid")
+
+# Create the line plot
+plt.figure(figsize = (12,6))
+sns.lineplot(x = price['Date'], y = price['Price'], color = 'b')
+
+# Lables and title
+plt.xlabel("Date", fontsize = 12)
+plt.ylabel("Price per Carton ($)", fontsize = 12)
+plt.title("Egg Price Over Time", fontsize = 14)
+
+plt.xticks(rotation = 45);
+plt.subplots_adjust(bottom=0.2) 
+plt.tight_layout()
+plt.show()
+
+```
+
+* Pre-2005: Prices were relatively stable, with minor fluctuations.
+* 2005–2020: A gradual increase, with occasional spikes due to market conditions.
+* Post-2020: Prices surged to all-time highs, with some months seeing dramatic jumps.
+
+The exact causes of these price surges aren’t immediately clear from the data alone. However, historical patterns suggest that factors like avian flu outbreaks and rising production costs have contributed to past fluctuations. What’s evident from the data is that price volatility has increased significantly in recent years.
+
+## Histogram: A Look at Price Distribution
+
+To understand how often extreme price hikes occur, I analyzed the distribution of egg prices over time. The data shows a right-skewed distribution, meaning that while prices have historically been low, recent years have seen frequent spikes.
+
+```{python, fig.width = 10, fig.height = 6, echo = FALSE}
+
+# Create the histogram
+plt.figure(figsize=(10,6))
+sns.histplot(price['Price'], bins=20, kde=True, color='b')
+
+# Labels and title
+plt.xlabel("Price per Carton ($)", fontsize=12)
+plt.ylabel("Frequency", fontsize=12)
+plt.title("Distribution of Egg Prices", fontsize=14)
+
+# Show the plot
+plt.show()
+
+
+```
+
+Most prices in the past ranged between $1.00–$1.50 per dozen, but recent spikes have pushed prices beyond $3.00–$5.00 per dozen, and in some cases, even higher. This suggests that while extreme prices weren’t common in the past, they are now appearing more frequently.
+
+
+## Box Plot Breakdown: Outliers Are Becoming the Norm
+
+A box plot of historical egg prices highlights growing price variability:
+
+```{python, fig.width = 8, fig.height = 5, echo = FALSE}
+
+plt.figure(figsize = (8,5))
+sns.boxplot(x = price['Price'], color = 'lightblue')
+
+# Labels and title
+plt.xlabel("Price per Carton ($)")
+plt.title("Box Plot of Egg Prices")
+
+plt.show()
+
+```
+
+* The median price sits around $1.15, meaning half the time, eggs were cheaper and half the time, they were more expensive.
+* The interquartile range (IQR) suggests that most prices have historically stayed below $2.00 per dozen.
+* However, outliers above $3.00–$5.00 per dozen confirm that price spikes have become more common.
+
+The data suggests that these high prices, once considered extreme, may now be part of a new pricing norm.
+
+
+## Moving Average: Smoothing Out the Volatility
+
+To better identify the underlying trends, a 3-month moving average was applied to the historical price data. This smooths out short-term fluctuations and provides a clearer picture of the long-term trend.
+
+```{python, fig.width = 10, fig.height = 8, echo = FALSE}
+
+price['Rolling_Avg'] = price['Price'].rolling(window=3).mean()
+
+plt.figure(figsize=(10,5))
+sns.lineplot(x=price['Date'], y=price['Price'], label="Actual Price", color='blue')
+sns.lineplot(x=price['Date'], y=price['Rolling_Avg'], label="3-Month Moving Avg", color='red')
+
+plt.xlabel("Month")
+plt.ylabel("Price per Carton ($)")
+plt.title("Egg Price with 3-Month Moving Average")
+plt.legend()
+plt.xticks(rotation=45);
+plt.tight_layout()
+plt.show()
+
+```
+
+Key takeaways from the moving average:
+
+* Long-Term Upward Trend 📈
+
+  * Egg prices have generally increased over time, with notable spikes in recent years (especially post-2020). This suggests inflationary pressures, supply chain issues, or increased demand.
+
+* Volatility & Sharp Spikes ⚡
+
+  * Several short-term price surges are visible, especially around 1985, 2005, 2015, and post-2020. These may be linked to economic recessions, avian flu outbreaks, or supply shortages.
+
+* Recent Price Surge (Post-2020) 🚀
+
+  * Prices have skyrocketed to record highs around 2022-2025. Likely due to inflation, pandemic effects, feed cost increases, and supply chain disruptions.
+
+* Moving Average (Red Line) Smooths Out Noise
+
+  * The red line (3-month moving average) helps identify the underlying trend without being affected by short-term fluctuations.
+
+
+## Final Thoughts: Are High Egg Prices Here to Stay?
+
+Will prices come back down, or are expensive eggs the new reality? While short-term price swings are common, long-term trends indicate that egg prices may never return to pre-2020 levels. Inflationary pressures and production costs suggest that even as volatility stabilizes, eggs are unlikely to be as cheap as they once were.
+
+For those looking to save:
+
+* Buying in bulk—flats of eggs (30-count trays) are often cheaper per egg than smaller cartons.
+
+* Shopping at warehouse stores or local farms—some farms offer direct-to-consumer pricing that can be more stable than grocery store prices.
+
+Egg prices aren’t just rising—they’re becoming more unpredictable. Whether this is a temporary trend or the new normal remains to be seen, but one thing is certain: the days of consistently cheap eggs may be behind us.
+
+As we move forward, forecasting models can help us better understand where egg prices might be headed. By applying time series techniques, we can predict future price trends and gain a clearer picture of what to expect in the coming months or years. Stay tuned as we dive deeper into these models and explore what the future may hold for egg prices!
+
+__________
