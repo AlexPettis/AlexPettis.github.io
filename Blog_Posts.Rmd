@@ -22,4 +22,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A dive into the differences between Data Analysts and Business Analysts, outlining their responsibilities, skills, and tools, and offering guidance on choosing the right career path.
 
+[Eggcellent Analysis: Cracking the Code Behind Rising Egg Prices – Part 1](Egg_Analysis.html) - (3/14/25)
+
+* An analysis of the rising cost of eggs, examining historical trends, price patterns, and what the future may hold.
+
 __________
