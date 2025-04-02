@@ -26,4 +26,9 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * An analysis of the rising cost of eggs, examining historical trends, price patterns, and what the future may hold.
 
+
+[Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2](Egg_Forecast.html) - (4/1/25)
+
+* An analysis forecasting future egg prices, driven by historical trends, price patterns, and potential market influences.  
+
 __________

@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Alex Pettis</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Undergraduate Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculus</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Calc_I.html">Calculus I</a>
+            </li>
+            <li>
+              <a href="Calc_II.html">Calculus II</a>
+            </li>
+            <li>
+              <a href="Calc_III.html">Calculus III</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Techniques_Proof.html">Techniques of Proof</a>
+        </li>
+        <li>
+          <a href="Linear_Algebra.html">Introduction to Linear Algebra</a>
+        </li>
+        <li>
+          <a href="Comp_Math.html">Computational Mathematics</a>
+        </li>
+        <li>
+          <a href="Math_Models.html">Discrete and Continuous Math Models</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistical Data Analysis</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Stat_Data_Analysis_I.html">Statistical Data Analysis I</a>
+            </li>
+            <li>
+              <a href="Stat_Data_Analysis_II.html">Statistical Data Analysis II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Statistical_Modeling.html">Statistical Modeling</a>
+        </li>
+        <li>
+          <a href="Sports_Modeling.html">Introduction to Modeling and Analysis in Sports</a>
+        </li>
+        <li>
+          <a href="Internship.html">Internship</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Math Courses</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Modern_Algebra.html">Introduction to Modern Algebra</a>
+            </li>
+            <li>
+              <a href="Abstract_Linear_Algebra.html">Abstract Linear Algebra with Applications to Differential Equations</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Discrete.html">Discrete Mathematics</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="CS_I.html">Computer Science I</a>
+            </li>
+            <li>
+              <a href="CS_II.html">Computer Science II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Intro_Systems.html">Introduction to Computer Systems</a>
+        </li>
+        <li>
+          <a href="Computer_Theory.html">Introduction to Theoretical Computer Science</a>
+        </li>
+        <li>
+          <a href="Database.html">Database</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Courses</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Spreadsheet_Analytics.html">Advanced Spreadsheet Analytics</a>
+        </li>
+        <li>
+          <a href="Economics_Sports.html">Economics of Sports</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Graduate Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Analytics</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Data_Management.html">Data Management</a>
+        </li>
+        <li>
+          <a href="Programming_Analytics.html">Programming for Business Analytics</a>
+        </li>
+        <li>
+          <a href="Op_Research.html">Operations Research</a>
+        </li>
+        <li>
+          <a href="Analysis_Methods.html">Problem Analysis and Quantitative Methods</a>
+        </li>
+        <li>
+          <a href="Exec_Skills.html">Executive Skills</a>
+        </li>
+        <li>
+          <a href="Web_Analytics.html">Web Analytics, Data Privacy, and Security</a>
+        </li>
+        <li>
+          <a href="Unstructured.html">Unstructured Data Analytics</a>
+        </li>
+        <li>
+          <a href="Project_Management.html">Project Management</a>
+        </li>
+        <li>
+          <a href="Time_Series.html">Forecasting and Time Series Models</a>
+        </li>
+        <li>
+          <a href="Econometrics.html">Applied Econometrics</a>
+        </li>
+        <li>
+          <a href="Blockchain.html">Global Blockchain for Business</a>
+        </li>
+        <li>
+          <a href="Analytics_Project.html">Applied Analytics Project</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MBA</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Accounting.html">Managerial Accounting</a>
+        </li>
+        <li>
+          <a href="Marketing.html">Marketing Application and Strategy</a>
+        </li>
+        <li>
+          <a href="Economics.html">Economics for Decision-Making</a>
+        </li>
+        <li>
+          <a href="Supply_Chain.html">Operations and Supply Chain Management</a>
+        </li>
+        <li>
+          <a href="Finance.html">Managerial Finance</a>
+        </li>
+        <li>
+          <a href="Management.html">Strategic Management</a>
+        </li>
+        <li>
+          <a href="FinTech.html">FinTech/InsureTech</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Resume.html">Resume</a>
+</li>
+<li>
+  <a href="Software.html">Software</a>
+</li>
+<li>
+  <a href="Blog_Posts.html">Blog Posts</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Eggcellent Analysis: Forecasting the Future
+of Egg Prices – Part 2</h1>
+
+</div>
+
+
+<div id="recap-analyzing-egg-prices-and-forecasting-future-trends"
+class="section level2">
+<h2>Recap: Analyzing Egg Prices and Forecasting Future Trends</h2>
+<p>In this first part of our analysis, we explored historical egg prices
+from 1980 to the present, revealing some key trends and insights about
+the price volatility and its potential future direction.</p>
+<p>Key Findings:</p>
+<ul>
+<li><p>Descriptive Statistics showed that egg prices typically range
+from $0.68 to $4.95, with most prices clustering around $1.00–$1.50 per
+dozen. However, extreme price spikes have become more frequent,
+especially after 2020.</p></li>
+<li><p>Egg Prices Over Time highlighted a period of stability pre-2005,
+followed by gradual increases and significant price surges post-2020.
+These surges have been linked to factors like avian flu outbreaks,
+rising production costs, and supply chain disruptions.</p></li>
+<li><p>Price Distribution showed that while prices were historically
+low, recent years have seen more frequent and larger price spikes,
+reflecting increased volatility in the market.</p></li>
+<li><p>Box Plot Breakdown revealed that price spikes above $3.00–$5.00
+per dozen are becoming more common, suggesting that high prices might be
+the new norm.</p></li>
+<li><p>Moving Average Analysis demonstrated a long-term upward trend in
+egg prices, with notable short-term surges around specific years. The
+moving average helped smooth out short-term fluctuations and revealed
+that while volatility may subside, prices are unlikely to return to
+pre-2020 levels.</p></li>
+</ul>
+</div>
+<div id="tying-this-to-forecasting-models" class="section level2">
+<h2>Tying This to Forecasting Models:</h2>
+<p>The next step in our analysis involves applying several forecasting
+techniques—benchmark methods, regression models, exponential smoothing,
+and ARIMA—to better predict future egg prices. These methods will allow
+us to capture both the underlying patterns and short-term fluctuations
+in price trends.</p>
+<ul>
+<li><p>Benchmark Methods provide a simple baseline forecast to compare
+against more complex models.</p></li>
+<li><p>Regression Models can help quantify relationships between egg
+prices and potential influencing factors (e.g., feed costs, production
+rates, or supply chain disruptions).</p></li>
+<li><p>Exponential Smoothing methods, like SES, Holt, and Holt-Winters,
+will help account for trend and seasonality in the data.</p></li>
+<li><p>ARIMA models are powerful for capturing autocorrelations and
+trends in time series data, making them ideal for forecasting long-term
+price movements.</p></li>
+</ul>
+<p>By applying these various techniques, we can refine our understanding
+of the forces driving egg prices and provide more accurate predictions
+for the coming months or years.</p>
+</div>
+<div id="time-series-graphics" class="section level2">
+<h2>Time Series Graphics</h2>
+<div id="plot-the-data" class="section level3">
+<h3>Plot the data</h3>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>This graph aligns with the one from Part 1’s Egg Prices Over Time: A
+Steady Climb with Surprising Spikes section, showcasing key trends:</p>
+<ul>
+<li><p>Before 2005: Prices remained fairly steady, showing only slight
+variations.</p></li>
+<li><p>2005–2020: A gradual upward trend took hold, with occasional
+sharp increases influenced by market factors.</p></li>
+<li><p>Post-2020: Prices hit record highs, with some months experiencing
+extreme volatility.</p></li>
+</ul>
+</div>
+<div id="time-series-patterns" class="section level3">
+<h3>Time series patterns</h3>
+<p>The ACF (Autocorrelation Function) plot helps us identify trends,
+seasonality, and cyclical patterns in time series data. By calculating
+correlations between observations at different time lags, the ACF plot
+shows how past values influence future ones.</p>
+<ul>
+<li><p>Trend: A positive correlation at larger lags indicates a
+trend.</p></li>
+<li><p>Seasonality: Repeating spikes at specific intervals suggest
+seasonal patterns.</p></li>
+<li><p>Cyclical Behavior: Irregular cycles can show up as sporadic
+spikes at various lags.</p></li>
+</ul>
+<p>By examining the ACF plot, we can identify these patterns and better
+understand the structure of the data, guiding the selection of
+appropriate forecasting methods.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>In this plot, we see a strong positive autocorrelation for many lags.
+The bars remain significantly above the upper significance line for a
+substantial number of lags, indicating a persistent and significant
+correlation between the time series at different points in time. This
+suggests that the time series exhibits strong dependence on its past
+values. The correlation gradually decreases as the lag increases but
+remains consistently positive. This kind of pattern is typical of time
+series with a trend or seasonality. More advanced analysis would be
+needed to determine the most likely causes (e.g., trend, seasonality,
+cyclical patterns).</p>
+</div>
+</div>
+<div id="transformations-and-adjustments" class="section level2">
+<h2>Transformations and adjustments</h2>
+<p>Transformations are not necessary for my data because the raw egg
+price data already captures the essential trends and seasonal patterns
+needed for forecasting. The inflation adjustment, while useful for
+comparing prices in terms of purchasing power, did not significantly
+alter the structure of the data or provide additional insights. Instead,
+it removed trends that are crucial for making accurate predictions.
+Since my goal is to forecast future prices rather than compare past
+values in real terms, keeping the original data allows the model to
+learn from historical price movements without unnecessary modifications.
+This reinforces the idea that transformations should only be applied
+when they meaningfully improve the analysis, and in this case, the raw
+data is already well-suited for time-series forecasting.</p>
+</div>
+<div id="time-series-decomposition" class="section level2">
+<h2>Time Series Decomposition</h2>
+<p>The STL (Seasonal and Trend decomposition using Loess) decomposition
+is a method used to break down time series data into three key
+components:</p>
+<ul>
+<li><p>Trend: This represents the long-term progression of the data,
+showing whether it is generally increasing or decreasing over
+time.</p></li>
+<li><p>Seasonality: This captures the repeating patterns or cycles that
+occur at regular intervals (e.g., yearly or monthly).</p></li>
+<li><p>Residuals: These are the random fluctuations or noise left after
+removing the trend and seasonality.</p></li>
+</ul>
+<p>The purpose of STL decomposition is to help us better understand the
+underlying structure of the data by isolating the components. This can
+improve forecasting accuracy, as each component can be analyzed and
+modeled separately. By separating the noise from the actual trend and
+seasonal patterns, STL decomposition makes it easier to make informed
+decisions about forecasting models and to interpret long-term behavior
+more clearly.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><strong>Trend Component</strong>: The long-term direction or pattern
+of the data. In the graph, the trend shows a general upward movement of
+the price over the years, with some periods of stagnation or slight
+decline. Notice how it smooths out the short-term fluctuations in the
+original price series.</p>
+<p><strong>Seasonal Component</strong>: The cyclical fluctuations that
+repeat annually. The graph clearly shows a periodic pattern, indicating
+regular seasonal variations in price. The relatively consistent
+amplitude suggests a stable seasonal effect.</p>
+<p><strong>Remainder Component</strong>: This component comprises the
+remaining parts of the time series – the noise or random fluctuations
+after the trend and seasonal components have been removed. It represents
+unpredictable variations that do not follow a clear pattern or cycle. In
+this instance, the remainder shows relatively small fluctuations around
+zero suggesting that after accounting for the trend and seasonal
+variations, there isn’t a significant amount of unexplained
+variance.</p>
+</div>
+<div id="benchmark-forecasting-methods" class="section level2">
+<h2>Benchmark Forecasting Methods</h2>
+<div id="training-set" class="section level3">
+<h3>Training set</h3>
+<p>We train the model using an 80/20 split, where the first 80% of the
+data serves as the training set and the final 20% is reserved for
+testing. The training period spans from January 1, 1980, to December 1,
+2012, while the testing period runs from January 1, 2013, to February 1,
+2025.</p>
+</div>
+<div id="fit-the-model" class="section level3">
+<h3>Fit the model</h3>
+<p>To establish a baseline for model performance, we employ several
+benchmark forecasting methods: mean, naïve, drift, and seasonal naïve.
+These methods provide fundamental comparisons, helping to assess the
+effectiveness of more advanced forecasting techniques. The mean method
+predicts future values using the average of past observations, while the
+naïve method assumes the most recent value will persist. The drift
+method extends past trends linearly, and the seasonal naïve method
+accounts for recurring patterns by using the value from the same period
+in the previous cycle. These benchmarks serve as reference points to
+evaluate whether more sophisticated models offer meaningful
+improvements.</p>
+</div>
+<div id="compare-the-forecast-accuracy-across-models"
+class="section level3">
+<h3>Compare the forecast accuracy across models</h3>
+<pre><code>## # A tibble: 4 × 10
+##   .model         .type      ME  RMSE   MAE    MPE  MAPE  MASE RMSSE  ACF1
+##   &lt;chr&gt;          &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Drift          Test  -0.113  0.765 0.585 -16.4   29.6  4.33  4.06 0.874
+## 2 Mean           Test   0.981  1.27  0.981  40.8   40.8  7.26  6.72 0.879
+## 3 Naïve          Test   0.0967 0.807 0.551  -5.89  24.9  4.08  4.28 0.879
+## 4 Seasonal naïve Test   0.266  0.841 0.551   3.14  22.9  4.08  4.47 0.872</code></pre>
+<p>When comparing forecast accuracy between models, we evaluate multiple
+error metrics to determine which method provides the most reliable
+predictions. Key metrics include:</p>
+<ul>
+<li><p>Mean Error (ME): Measures bias in the forecasts, indicating
+whether predictions tend to overestimate or underestimate actual
+values.</p></li>
+<li><p>Root Mean Squared Error (RMSE): Penalizes larger errors more
+heavily, making it useful for assessing overall predictive
+performance.</p></li>
+<li><p>Mean Absolute Error (MAE): Provides a straightforward measure of
+average forecast error, treating all deviations equally.</p></li>
+<li><p>Mean Percentage Error (MPE) &amp; Mean Absolute Percentage Error
+(MAPE): Express errors as percentages, helping to compare performance
+across different scales.</p></li>
+<li><p>Mean Absolute Scaled Error (MASE): Standardizes errors relative
+to a simple baseline, such as naïve forecasting, to evaluate model
+improvement.</p></li>
+<li><p>Root Mean Squared Scaled Error (RMSSE): Similar to RMSE but
+scaled for better interpretability in comparing models.</p></li>
+<li><p>Autocorrelation of Residuals at Lag 1 (ACF1): Measures how much
+forecast errors are correlated over time, with high values indicating
+potential issues in capturing trends or seasonality.</p></li>
+</ul>
+<p>In this comparison, lower values for RMSE, MAE, and MAPE generally
+indicate better model performance. Additionally, a lower ACF1 suggests
+fewer patterns in residuals, meaning the model is effectively capturing
+underlying trends.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Which method provides the best forecast accuracy? Discuss the
+results.</p>
+<p>The drift method emerges as the most effective forecasting approach
+based on key performance metrics. It achieves the lowest RMSE (0.7647)
+and MAE (0.5854), indicating that its predictions are more accurate and
+closer to actual values than those of other methods. Additionally, it
+has a lower MAPE (29.58%), demonstrating a smaller average percentage
+error, and outperforms alternatives in scaled error metrics, with the
+lowest MASE (4.33) and RMSSE (4.06). While all models exhibit some
+autocorrelation, the drift method shows a slightly lower ACF1 (0.8737),
+suggesting it captures more of the underlying data structure. The reason
+for its superior performance lies in its ability to account for
+long-term trends by projecting the historical average rate of change
+forward, unlike the naïve method, which assumes the latest observation
+is the best predictor. The seasonal naïve method, which relies on
+repeating past seasonal patterns, does not provide better accuracy,
+implying that seasonality alone is insufficient to explain the data. The
+mean method performs the worst because it fails to capture any trends,
+leading to higher errors. While the drift method proves to be the most
+reliable among the tested models, residual autocorrelation suggests that
+further refinements, such as incorporating ARIMA or seasonal
+adjustments, could further enhance predictive accuracy.</p>
+</div>
+<div id="test-the-residuals-of-your-preferred-method"
+class="section level3">
+<h3>Test the residuals of your preferred method</h3>
+<p>Assuming that the Drift method provides the best forecast
+accuracy</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>The purpose of checking residuals and conducting the Ljung-Box test
+is to ensure that the forecasting model is correctly capturing the
+structure of the data and making reliable predictions.</p>
+<ul>
+<li><p>Residual Analysis: Helps confirm that any remaining patterns in
+the data have been accounted for. Ideally, residuals should be random,
+meaning the model has successfully extracted all meaningful signals. If
+patterns remain, the model may need adjustments.</p></li>
+<li><p>Ljung-Box Test: Specifically checks for autocorrelation in
+residuals. If residuals are correlated, it suggests the model is missing
+key relationships in the data, reducing its effectiveness in forecasting
+future values.</p></li>
+</ul>
+<p>By performing these checks, we validate that the model is robust,
+unbiased, and not overlooking important trends that could impact
+forecasting accuracy.</p>
+<p>Discuss residual properties and the Ljung-Box test value.</p>
+<p>The diagnostic analysis of the time series model highlights areas
+where improvements could enhance its predictive performance. The
+residual plot reveals that while most residuals are centered around
+zero, certain periods show clustering of positive or negative values,
+suggesting that some underlying patterns remain uncaptured.
+Additionally, the variability of residuals increases over time,
+indicating potential heteroscedasticity, where prediction errors are not
+consistent across the dataset. The autocorrelation function (ACF) plot
+further supports this concern, as several lags exhibit significant
+autocorrelation, meaning past errors influence future ones—implying that
+the model does not fully account for temporal dependencies. The
+histogram of residuals suggests an approximately normal distribution but
+with slight skewness and the presence of outliers that may impact the
+model’s accuracy. Furthermore, the Ljung-Box test (statistic = 45.86,
+p-value = 1.52e-06) confirms that residuals exhibit significant
+autocorrelation, reinforcing the need for adjustments. Addressing these
+issues may involve incorporating autoregressive or moving average
+components (such as in an ARIMA model), applying transformations to
+stabilize variance, or considering additional explanatory variables.
+Refining the model in these ways can lead to more reliable and unbiased
+forecasts, making it more effective for real-world applications.</p>
+</div>
+<div id="forecasting" class="section level3">
+<h3>Forecasting</h3>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Using the drift method, we observe that egg prices are projected to
+continue rising over the next several years. The forecast suggests a
+steady upward trend, with prices potentially reaching around $6.25
+within the forecast period. However, the widening confidence intervals
+indicate increasing uncertainty over time, meaning actual prices could
+fluctuate above or below this estimate.</p>
+</div>
+</div>
+<div id="regression-model" class="section level2">
+<h2>Regression model</h2>
+<pre><code>## Series: Price 
+## Model: TSLM 
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.8400 -0.2496 -0.0348  0.1653  3.6334 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 1.218e-01  5.101e-02   2.388   0.0173 *  
+## Month       1.064e-04  3.984e-06  26.718   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4417 on 540 degrees of freedom
+## Multiple R-squared: 0.5693,  Adjusted R-squared: 0.5685
+## F-statistic: 713.9 on 1 and 540 DF, p-value: &lt; 2.22e-16</code></pre>
+<p>The time series linear model (TSLM) for Price includes an intercept
+of 0.1218 and a Month coefficient of 0.0001064, both statistically
+significant, with p-values of 0.0173 and &lt; 2.2e-16, respectively.
+This means that, on average, Price increases by approximately 0.0001064
+per month. The residuals, or the differences between the actual and
+predicted values, range from -0.84 to 3.6334, with a median near zero,
+suggesting the model does not systematically overpredict or
+underpredict. However, the residual standard error (0.4417) indicates
+some variation in the data that the model does not fully explain.</p>
+<p>From a statistical standpoint, the R-squared value of 0.5693 means
+that approximately 57% of the variation in Price is explained by the
+model, which is decent but leaves room for improvement. The F-statistic
+of 713.9 and its near-zero p-value confirm that the model as a whole is
+highly significant. In simpler terms, the model captures a clear upward
+trend in Price over time, but it does not account for all fluctuations,
+suggesting that additional variables or a more complex model could
+improve accuracy.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<pre><code>## # A tibble: 1 × 3
+##   .model lb_stat lb_pvalue
+##   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1 tslm     1869.         0</code></pre>
+<p>Once again we check the residuals and perform the Ljung-Box test. The
+residual diagnostic plots provide insights into the performance of the
+model and the randomness of its errors. The top plot shows the
+innovation residuals over time, ideally expected to be randomly
+distributed around zero. However, there is an increasing variance toward
+the most recent years, indicating heteroskedasticity—a sign that the
+model struggles to capture recent fluctuations accurately. The
+autocorrelation function (ACF) plot (bottom left) displays the
+correlation of residuals at different lags. The slow decay of bars
+suggests the presence of serial correlation, meaning past errors
+influence future errors, which violates the assumption of white noise
+residuals. The histogram (bottom right) of residuals should resemble a
+normal distribution, but deviations, particularly on the right tail,
+indicate the presence of skewness or extreme values.</p>
+<p>The Ljung-Box test statistic (lb_stat = 1869.088) with a p-value of 0
+confirms that the residuals are not independently distributed, meaning
+the model fails to capture all patterns in the data. For a well-fitted
+model, we expect a high p-value (typically above 0.05), indicating that
+residuals behave like random noise. Since the p-value here is
+essentially zero, the model exhibits significant autocorrelation,
+suggesting that improvements—such as incorporating additional
+predictors, transforming variables, or switching to a different
+model—may be necessary to enhance predictive accuracy.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>The regression model appears to struggle with capturing the recent
+volatility and sharp spikes in egg prices, as indicated by the widening
+confidence intervals and the relatively smooth forecast compared to past
+fluctuations. This suggests that alternative forecasting methods, such
+as ARIMA, ETS, or machine learning-based approaches, might provide
+better predictive performance.</p>
+</div>
+<div id="exponential-smoothing" class="section level2">
+<h2>Exponential smoothing</h2>
+<p>Exponential smoothing methods are a family of forecasting techniques
+that are widely used for time series data. They are particularly useful
+when there is a need to forecast data with a trend or seasonality
+component. These methods assign exponentially decreasing weights to past
+observations, with more recent observations being weighted more heavily.
+Here’s a brief overview of the various exponential smoothing
+methods:</p>
+<ul>
+<li><p>Simple Exponential Smoothing (SES): SES is the most basic form of
+exponential smoothing. It is used when the time series data does not
+exhibit any trend or seasonality. The method uses a weighted average of
+past observations, with weights decreasing exponentially over time. It
+is ideal for data with a stable mean.</p></li>
+<li><p>Drift Method: This is a variant of SES that incorporates a linear
+trend in the data. It adds a drift component to the forecast to account
+for trends in the data, making it a simple approach to handle data with
+a slight upward or downward movement over time.</p></li>
+<li><p>Holt’s Linear Trend Method: This method extends SES by adding a
+component to account for linear trends in the data. It smooths both the
+level (average) and the trend (direction of the data movement). It is
+useful for data with a trend but no seasonality.</p></li>
+<li><p>Holt-Winters (Damped Trend): This method adds a damping factor to
+the trend component in Holt’s method. The damping factor ensures that
+the trend doesn’t grow indefinitely, which is particularly useful when
+the trend is expected to level off or stabilize over time. It is a more
+flexible version of Holt’s method, suitable for data with a trend that
+is expected to slow down.</p></li>
+<li><p>Additive Exponential Smoothing (Additive ETS): This method is
+used when both trend and seasonality are present in the data. The
+“additive” part refers to the way seasonal effects are added to the
+forecast. This method assumes that the seasonal variations are constant
+over time (i.e., the same amount is added to the forecast at each
+seasonal period).</p></li>
+<li><p>Multiplicative Exponential Smoothing (Multiplicative ETS):
+Similar to Additive ETS, but it assumes that the seasonal variations are
+proportional to the level of the series. This means that as the level of
+the series increases, the seasonal effect also increases or decreases
+proportionally. This method is useful when the seasonal variation grows
+larger as the data values increase.</p></li>
+<li><p>General Exponential Smoothing (ETS): The ETS method is a more
+generalized framework that can handle both trend and seasonality
+components. It can be used with both additive and multiplicative
+seasonal components, depending on the nature of the data. ETS models can
+automatically select the best model by evaluating different combinations
+of error, trend, and seasonality components.</p></li>
+</ul>
+<p>Each of these methods has its own strengths, and the choice of which
+to use depends on the characteristics of the time series data—whether it
+exhibits trend, seasonality, or both, and whether the seasonal
+variations are additive or multiplicative.</p>
+<pre><code>## # A tibble: 7 × 10
+##   .model             .type       ME  RMSE   MAE    MPE  MAPE  MASE RMSSE  ACF1
+##   &lt;chr&gt;              &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Drift              Test  -0.113   0.765 0.585 -16.4   29.6  4.33  4.06 0.874
+## 2 ETS                Test  -0.00256 0.748 0.548 -10.4   26.3  4.06  3.97 0.877
+## 3 Holt               Test  -0.110   0.764 0.584 -16.2   29.5  4.32  4.06 0.874
+## 4 Holt_Damped        Test   0.100   0.808 0.551  -5.72  24.8  4.07  4.29 0.879
+## 5 additive_ETS       Test   0.167   0.809 0.540  -2.02  23.5  4.00  4.29 0.881
+## 6 multiplicative_ETS Test  -0.00256 0.748 0.548 -10.4   26.3  4.06  3.97 0.877
+## 7 ses                Test   0.101   0.808 0.551  -5.66  24.8  4.07  4.29 0.879</code></pre>
+<p>When evaluating different forecasting models, the ETS method stands
+out as the best choice based on multiple performance metrics. Among the
+tested models, ETS has the lowest root mean squared error (RMSE) at
+0.7485, meaning it produces the smallest overall prediction errors on
+average. It also has a lower mean absolute error (MAE) of 0.5483,
+indicating more consistent accuracy compared to alternatives like Holt’s
+method (0.5840) or the Drift method (0.5854). Additionally, ETS achieves
+a lower mean absolute percentage error (MAPE) of 26.34%, showing better
+predictive reliability in percentage terms. The model also maintains a
+relatively low autocorrelation of residuals (ACF1 = 0.8769), meaning
+that prediction errors are less dependent on previous errors, which
+improves forecasting stability. While the additive and multiplicative
+ETS variations perform similarly, their higher RMSE and MAPE values
+suggest they introduce slightly more error. Overall, the ETS model
+provides a balanced combination of accuracy, consistency, and error
+independence, making it the most reliable choice for forecasting.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<pre><code>## # A tibble: 1 × 3
+##   .model lb_stat lb_pvalue
+##   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1 ETS       25.8   0.00405</code></pre>
+<p>The residual analysis for the ETS model provides insights into its
+effectiveness in capturing patterns within the data. The time series
+plot of residuals shows that while most residuals fluctuate around zero,
+periods after 2010 exhibit larger spikes, suggesting some systematic
+variation that the model may not fully account for. The autocorrelation
+function (ACF) plot indicates potential autocorrelation, as some lag
+values exceed the significance bounds, meaning past residuals may
+influence future ones. The histogram of residuals shows a distribution
+that is roughly normal but with some outliers, particularly on the right
+tail, hinting at occasional large errors. The Ljung-Box test, which
+assesses whether residuals are independent, yields a test statistic of
+25.78 and a p-value of 0.0040. Since this p-value is below 0.05, we
+reject the null hypothesis, suggesting that the residuals exhibit
+autocorrelation rather than behaving like purely random noise. In
+summary, while the ETS model captures trends well, the presence of
+autocorrelation implies that improvements—such as incorporating
+additional seasonal components or refining the model structure—may be
+needed to enhance forecasting accuracy.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<pre><code>## # A tibble: 1 × 3
+##   .model lb_stat lb_pvalue
+##   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1 ETS       25.8   0.00405</code></pre>
+<p>The residual analysis for the ETS model provides insights into its
+effectiveness in capturing patterns within the data. The time series
+plot of residuals shows that while most residuals fluctuate around zero,
+periods after 2010 exhibit larger spikes, suggesting some systematic
+variation that the model may not fully account for. The autocorrelation
+function (ACF) plot indicates potential autocorrelation, as some lag
+values exceed the significance bounds, meaning past residuals may
+influence future ones. The histogram of residuals shows a distribution
+that is roughly normal but with some outliers, particularly on the right
+tail, hinting at occasional large errors. The Ljung-Box test, which
+assesses whether residuals are independent, yields a test statistic of
+25.78 and a p-value of 0.0040. Since this p-value is below 0.05, we
+reject the null hypothesis, suggesting that the residuals exhibit
+autocorrelation rather than behaving like purely random noise. In
+summary, while the ETS model captures trends well, the presence of
+autocorrelation implies that improvements—such as incorporating
+additional seasonal components or refining the model structure—may be
+needed to enhance forecasting accuracy.</p>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>The graph suggests that future egg prices will fluctuate
+periodically, following a seasonal pattern. The central forecast (blue
+line) remains relatively stable compared to past volatility, indicating
+that the ETS model anticipates prices leveling off rather than
+continuing their sharp rise. However, the widening prediction intervals
+highlight growing uncertainty, suggesting that prices could either
+increase significantly or decline over time. Since the model does not
+fully capture recent price spikes, its accuracy in predicting future
+trends may be limited, reinforcing the need to apply ARIMA models for a
+more comprehensive analysis.</p>
+</div>
+<div id="arima-models" class="section level2">
+<h2>ARIMA models</h2>
+<!--
+### Check stationarity 
+
+The following command will tell you the number of differences required to make your time series stationary. If your data is seasonal, you need to test for the seasonal differences too.
+
+
+
+
+
+```r
+mydata |>  
+    features(Price, unitroot_ndiffs)
+```
+
+```
+## # A tibble: 1 × 1
+##   ndiffs
+##    <int>
+## 1      1
+```
+
+
+
+### Initial models
+
+Look at the ACF and PACF to find an initial model. Make sure to difference the data if required.
+
+
+
+```r
+mydata |> 
+  gg_tsdisplay(Price, plot_type='partial')
+```
+
+<img src="Egg-Forecast_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+
+
+Comment on the ACF and the PACF and the orders of p and q.
+
+-->
+<div id="fit-the-models" class="section level3">
+<h3>Fit the models</h3>
+<pre><code>## # A tibble: 3 × 6
+##   .model       sigma2 log_lik   AIC  AICc   BIC
+##   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 arima012011 0.00424    495. -982. -982. -966.
+## 2 arima210011 0.00426    494. -981. -981. -965.
+## 3 auto_arima  0.00476    497. -980. -980. -952.</code></pre>
+<p>The ARIMA(0,1,1) model (arima012011) stands out as the best because
+it strikes a balance between fitting the data well and avoiding
+unnecessary complexity. It has the lowest AIC and AICc values, -982.2300
+and -982.1242, respectively, which means it offers the best fit while
+penalizing for overfitting. The BIC value for this model is also the
+lowest at -966.4378, suggesting that it efficiently captures the data’s
+patterns with minimal complexity. Additionally, the sigma squared (σ²)
+value, which reflects the variance of residuals, is 0.004244550,
+indicating that this model’s errors are smaller, making its predictions
+more reliable. The log-likelihood of 495.1150 further supports its
+superior fit. In summary, ARIMA(0,1,1) is the best model here as it
+minimizes key performance metrics like AIC, AICc, BIC, and residual
+variance, ensuring it fits the data well without overcomplicating the
+model.</p>
+</div>
+</div>
+<div id="ensemble-models" class="section level2">
+<h2>Ensemble models</h2>
+<pre><code>## # A tibble: 4 × 10
+##   .model            .type      ME  RMSE   MAE   MPE  MAPE  MASE RMSSE  ACF1
+##   &lt;chr&gt;             &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 arima012011       Test  -0.200  0.750 0.592 -20.4  31.2  4.38  3.98 0.876
+## 2 ensemble_forecast Test  -0.116  0.763 0.584 -16.5  29.6  4.32  4.05 0.876
+## 3 Drift             Test  -0.113  0.765 0.585 -16.4  29.6  4.33  4.06 0.874
+## 4 auto_arima        Test  -0.0335 0.795 0.582 -12.8  28.3  4.31  4.22 0.879</code></pre>
+<p><img src="Egg-Forecast_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>An ensemble method in forecasting combines multiple models to improve
+the accuracy and reliability of predictions. Instead of relying on just
+one forecasting model, this approach uses the strengths of several
+models and combines their results to make better predictions.</p>
+<p>In this case, the ensemble method combines three different
+forecasting models:</p>
+<ul>
+<li><p>ARIMA(0,1,2)(0,1,1): This model looks at past trends in the data
+to make predictions, adjusting for any trends or patterns that might
+occur over time.</p></li>
+<li><p>auto_arima: This model automatically chooses the best way to
+predict based on the data, finding the right settings to fit the model
+to the specific characteristics of the data, like trends or seasonal
+patterns.</p></li>
+<li><p>Drift Method: This is a simpler model that assumes the future
+will follow the same pattern as the most recent past values, essentially
+forecasting the future by extending the recent trend.</p></li>
+</ul>
+<p>By combining these three models, the ensemble method aims to produce
+more accurate forecasts by balancing the different strengths of each
+model. This approach can help reduce the impact of any one model’s
+weaknesses, leading to a more reliable prediction.</p>
+<p>The ARIMA(0,1,2)(0,1,1) model stands out as the best based on its
+superior performance metrics. It achieves the lowest RMSE (0.7499701)
+and MAE (0.5917141), indicating it provides the most accurate
+predictions, with fewer errors compared to other models. Additionally,
+its MAPE of 31.20559 is the lowest, meaning its forecasts have the
+smallest relative percentage errors, making it more reliable. The model
+also excels in handling scaling and seasonality, as reflected in its
+best MASE (4.378337) and RMSSE (3.980400). Its high ACF1 value
+(0.8762374) suggests it effectively captures the underlying patterns of
+the data without overfitting, ensuring stability in predictions.
+Overall, ARIMA(0,1,1) delivers more precise and consistent forecasts,
+outperforming the other models in terms of error reduction and overall
+forecasting capability.</p>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<p>Based on the forecast from the ARIMA (0,1,2)(0,1,1) model, we can
+observe a gradual increase in egg prices over time. By April 2037, the
+price of a carton of eggs is projected to reach an impressive $10.76.
+This highlights a slow but steady upward trend, indicating a continued
+rise in prices in the coming years.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Month"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Price"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"2025 Mar","2":"6.072397"},{"1":"2025 Apr","2":"6.273016"},{"1":"2025 May","2":"6.152068"},{"1":"2025 Jun","2":"6.082019"},{"1":"2025 Jul","2":"6.120849"},{"1":"2025 Aug","2":"6.170110"},{"1":"2025 Sep","2":"6.253306"},{"1":"2025 Oct","2":"6.233336"},{"1":"2025 Nov","2":"6.281751"},{"1":"2025 Dec","2":"6.468054"},{"1":"2026 Jan","2":"6.572937"},{"1":"2026 Feb","2":"6.644151"},{"1":"2026 Mar","2":"6.600891"},{"1":"2026 Apr","2":"6.647122"},{"1":"2026 May","2":"6.526175"},{"1":"2026 Jun","2":"6.456126"},{"1":"2026 Jul","2":"6.494955"},{"1":"2026 Aug","2":"6.544216"},{"1":"2026 Sep","2":"6.627412"},{"1":"2026 Oct","2":"6.607442"},{"1":"2026 Nov","2":"6.655858"},{"1":"2026 Dec","2":"6.842161"},{"1":"2027 Jan","2":"6.947044"},{"1":"2027 Feb","2":"7.018257"},{"1":"2027 Mar","2":"6.974997"},{"1":"2027 Apr","2":"7.021229"},{"1":"2027 May","2":"6.900281"},{"1":"2027 Jun","2":"6.830233"},{"1":"2027 Jul","2":"6.869062"},{"1":"2027 Aug","2":"6.918323"},{"1":"2027 Sep","2":"7.001519"},{"1":"2027 Oct","2":"6.981549"},{"1":"2027 Nov","2":"7.029965"},{"1":"2027 Dec","2":"7.216268"},{"1":"2028 Jan","2":"7.321150"},{"1":"2028 Feb","2":"7.392364"},{"1":"2028 Mar","2":"7.349104"},{"1":"2028 Apr","2":"7.395335"},{"1":"2028 May","2":"7.274388"},{"1":"2028 Jun","2":"7.204339"},{"1":"2028 Jul","2":"7.243169"},{"1":"2028 Aug","2":"7.292429"},{"1":"2028 Sep","2":"7.375625"},{"1":"2028 Oct","2":"7.355655"},{"1":"2028 Nov","2":"7.404071"},{"1":"2028 Dec","2":"7.590374"},{"1":"2029 Jan","2":"7.695257"},{"1":"2029 Feb","2":"7.766470"},{"1":"2029 Mar","2":"7.723210"},{"1":"2029 Apr","2":"7.769442"},{"1":"2029 May","2":"7.648494"},{"1":"2029 Jun","2":"7.578446"},{"1":"2029 Jul","2":"7.617275"},{"1":"2029 Aug","2":"7.666536"},{"1":"2029 Sep","2":"7.749732"},{"1":"2029 Oct","2":"7.729762"},{"1":"2029 Nov","2":"7.778178"},{"1":"2029 Dec","2":"7.964481"},{"1":"2030 Jan","2":"8.069363"},{"1":"2030 Feb","2":"8.140577"},{"1":"2030 Mar","2":"8.097317"},{"1":"2030 Apr","2":"8.143549"},{"1":"2030 May","2":"8.022601"},{"1":"2030 Jun","2":"7.952552"},{"1":"2030 Jul","2":"7.991382"},{"1":"2030 Aug","2":"8.040643"},{"1":"2030 Sep","2":"8.123839"},{"1":"2030 Oct","2":"8.103868"},{"1":"2030 Nov","2":"8.152284"},{"1":"2030 Dec","2":"8.338587"},{"1":"2031 Jan","2":"8.443470"},{"1":"2031 Feb","2":"8.514683"},{"1":"2031 Mar","2":"8.471424"},{"1":"2031 Apr","2":"8.517655"},{"1":"2031 May","2":"8.396707"},{"1":"2031 Jun","2":"8.326659"},{"1":"2031 Jul","2":"8.365488"},{"1":"2031 Aug","2":"8.414749"},{"1":"2031 Sep","2":"8.497945"},{"1":"2031 Oct","2":"8.477975"},{"1":"2031 Nov","2":"8.526391"},{"1":"2031 Dec","2":"8.712694"},{"1":"2032 Jan","2":"8.817577"},{"1":"2032 Feb","2":"8.888790"},{"1":"2032 Mar","2":"8.845530"},{"1":"2032 Apr","2":"8.891762"},{"1":"2032 May","2":"8.770814"},{"1":"2032 Jun","2":"8.700765"},{"1":"2032 Jul","2":"8.739595"},{"1":"2032 Aug","2":"8.788856"},{"1":"2032 Sep","2":"8.872052"},{"1":"2032 Oct","2":"8.852082"},{"1":"2032 Nov","2":"8.900497"},{"1":"2032 Dec","2":"9.086800"},{"1":"2033 Jan","2":"9.191683"},{"1":"2033 Feb","2":"9.262897"},{"1":"2033 Mar","2":"9.219637"},{"1":"2033 Apr","2":"9.265868"},{"1":"2033 May","2":"9.144921"},{"1":"2033 Jun","2":"9.074872"},{"1":"2033 Jul","2":"9.113701"},{"1":"2033 Aug","2":"9.162962"},{"1":"2033 Sep","2":"9.246158"},{"1":"2033 Oct","2":"9.226188"},{"1":"2033 Nov","2":"9.274604"},{"1":"2033 Dec","2":"9.460907"},{"1":"2034 Jan","2":"9.565790"},{"1":"2034 Feb","2":"9.637003"},{"1":"2034 Mar","2":"9.593743"},{"1":"2034 Apr","2":"9.639975"},{"1":"2034 May","2":"9.519027"},{"1":"2034 Jun","2":"9.448979"},{"1":"2034 Jul","2":"9.487808"},{"1":"2034 Aug","2":"9.537069"},{"1":"2034 Sep","2":"9.620265"},{"1":"2034 Oct","2":"9.600295"},{"1":"2034 Nov","2":"9.648711"},{"1":"2034 Dec","2":"9.835013"},{"1":"2035 Jan","2":"9.939896"},{"1":"2035 Feb","2":"10.011110"},{"1":"2035 Mar","2":"9.967850"},{"1":"2035 Apr","2":"10.014081"},{"1":"2035 May","2":"9.893134"},{"1":"2035 Jun","2":"9.823085"},{"1":"2035 Jul","2":"9.861914"},{"1":"2035 Aug","2":"9.911175"},{"1":"2035 Sep","2":"9.994371"},{"1":"2035 Oct","2":"9.974401"},{"1":"2035 Nov","2":"10.022817"},{"1":"2035 Dec","2":"10.209120"},{"1":"2036 Jan","2":"10.314003"},{"1":"2036 Feb","2":"10.385216"},{"1":"2036 Mar","2":"10.341956"},{"1":"2036 Apr","2":"10.388188"},{"1":"2036 May","2":"10.267240"},{"1":"2036 Jun","2":"10.197192"},{"1":"2036 Jul","2":"10.236021"},{"1":"2036 Aug","2":"10.285282"},{"1":"2036 Sep","2":"10.368478"},{"1":"2036 Oct","2":"10.348508"},{"1":"2036 Nov","2":"10.396924"},{"1":"2036 Dec","2":"10.583227"},{"1":"2037 Jan","2":"10.688109"},{"1":"2037 Feb","2":"10.759323"},{"1":"2037 Mar","2":"10.716063"},{"1":"2037 Apr","2":"10.762295"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="discussion-and-conclustion" class="section level1">
+<h1>Discussion and conclustion</h1>
+<p>The forecasting analysis suggests that egg prices are likely to
+continue rising due to underlying trends. While the drift method and ETS
+performed well, ARIMA and other advanced models might offer further
+improvements in capturing seasonality and volatility. The regression
+model, while providing useful insights, is less adept at handling sharp
+fluctuations, indicating the need for more sophisticated modeling
+techniques in future forecasts.</p>
+<p>Refining the model and incorporating additional variables will
+enhance prediction accuracy, particularly in capturing factors like
+supply chain disruptions, disease outbreaks, and economic shifts that
+influence egg prices. In Part 3, we will use regression analysis to
+focus on examining these factors in greater detail, gaining deeper
+insights into the variables driving price changes. Stay tuned for the
+next section, where we dive deeper into the data to uncover key drivers
+of egg price fluctuations.</p>
+</div>
+
+<!--div id="footer">
+     <p><strong>Alex Pettis</strong></br>
+     Appalachian State University | Aug 2024</br>
+     MS Applied Data Analytics & MBA</br> 
+</p-->
+
+<div id="footer">
+     <p><strong>Alex Pettis</strong></br>
+     Appalachian State University | 2024</br>
+     MS Applied Data Analytics</br> 
+     MBA</br>
+</p>
+
+      
+        
+        <p>
+    <strong>Contact Information</strong><br />      
+    Phone: (704) 526-8883</br>
+    <a href="mailto:alexpettis@icloud.com">alexpettis@icloud.com</a><br>
+    <a href="https://www.linkedin.com/in/alexpettis">LinkedIn</a><br>
+    Mooresville, NC 28115 </br>
+		</p> 
+</div>
+
+<!--Alex Pettis
+Appalachian State University Fall 2022 
+Mathematics Major
+Computer Science and Statistics Minors
+Sports Analytics Certificate-->
+
+<!--Alex Pettis
+Appalachian State University | Summer 24
+MS in Applied Data Analytics and MBA-->
+
+<!--Alex Pettis
+     Appalachian State University | Summer 2024</br>
+     Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS</br>
+     Business Administration - Interdisciplinary Business Concentration, MBA-->
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
