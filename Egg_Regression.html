@@ -11,7 +11,7 @@
 
 
 
-<title>Blog Posts</title>
+<title>Eggcellent Analysis: Unraveling the Drivers of Rising Egg Prices – Part 3</title>
 
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -453,57 +453,225 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog Posts</h1>
+<h1 class="title toc-ignore">Eggcellent Analysis: Unraveling the Drivers
+of Rising Egg Prices – Part 3</h1>
 
 </div>
 
 
-<div id="welcome-to-my-blog" class="section level2">
-<h2>Welcome to My Blog</h2>
-<p>Here, I share insights on analytics, data science, and technology.
-Check out my latest posts below!</p>
-<div id="recent-posts" class="section level3">
-<h3>Recent Posts</h3>
-<p><a href="intro_blog.html">Welcome to My Analytics Blog!</a> -
-(2/22/25)</p>
-<ul>
-<li>A quick introduction to why I started this blog and what you can
-expect from future posts.</li>
-</ul>
-<p><a href="why_analytics.html">My Journey: From Computer Science to
-Data Analytics and an MBA</a> - (2/28/25)</p>
-<ul>
-<li>A look into how I transitioned from computer science to mathematics,
-pursued analytics, and added an MBA to bridge the gap between data and
-business.</li>
-</ul>
-<p><a href="da_vs_ba.html">Data Analyst vs. Business Analyst: What’s the
-Difference?</a> - (3/7/25)</p>
-<ul>
-<li>A dive into the differences between Data Analysts and Business
-Analysts, outlining their responsibilities, skills, and tools, and
-offering guidance on choosing the right career path.</li>
-</ul>
-<p><a href="Egg_Analysis.html">Eggcellent Analysis: Cracking the Code
-Behind Rising Egg Prices – Part 1</a> - (3/14/25)</p>
-<ul>
-<li>An analysis of the rising cost of eggs, examining historical trends,
-price patterns, and what the future may hold.</li>
-</ul>
-<p><a href="Egg_Forecast.html">Eggcellent Analysis: Forecasting the
-Future of Egg Prices – Part 2</a> - (4/1/25)</p>
-<ul>
-<li>An analysis forecasting future egg prices, driven by historical
-trends, price patterns, and potential market influences.</li>
-</ul>
-<p><a href="Egg_Regression.html">Eggcellent Analysis: Unraveling the
-Drivers of Rising Egg Prices – Part 3</a> - (4/24/25)</p>
-<ul>
-<li>An analysis on the factors that contribute to egg prices,
-highlighting key economic influences behind recent fluctuations</li>
-</ul>
 <hr />
+<p>Egg prices, once a steady and affordable staple, have seen dramatic
+increases, particularly since 2020. This shift from stability to sharp
+price surges could be attributed to factors such as avian flu outbreaks,
+rising production costs, and supply chain disruptions. But what exactly
+drove this surge?</p>
+<p>In this analysis, we first uncovered the key trends and price
+fluctuations over time, before diving into a deeper analysis to pinpoint
+the true drivers of egg prices. Spoiler alert: it wasn’t just
+inflation.</p>
+<div id="descriptive-insights-and-trends" class="section level2">
+<h2>Descriptive Insights and Trends 📈</h2>
+<p>Egg prices fluctuated between $0.68 and $4.95 per dozen, with an
+average price of around $1.38. Prices were relatively stable before
+2005, but post-2005, there was a gradual rise, punctuated by occasional
+surges. These peaks were especially notable after 2020, driven by
+unforeseen events and pressures in the economy.</p>
+<p>Notably, a 3-month moving average revealed a long-term upward trend,
+with spikes occurring in 1985, 2005, 2015, and most recently in 2020 and
+beyond. This volatility suggested that inflation, supply chain
+disruptions, and demand shifts were key contributors. The median price
+was around $1.15, but with outliers reaching upwards of $3.00–$5.00, it
+was clear that recent years introduced substantial price
+unpredictability.</p>
 </div>
+<div id="forecasting-egg-prices" class="section level2">
+<h2>Forecasting Egg Prices 🔮</h2>
+<p>Looking ahead, we explored various forecasting methods to predict the
+future trajectory of egg prices. Using models such as the Drift Method,
+Time Series Linear Model (TSLM), Exponential Smoothing (ETS), and ARIMA,
+we sought to understand how prices might continue to evolve.</p>
+<p>The Drift Method provided the most reliable short-term forecasts,
+while the TSLM highlighted a gradual upward trend in prices.</p>
+<p>ARIMA(0,1,1) emerged as the best-fitting model, suggesting that egg
+prices were likely to continue their upward march, with potential price
+hikes reaching $6.25 in the near future. However, this model also
+pointed to increasing uncertainty, making it clear that predicting egg
+prices was no easy task.</p>
+<p>While these models gave us an outlook, they only told part of the
+story. To truly understand why egg prices were behaving this way, we
+needed to go deeper—looking at factors beyond simple trends and seasonal
+adjustments.</p>
+</div>
+<div id="the-real-drivers-digging-deeper-into-the-data"
+class="section level2">
+<h2>The Real Drivers: Digging Deeper into the Data 🔍</h2>
+<p>As we explored the economic forces at play, we wanted to understand
+why egg prices were fluctuating. It wasn’t enough to look at simple
+descriptive statistics or basic models; we needed to investigate the
+real underlying factors that were influencing prices.</p>
+<p>Was it inflation? Was it the cost of feed or energy? Were supply-side
+factors like bird flu or weather disruptions affecting prices? Or was
+there something deeper—perhaps a relationship between disposable income
+and egg prices?</p>
+<p>To uncover the root causes, we performed a regression analysis using
+a broad set of variables from both the demand and supply sides of the
+market. Here’s how we approached it:</p>
+</div>
+<div id="building-the-dataset-what-drives-egg-prices"
+class="section level2">
+<h2>Building the Dataset: What Drives Egg Prices? 🧱</h2>
+<p>To uncover the true drivers behind egg price fluctuations, we
+collected a comprehensive dataset that included both supply-side and
+demand-side factors, as well as macroeconomic indicators. By casting a
+wide net, we aimed to let the data guide us toward the most significant
+predictors of egg prices. Our dataset included variables such as:</p>
+<p>Weather Data: Temperature, which can influence both supply (e.g.,
+laying conditions) and demand (e.g., changes in consumption patterns
+during extreme weather).</p>
+<p>Supply-Side Shocks: Notably, bird flu outbreaks, which have the
+potential to disrupt egg production and affect supply.</p>
+<p>Feed Input Costs: Prices for corn and soybeans, which are primary
+ingredients in poultry feed and directly impact egg production
+costs.</p>
+<p>Energy Costs: Diesel, natural gas, propane, and gasoline prices,
+which influence transportation and production costs for egg farmers.</p>
+<p>Demand-Side Indicators: Unemployment rate, population growth, and
+personal income, all of which can affect consumer purchasing
+behavior.</p>
+<p>Inflation Indicators: The Consumer Price Index (CPI), inflation rate,
+and Real Disposable Personal Income (RDPI), which are key drivers of
+purchasing power and cost-of-living adjustments.</p>
+<p>This diverse set of variables allowed us to explore the broader
+economic trends and pinpoint which factors might have been contributing
+to the rising prices of eggs.</p>
+</div>
+<div id="exploring-the-impact-of-individual-factors"
+class="section level2">
+<h2>Exploring the Impact of Individual Factors 🔍</h2>
+<p>With our dataset in hand, we ran several Ordinary Least Squares (OLS)
+regressions and correlation tests to evaluate the individual effects of
+each factor on egg prices. While some factors appeared to have an
+impact, others did not show strong or consistent relationships. Here’s
+what we found:</p>
+<p>Bird Flu, Corn Prices, and Soybean Prices: While bird flu outbreaks
+did lead to short-term disruptions, they didn’t consistently affect egg
+prices across the entire period we analyzed. Similarly, the prices of
+corn and soybeans showed weak correlations with egg prices, especially
+when considering long-term trends.</p>
+<p>Energy Prices (Diesel, Propane, Natural Gas, Gasoline): Despite
+expectations, energy prices did not emerge as strong predictors of egg
+price fluctuations. While they might influence production and
+transportation costs, they did not have as large an impact as other
+variables in our model.</p>
+<p>Unemployment and Population Growth: These demand-side factors showed
+marginal relationships with egg prices. However, the effects were often
+non-significant or weak, suggesting that other economic forces may have
+been at play.</p>
+<p>This initial exploration made it clear that individual factors, while
+important, didn’t tell the full story. We needed to delve deeper into
+the interactions between these variables to uncover the true drivers
+behind egg prices.</p>
+</div>
+<div id="refining-the-focus-interaction-terms-and-composite-variables"
+class="section level2">
+<h2>Refining the Focus: Interaction Terms and Composite Variables
+🧠</h2>
+<p>Realizing that many of the individual variables had weak effects, we
+hypothesized that the relationships between these factors could be more
+complex, driven by interactions between variables. We introduced several
+interaction terms to explore potential synergies that could explain the
+price dynamics better:</p>
+<p>Corn and Soybean Prices: We tested interaction terms like
+corn_outbreak, soy_outbreak, and corn_soy to capture how simultaneous
+disruptions in both feed ingredients might have affected egg prices.</p>
+<p>Inflation and Disposable Income: We examined interactions such as
+cpi_fed, rdpi_fed, and unrate_rdpi, focusing on how inflation and
+disposable income together might have impacted consumer purchasing power
+and, subsequently, egg prices.</p>
+<p>Energy and Environmental Factors: Variables like diesel_corn,
+propane_soy, and gas_temp helped assess how the costs of energy
+interacted with feed prices or temperature extremes.</p>
+<p>Although most of these interactions didn’t significantly improve our
+model’s performance, they helped refine our focus and led us to
+eliminate less impactful variables.</p>
+<p>In addition to interactions, we created composite variables that
+could capture broader economic trends more effectively:</p>
+<p>CPI to RDPI Ratio: The ratio of the Consumer Price Index (CPI) to
+Real Disposable Personal Income (RDPI), which reflects overall
+purchasing power.</p>
+<p>Per Capita Disposable Income: The amount of disposable income
+available per person, which could directly influence demand for
+eggs.</p>
+<p>By developing these composite variables, we hoped to better capture
+the broader economic context in which egg prices were fluctuating.</p>
+</div>
+<div id="tackling-multicollinearity" class="section level2">
+<h2>Tackling Multicollinearity 🚨</h2>
+<p>As we refined our model, we encountered a significant issue:
+multicollinearity. Our model was showing an almost perfect R-squared
+value (greater than 0.999), suggesting that something was amiss. We ran
+a Variance Inflation Factor (VIF) check and found that several variables
+had high VIF scores, which indicated high correlation between them.</p>
+<p>For example:</p>
+<p>The correlation between cpi_rdpi and cpi_value was extremely high
+(0.9883), leading to inflated standard errors and unreliable regression
+coefficients.</p>
+<p>To address this, we removed the variables with the highest VIFs,
+which helped resolve the multicollinearity issue. This adjustment also
+improved the reliability of the regression coefficients, making the
+model’s insights more trustworthy.</p>
+</div>
+<div id="key-findings-and-takeaways" class="section level2">
+<h2>Key Findings and Takeaways 🔑</h2>
+<p>Once we removed the problematic variables, our final regression model
+revealed some surprising findings about the factors that truly drive egg
+prices:</p>
+<p>CPI (Consumer Price Index) showed a positive relationship with egg
+prices, meaning that as inflation rose, so did egg prices.</p>
+<p>Corn Prices had a negative relationship with egg prices—when corn
+became more expensive, the cost of poultry feed rose, pushing egg prices
+higher.</p>
+<p>RDPI per capita (Real Disposable Personal Income) was another
+significant predictor—higher disposable income per person was correlated
+with higher egg prices, suggesting that as people had more money to
+spend, they were more willing to pay higher prices for eggs.</p>
+<p>On the other hand, bird flu outbreaks and energy prices like diesel,
+propane, and natural gas didn’t have a significant impact on egg prices.
+After adjusting for multicollinearity and refining our model, these
+supply-side factors were found to have less influence than expected.</p>
+</div>
+<div id="conclusion-cracking-the-egg-price-mystery"
+class="section level2">
+<h2>Conclusion: Cracking the Egg Price Mystery 🥚</h2>
+<p>In conclusion, the rising cost of eggs is far from a simple case of
+inflation alone. While factors like the Consumer Price Index (CPI) and
+Real Disposable Personal Income (RDPI) per capita do play a crucial
+role, it’s clear that egg prices are influenced by a complex interplay
+of economic forces. Our analysis revealed that corn prices and
+inflationary pressures were significant contributors, while factors such
+as bird flu outbreaks and energy costs were less impactful than
+initially expected.</p>
+<p>Looking ahead, it’s essential for both consumers and producers to
+stay attuned to these economic dynamics, as shifts in inflation, feed
+costs, and disposable income continue to shape the market. While
+predicting egg prices with complete accuracy remains a challenge,
+understanding these underlying drivers offers valuable insight into the
+forces at play in the poultry market.</p>
+<p>As we continue to refine forecasting models and incorporate new data,
+we can expect egg prices to remain volatile, with the potential for
+future surges driven by a range of economic variables. The key takeaway?
+Egg prices may be subject to many forces, but they aren’t entirely out
+of our control—at least not when we understand the drivers beneath the
+surface.</p>
+<p>Stay tuned for Part 4 of this series, where we’ll dive into egg price
+cluster analysis, providing a final layer of insight into the patterns
+behind egg price fluctuations.</p>
+</div>
+<div id="project-code" class="section level2">
+<h2>Project Code</h2>
+<iframe src="Regression.html" width="100%" height="600px">
+</iframe>
+<hr />
 </div>
 
 <!--div id="footer">

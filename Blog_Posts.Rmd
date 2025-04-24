@@ -29,6 +29,10 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 [Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2](Egg_Forecast.html) - (4/1/25)
 
-* An analysis forecasting future egg prices, driven by historical trends, price patterns, and potential market influences.  
+* An analysis forecasting future egg prices, driven by historical trends, price patterns, and potential market influences.
+
+[Eggcellent Analysis: Unraveling the Drivers of Rising Egg Prices – Part 3](Egg_Regression.html) - (4/24/25)
+
+* An analysis on the factors that contribute to egg prices, highlighting key economic influences behind recent fluctuations
 
 __________
