@@ -1,0 +1,53 @@
+---
+title: "Egg Clustering"
+output: html_document
+date: "2025-05-22"
+---
+As we’ve seen, egg prices haven’t followed a straightforward trajectory. What once seemed like a stable grocery item has shown unexpected volatility, prompting deeper investigation. Through our descriptive analysis, we identified key pricing trends and structural shifts over time. Forecasting methods then helped us project future price movements, while regression analysis isolated the most influential drivers of these changes. Together, these approaches laid the groundwork for our clustering analysis—where we aim to uncover hidden patterns in pricing behavior that traditional models may overlook.
+
+Descriptive Analysis: Egg prices, once relatively stable, have experienced sharp increases—especially since 2020. From 1980 to 2023, prices ranged from $0.68 to $4.95 per dozen, with an average of about $1.38. Prices stayed mostly flat before 2005, then began to climb, with notable spikes in 1985, 2005, 2015, and after 2020. A 3-month moving average revealed a clear upward trend, alongside growing volatility in recent years. Outliers in the $3–$5 range highlighted how unpredictable egg prices have become, particularly under recent economic pressures.
+
+Forecasting Analysis: To predict future prices, we tested several time series models. The Drift Method offered a reasonable short-term forecast, while the Time Series Linear Model (TSLM) captured a gradual long-term increase. However, the ARIMA(0,1,1) model delivered the best fit, projecting continued increases—possibly reaching $6.25 per dozen. Still, all models reflected a high level of uncertainty, emphasizing that egg prices remain highly sensitive to external shocks.
+
+Regression Analysis: To pinpoint the true drivers behind these price shifts, we constructed a regression model using both supply- and demand-side variables. Surprisingly, factors like bird flu outbreaks and energy prices (diesel, propane, etc.) had limited long-term influence. Instead, the most impactful variables were:
+
+* Consumer Price Index (CPI): Inflation was strongly associated with higher egg prices.
+
+* Corn Prices: As a major input in poultry feed, corn prices had a positive effect—higher corn costs led to higher egg prices.
+
+* Real Disposable Personal Income (RDPI) per capita: As consumers’ income rose, egg prices tended to increase, suggesting greater willingness to pay.
+
+We refined the model by removing variables with multicollinearity and introducing interaction terms and composite indicators (like the CPI-to-RDPI ratio), which sharpened our insights. Overall, inflation and consumer purchasing power emerged as the key long-term influencers.
+
+
+
+
+Having explored the key trends, forecasted future movements, and identified the main drivers behind egg price volatility, one question still remained: Are there distinct patterns or groupings in how prices behave over time? Traditional analyses gave us strong directional insight, but we wanted to uncover whether certain time periods or price behaviors naturally clustered together — beyond what averages or models could tell us.
+
+That’s where clustering analysis came in. By grouping similar periods based on price dynamics and other relevant factors, we aimed to reveal hidden structure in the data — structure that could explain why some timeframes experienced sharper changes than others. Using the Elbow Method, we identified four distinct clusters, each representing a unique pricing environment. Let’s take a closer look.
+
+To determine the optimal number of clusters for our analysis, we used the Elbow Method, which plots the Sum of Squared Errors (SSE) against different values of $k$
+k, the number of clusters. SSE measures how tightly grouped the data points in each cluster are; lower values indicate more cohesive clusters.
+
+As shown in the graph above, SSE drops steeply from 1 to 3 clusters, then begins to level off. This “elbow” — the point where adding more clusters yields diminishing returns in reducing SSE — typically indicates the optimal number of clusters.
+
+In our case, the bend occurs between 3 and 4 clusters, and we chose 4 clusters to better capture subtle distinctions in the data without overcomplicating the model. This balance allows for meaningful groupings that can reveal deeper insights into egg price behaviors that wouldn’t be obvious through traditional methods alone.
+
+
+
+
+After determining that four clusters best represented the underlying patterns in the data, we chose to cluster the egg prices by time in order to highlight how pricing behavior has shifted over the years. This method groups similar time segments based on trends in price level and volatility, revealing distinct periods in the egg market from 1980 through 2025.
+
+Cluster 0 covers the early 1980s through the early 2000s and is characterized by low and stable prices, reflecting a long period of minimal volatility and consistent market conditions. Cluster 1 spans from the early 2000s into the mid-2010s, showing a gradual upward trend in prices—likely influenced by inflation and changing economic factors—yet still relatively stable compared to later periods.
+
+Cluster 2 emerges after the 2008 financial crisis and captures a shift toward higher average prices and increased volatility. This period suggests the influence of rising production costs, economic recovery dynamics, or supply chain challenges. Cluster 3 represents the most recent years, particularly the 2020s, and contains the highest prices and most extreme fluctuations in the dataset. These dramatic changes are likely linked to factors such as the COVID-19 pandemic, inflation, and avian flu outbreaks that disrupted both supply and demand.
+
+Clustering by time provides a structured view of how egg prices have transitioned from decades of relative stability to a recent era marked by sharp increases and volatility.
+
+
+
+
+
+
+
+__________

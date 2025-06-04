@@ -17,7 +17,6 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A look into how I transitioned from computer science to mathematics, pursued analytics, and added an MBA to bridge the gap between data and business.
 
-
 [Data Analyst vs. Business Analyst: What’s the Difference?](da_vs_ba.html) - (3/7/25)
 
 * A dive into the differences between Data Analysts and Business Analysts, outlining their responsibilities, skills, and tools, and offering guidance on choosing the right career path.
@@ -26,7 +25,6 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * An analysis of the rising cost of eggs, examining historical trends, price patterns, and what the future may hold.
 
-
 [Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2](Egg_Forecast.html) - (4/1/25)
 
 * An analysis forecasting future egg prices, driven by historical trends, price patterns, and potential market influences.
@@ -34,5 +32,9 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 [Eggcellent Analysis: Unraveling the Drivers of Rising Egg Prices – Part 3](Egg_Regression.html) - (4/24/25)
 
 * An analysis on the factors that contribute to egg prices, highlighting key economic influences behind recent fluctuations
+
+[Eggcellent Analysis: Clustering the Carton – Part 4](Egg_Clustering.html) - (6/4/25)
+
+* An analysis using clustering reveals egg price groups driven by seasonality and inflation.
 
 __________

@@ -1,0 +1,493 @@
+---
+title: "Eggcellent Analysis: Clustering the Carton – Part 4"
+output:
+  html_document:
+    css: "css.css"
+---
+
+__________
+
+As we’ve seen, egg prices haven’t followed a straightforward trajectory. What once seemed like a stable grocery item has shown unexpected volatility, prompting deeper investigation. Through our descriptive analysis, we identified key pricing trends and structural shifts over time. Forecasting methods then helped us project future price movements, while regression analysis isolated the most influential drivers of these changes. Together, these approaches laid the groundwork for our clustering analysis—where we aim to uncover hidden patterns in pricing behavior that traditional models may overlook.
+
+## Recap of Previous Analyses
+
+### Descriptive Analysis
+
+Past descriptive work highlighted a long-term upward trend in egg prices from 1980 through 2023, with early decades showing relative stability and recent years marked by increased volatility. Prices ranged broadly from \$0.68 to nearly \$5 per dozen, reflecting heightened market sensitivity to economic conditions and supply disruptions.
+
+### Forecasting Analysis
+
+Time series models such as ARIMA(0,1,1) and the Drift method were applied to forecast future egg prices. These models consistently projected continued price increases, with ARIMA producing the best fit. However, all models indicated substantial uncertainty due to external shocks like inflation and pandemics.
+
+### Regression Analysis 
+
+We built a regression model using supply- and demand-side variables to explain egg price shifts. Bird flu and energy prices showed limited long-term impact. Key drivers were inflation (CPI), corn prices as feed costs, and real disposable personal income (RDPI). After refining for multicollinearity and adding interaction terms, inflation and consumer purchasing power emerged as the strongest long-term influencers.
+
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(reticulate)
+
+# Silence stdout/stderr from pip by calling pip directly, conditionally
+if (!py_module_available("sklearn")) {
+  system2("python", c("-m", "pip", "install", "scikit-learn"), stdout = FALSE, stderr = FALSE)
+}
+
+use_condaenv("base", required = TRUE)
+```
+
+
+```{python, message = FALSE, warning = FALSE, echo = FALSE}
+import importlib.util
+import os
+import platform
+
+# Detect OS and set redirection target
+if platform.system() == "Windows":
+    redirect = ">nul 2>&1"
+else:
+    redirect = ">/dev/null 2>&1"
+
+# Install silently if sklearn not found
+if importlib.util.find_spec("sklearn") is None:
+    os.system(f"pip install scikit-learn {redirect}")
+```
+
+
+```{python, echo = FALSE, include = FALSE, warning = FALSE, message  = FALSE, output = FALSE}
+import os
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
+os.environ["OMP_NUM_THREADS"] = "1"
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import MiniBatchKMeans
+import pandoc
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price = pd.read_csv(r"C:\Users\alexp\Desktop\Egg Price.csv")
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price.rename(columns = {'observation_date': 'date', 'APU0000708111': 'Price'}, inplace = True)
+egg_price['date'] = pd.to_datetime(egg_price['date'])
+egg_price.set_index('date', inplace = True)
+egg_price.head()
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+scaler = StandardScaler()
+scaled_prices = scaler.fit_transform(egg_price)
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+sse = []
+for k in range(1, 10):
+    kmeans = MiniBatchKMeans(n_clusters=k, random_state=42)
+    kmeans.fit(scaled_prices)
+    sse.append(kmeans.inertia_)
+```
+
+## Transition to Cluster Analysis
+
+Building on the foundational insights gained from the descriptive, forecasting, and regression analyses, the next step involves applying clustering techniques to uncover deeper patterns and structural shifts in egg price behavior over time. While previous analyses highlighted overall trends, key drivers, and forecasted price trajectories, clustering allows us to segment the data into meaningful groups based on similarities in price levels, volatility, and seasonality. This approach provides a more nuanced understanding of how egg prices have evolved through distinct market regimes and economic environments, setting the stage for more targeted interpretation and strategy.
+
+## Determining the Optimal Number of Clusters: The Elbow Method 🔍📊
+
+
+```{python, echo = FALSE, include = TRUE}
+plt.figure(figsize=(8, 5))
+plt.plot(range(1, 10), sse, marker='o')
+plt.title('Elbow Method For Optimal k')
+plt.xlabel('Number of Clusters')
+plt.ylabel('SSE')
+plt.grid(True)
+plt.show()
+```
+
+To determine the optimal number of clusters for our analysis, we used the Elbow Method, which plots the Sum of Squared Errors (SSE) against different values of k — the number of clusters. SSE measures how tightly grouped the data points are within each cluster; lower SSE values indicate more cohesive clusters.
+
+As shown in the graph above, SSE drops sharply from 1 to 3 clusters, then begins to level off. This “elbow” — the point where adding more clusters yields diminishing returns in reducing SSE — typically signals the optimal cluster count.
+
+In our case, the bend occurs between 3 and 4 clusters, and we selected 4 clusters to better capture subtle distinctions in the data without overcomplicating the model. This balance allows us to uncover meaningful groupings, revealing deeper insights into egg price behaviors that traditional methods might miss. 🥚📈✨
+
+## 🥚⏳ Clustering Egg Prices Over Time: Revealing Market Shifts 
+
+
+```{python, echo = FALSE, include = FALSE}
+# Fit MiniBatchKMeans with 4 clusters
+kmeans = MiniBatchKMeans(n_clusters=4, random_state=42)
+kmeans.fit(scaled_prices)
+
+# Assign the cluster labels back to the original dataframe
+egg_price['Cluster'] = kmeans.labels_
+
+plt.figure(figsize=(12, 6))
+sns.lineplot(x=egg_price.index, y=egg_price['Price'], hue=egg_price['Cluster'], palette='tab10')
+plt.title('Egg Prices Clustered Over Time')
+plt.xlabel('Date')
+plt.ylabel('Price ($)')
+plt.legend(title='Cluster')
+plt.grid(True)
+plt.show()
+```
+
+After determining that four clusters best represent the underlying patterns in the data, we clustered egg prices by time to highlight how pricing behavior has evolved over the years. This approach groups similar time segments based on trends in price levels and volatility, revealing distinct periods in the egg market from 1980 through 2025.
+
+Cluster 0 covers the early 1980s through the early 2000s and is characterized by low, stable prices — reflecting a long period of minimal volatility and steady market conditions.
+Cluster 1 spans from the early 2000s into the mid-2010s, showing a gradual upward price trend, likely influenced by inflation and shifting economic factors, yet remaining relatively stable compared to later periods.
+
+Cluster 2 emerges post-2008 financial crisis, capturing a shift toward higher average prices and increased volatility. This period likely reflects rising production costs, economic recovery effects, and supply chain challenges.
+Cluster 3 represents the most recent years, especially the 2020s, featuring the highest prices and the most extreme fluctuations in the dataset. These dramatic changes are probably linked to the COVID-19 pandemic, inflation, and avian flu outbreaks disrupting both supply and demand.
+
+Clustering by time offers a structured lens into how egg prices have transitioned from decades of relative calm to a recent era marked by sharp increases and volatility.
+
+## How Three Clusters Reveal Shifts in Egg Price Trends Over Time  
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price.groupby('Cluster')['Price'].mean()
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price['Year'] = egg_price.index.year
+
+# Aggregate features per year
+annual_features = egg_price.groupby('Year').agg({
+    'Price': ['mean', 'std', 'max', 'min']
+})
+
+# Flatten the column names
+annual_features.columns = ['_'.join(col) for col in annual_features.columns]
+
+# Standardize
+scaler = StandardScaler()
+scaled_annual = scaler.fit_transform(annual_features)
+
+# Cluster the years
+kmeans = MiniBatchKMeans(n_clusters=3, random_state=42)
+kmeans.fit(scaled_annual)
+
+# Assign cluster labels
+annual_features['Cluster'] = kmeans.labels_
+```
+
+```{python, echo = FALSE, include = TRUE}
+# Plot
+sns.scatterplot(x=annual_features['Price_mean'], y=annual_features['Price_std'], hue=annual_features['Cluster'], palette='tab10')
+plt.title('Clusters of Years Based on Egg Price Patterns')
+plt.xlabel('Average Price')
+plt.ylabel('Price Volatility (Std Dev)')
+plt.grid(True)
+plt.legend(title='Cluster')
+plt.show()
+```
+
+Looking at the data through the lens of three clusters based on average price and price volatility (standard deviation) reveals distinct periods in egg price behavior. Cluster 0 (blue) represents years with low prices and low volatility, reflecting stable market conditions. Cluster 1 (orange) includes years with moderate prices and slightly higher volatility, indicating transitional or moderately unstable periods. Cluster 2 (green) stands out with significantly higher prices and extreme volatility, likely linked to recent economic shocks such as post-2020 inflation and supply chain disruptions. This classification highlights how egg prices have evolved over time, uncovering meaningful patterns that simple averages would overlook. The years grouped in Cluster 2, as clear outliers with both high prices and unpredictability, deserve particular attention in forecasting and policy considerations.
+
+## Time-Based Clustering Reveals Distinct Eras in Egg Price Trends  
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price['Year'] = egg_price.index.year
+yearly_prices = egg_price.groupby('Year')['Price'].mean().to_frame()
+
+scaler = StandardScaler()
+scaled_yearly_prices = scaler.fit_transform(yearly_prices)
+
+kmeans = MiniBatchKMeans(n_clusters=3, random_state=42)  # Choose k from elbow method
+kmeans.fit(scaled_yearly_prices)
+yearly_prices['Cluster'] = kmeans.labels_
+```
+
+```{python, echo = FALSE, include = TRUE}
+plt.figure(figsize=(10,6))
+sns.scatterplot(x=yearly_prices.index, y=yearly_prices['Price'], hue=yearly_prices['Cluster'], palette='viridis', s=100)
+plt.title('Egg Prices Clustered by Year')
+plt.xlabel('Year')
+plt.ylabel('Average Price')
+plt.grid(True)
+plt.show()
+```
+
+Egg prices have been clustered by year to provide a time-series perspective on how pricing patterns evolved from 1980 to 2025. The x-axis represents the years, while the y-axis shows the average annual egg price. Each point is color-coded according to one of three clusters identified using K-Means clustering. Cluster 2 (yellow) includes the earliest years, roughly from 1980 through the early 2000s, characterized by low and stable prices and representing a baseline era before market volatility increased. Cluster 0 (purple) captures a transitional phase spanning the mid-1990s through the 2010s, marked by moderate price increases. Cluster 1 (teal) consists mainly of recent years, especially post-2015, with notable spikes in 2022–2023, which were likely impacted by inflation, supply chain disruptions, or avian flu outbreaks. This clustering not only segments the data into distinct pricing regimes but also reveals that recent high prices are not just part of a gradual upward trend, but rather belong to a separate, statistically distinct era. Such insights are valuable for forecasting, shaping policy, or understanding shifts in consumer behavior.
+
+## How Egg Prices Evolved—Season by Season 
+
+
+```{python, echo = FALSE, include = FALSE}
+def get_season(date):
+    month = date.month
+    day = date.day
+    if (month == 12 and day >= 21) or (month <= 3 and day <= 20):
+        return 'Winter'
+    elif (month == 3 and day >= 21) or (month == 4) or (month == 5) or (month == 6 and day <= 20):
+        return 'Spring'
+    elif (month == 6 and day >= 21) or (month == 7) or (month == 8) or (month == 9 and day <= 22):
+        return 'Summer'
+    else:
+        return 'Fall'
+
+egg_price['Season'] = egg_price.index.map(get_season)
+
+egg_price['Year'] = egg_price.index.year
+seasonal_prices = egg_price.groupby(['Year', 'Season'])['Price'].mean().reset_index()
+
+scaler = StandardScaler()
+scaled_seasonal_prices = scaler.fit_transform(seasonal_prices[['Price']])
+
+kmeans = MiniBatchKMeans(n_clusters=4, random_state=42)  # 4 clusters maybe for 4 seasons?
+kmeans.fit(scaled_seasonal_prices)
+
+seasonal_prices['Cluster'] = kmeans.labels_
+```
+
+
+```{python, echo = FALSE, include = TRUE}
+plt.figure(figsize=(12,8))
+sns.scatterplot(
+    x='Year', 
+    y='Price', 
+    hue='Cluster', 
+    style='Season', 
+    data=seasonal_prices, 
+    palette='Set2', 
+    s=100
+)
+
+plt.title('Clustered Egg Prices by Season')
+plt.xlabel('Year')
+plt.ylabel('Average Seasonal Price')
+plt.grid(True)
+plt.show()
+```
+
+Clustered egg prices by season over time reveal how both seasonal and long-term pricing patterns have evolved. The x-axis spans from 1979 to 2023, while the y-axis represents the average seasonal price for each year. Data points are color-coded by cluster (0–3), and shaped by season: Fall (●), Spring (✖), Summer (■), and Winter (✚).
+
+Cluster 0 (green) covers years prior to 2003, marked by low, stable prices—mostly under \$1.50 across all seasons. Cluster 1 (orange), spanning from the mid-2000s to early 2020s, shows moderate increases, with prices generally between \$1.50 and \$3.00, possibly influenced by inflation or rising production costs. Cluster 3 (pink) represents a transitional phase from 2005 to 2020 with relatively stable prices slightly below \$2.00. Cluster 2 (blue) includes 2022–2023 and stands out with extreme volatility and sharply elevated prices—some exceeding \$5.50—likely driven by supply shocks like avian flu, inflation, and rising feed costs.
+
+The analysis also confirms seasonal effects: Winter and Spring often show higher prices than Summer and Fall, regardless of the overall price level. Rather than following a smooth upward trend, egg prices have shifted through distinct regimes. Clustering helps capture these structural shifts and seasonal dynamics—valuable for improving forecasts, shaping policy, and informing market strategies.
+
+## Seasonal Patterns Help Explain Cluster Behavior 
+
+
+```{python, echo = FALSE, include = TRUE}
+egg_price['Month'] = egg_price.index.month
+
+monthly_avg = egg_price.groupby('Month')['Price'].mean()
+
+monthly_avg.plot(kind='bar')
+plt.title('Average Egg Prices by Month')
+plt.xlabel('Month (1 = Jan, 12 = Dec)')
+plt.ylabel('Average Price ($)')
+plt.show()
+```
+
+Average egg prices, aggregated by calendar month (1 = January, 12 = December), reveal a clear seasonal pattern: prices tend to peak in January, February, and December, while dipping during the summer months, especially from May through July.
+
+This seasonal trend helps contextualize the time-based clustering of egg prices. For example, periods that frequently fall into higher-priced clusters (like Cluster 3) often coincide with winter months, when prices naturally rise due to factors like holiday demand or colder-weather supply constraints. In contrast, the more stable, lower-priced clusters (such as Cluster 0 or 1) align with months that typically show less volatility—like those in summer.
+
+These patterns suggest that even within a given year, seasonality plays a significant role in shaping pricing behavior and may influence how certain time periods are grouped in cluster-based analysis.
+
+## Seasonal Patterns in Egg Prices: Monthly Averages and Their Role in Clustering 
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price['Month'] = egg_price.index.month
+
+monthly_avg = egg_price.groupby('Month')['Price'].mean()
+overall_avg = egg_price['Price'].mean()
+overall_std = egg_price['Price'].std()
+```
+
+
+```{python, echo = FALSE, include = FALSE}
+spike_months = monthly_avg[monthly_avg > overall_avg + overall_std]
+print("Spike Months:\n", spike_months)
+```
+
+
+```{python, echo = FALSE, include = TRUE}
+colors = ['red' if month in spike_months.index else 'skyblue' for month in monthly_avg.index]
+
+monthly_avg.plot(kind='bar', color=colors)
+plt.axhline(overall_avg, color='green', linestyle='--', label='Overall Avg')
+plt.axhline(overall_avg + overall_std, color='orange', linestyle='--', label='+1 Std Dev')
+plt.title('Average Egg Prices by Month')
+plt.xlabel('Month (1 = Jan, 12 = Dec)')
+plt.ylabel('Average Price ($)')
+plt.legend()
+plt.show()
+```
+
+The monthly average price of eggs, aggregated over all years in the dataset, is displayed along with two key reference lines: a green dashed line showing the overall average price across all months, and an orange dashed line marking one standard deviation above that average, helping to highlight unusually high prices. Egg prices tend to be highest in January, February, March, and December—months with averages near or above the overall mean—while May through September, especially June and July, typically have lower prices well below the average.
+
+These seasonal patterns support the trends observed in the clustering analysis. Months that consistently show above-average prices, especially near or above the one standard deviation line, are likely linked to high-price or volatile clusters. Conversely, the more stable, lower-priced months align with clusters characterized by less variability and lower prices. Together, these insights provide a clearer statistical context for how seasonality shapes the structure of egg price behavior over time.
+
+## Identifying Yearly Pricing Patterns Through Seasonal Clustering 
+
+
+```{python, echo = FALSE, include = FALSE}
+egg_price['Month'] = egg_price.index.month
+egg_price['Year'] = egg_price.index.year
+```
+
+
+```{python, echo = FALSE, include = TRUE}
+plt.figure(figsize=(14, 6))
+sns.lineplot(data=egg_price, x='Month', y='Price', hue='Year', palette='tab20', legend=False)
+plt.title('Monthly Egg Prices by Year')
+plt.xlabel('Month')
+plt.ylabel('Price ($)')
+plt.xticks(ticks=range(1,13), labels=[
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+]);
+plt.grid(True)
+plt.show()
+```
+
+Monthly egg prices are shown across multiple years, with each line representing a single year and the x-axis spanning from January to December. The y-axis shows prices in dollars. While most years follow a stable pattern with prices ranging between \$0.80 and \$2.50, a few years stand out with significant price spikes exceeding \$6 in the early months—clear outliers in the dataset. Seasonal trends are evident, with some years showing price increases toward the end of the year, likely due to holiday demand, while others remain relatively flat or show minor fluctuations.
+
+These patterns highlight natural groupings within the data that clustering methods like K-means or hierarchical clustering can formally identify. By considering each year as a data point characterized by 12 monthly price features, clustering helps group years with similar price behaviors and seasonal patterns. Such groupings are valuable for detecting anomalies, understanding pricing trends, and enhancing forecasting accuracy by recognizing years with comparable market dynamics.
+
+## Holiday Month Price Variability and Outliers in Egg Pricing 
+
+
+```{python, echo = FALSE, include = TRUE}
+holiday_months = [1, 3, 4, 5, 7, 8, 10, 11, 12]
+egg_price['Month'] = egg_price.index.month
+egg_price['Year'] = egg_price.index.year
+
+holiday_data = egg_price[egg_price['Month'].isin(holiday_months)]
+
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=holiday_data, x='Month', y='Price')
+
+# Define custom labels and positions
+holiday_labels = {
+    1: 'Jan\n(New Year’s)',
+    4: 'Apr\n(Easter)',
+    5: 'May\n(Mother’s Day)',
+    7: 'Jul\n(4th of July)',
+    8: 'Aug\n(B2S)',
+    10: 'Oct\n(Halloween)',
+    11: 'Nov\n(T-giving)',
+    12: 'Dec\n(Christmas)'
+}
+
+# Apply only relevant ticks
+plt.xticks(
+    ticks=list(holiday_labels.keys()),
+    labels=list(holiday_labels.values()),
+    rotation=15  # slight rotation for better readability
+);
+
+plt.title('Egg Prices During Key Holiday Months')
+plt.xlabel('Month')
+plt.ylabel('Price ($)')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+Egg prices during key holiday months show distinct distribution patterns across multiple years. The interquartile range (IQR) captures the middle 50% of prices, with median values generally stable between \$0.90 and \$1.30. However, notable outliers appear, especially in January and April, where prices in some years spike above \$3, including one instance exceeding \$6. While most years follow predictable pricing trends, these spikes suggest occasional deviations likely caused by supply disruptions or heightened demand. This variability aligns with clustering findings, indicating groups of years with typical price ranges and others with unusually high holiday prices. Recognizing these clusters helps explain abnormal pricing behavior and enhances forecasting accuracy.
+
+## Top Egg Price Years Across All Months Reveal Distinct Clusters 
+
+
+```{python, echo = FALSE, include = TRUE}
+monthly = egg_price.groupby(['Year', 'Month'])['Price'].mean().unstack()
+
+for m in holiday_months:
+    print(f"Top 3 Years for Month {m}:")
+    print(monthly[m].sort_values(ascending=False).head(), '\n')
+```
+    
+Top egg price years across various months reveal a clear clustering pattern centered on specific years—particularly 2022, 2023, and 2024. These years consistently rank among the highest price points across nearly every holiday month, indicating a distinct high-price cluster. In contrast, earlier years such as 2014 and 2015 appear sporadically but at generally lower price levels, representing a separate, lower-price cluster. This pattern suggests a structural shift or shock beginning around 2022, likely driven by factors like inflation, supply chain disruptions, or avian flu outbreaks. The repeated prominence of recent years reinforces the idea of temporal clustering, where certain periods experience systematically higher egg prices compared to others.
+
+## Patterns of Price Persistence and Mean Reversion Over Time 
+
+
+```{python, echo = FALSE, include = FALSE}
+# Step 0: Ensure the index is datetime
+egg_price.index = pd.to_datetime(egg_price.index)
+
+# Step 1: Add Month and Year columns
+egg_price['Month'] = egg_price.index.month
+egg_price['Year'] = egg_price.index.year
+
+# Step 2: Calculate the yearly average
+yearly_avg = egg_price.groupby('Year')['Price'].mean().reset_index().rename(columns={'Price': 'Yearly_Avg'})
+
+# Step 3: Merge the yearly average back to the original data
+egg_price = egg_price.merge(yearly_avg, on='Year', how='left')
+
+# Step 4: Identify months with a spike (where Price > Yearly_Avg)
+egg_price['Above_Yearly_Avg'] = egg_price['Price'] > egg_price['Yearly_Avg']
+
+# Step 5: Compare to following month's price
+egg_price['Next_Month_Price'] = egg_price['Price'].shift(-1)
+egg_price['Returns_To_Avg'] = egg_price['Next_Month_Price'] <= egg_price['Yearly_Avg']
+
+# Step 6 & 7: Show summary for all months (not just spike months)
+spike_summary = egg_price[['Year', 'Month', 'Price', 'Yearly_Avg', 'Above_Yearly_Avg', 'Next_Month_Price', 'Returns_To_Avg']]
+```
+
+
+```{python, echo = FALSE, include = TRUE}
+spike_summary_copy = spike_summary.copy()
+spike_summary_copy['Month'] = spike_summary_copy['Month'].astype(int)
+spike_summary_copy['Year'] = spike_summary_copy['Year'].astype(int)
+spike_summary_sorted = spike_summary_copy.sort_values(by=['Year', 'Month'], ascending=[True, True])
+
+
+spike_summary_sorted
+```
+
+Monthly egg prices from 1980 to 2025 include indicators showing when prices exceeded the yearly average (Above_Yearly_Avg), the price in the following month (Next_Month_Price), and whether prices returned to the yearly average afterward (Returns_To_Avg).
+
+Earlier years, such as 1980, typically exhibited price spikes above the yearly average that quickly reverted to the mean, indicating short-lived fluctuations tightly clustered around stable averages. However, beginning around 2022, prices not only surged significantly above the yearly average but also remained elevated for consecutive months without returning to typical levels. Notably, prices in late 2024 and into 2025 stayed consistently above average, breaking from previous patterns.
+
+This shift highlights a structural change in price behavior, marking a break from historical clustering where prices oscillated around a steady mean. Instead, recent years form a distinct, persistent high-price cluster, reinforcing the idea of a new, elevated pricing regime emerging in the egg market.
+
+
+```{python, echo = FALSE, include = TRUE, results = 'hide', fig.show = 'hold'}
+# Count True and False in the Returns_To_Avg column
+return_counts = spike_summary['Returns_To_Avg'].value_counts()
+
+# Labels and values
+labels = ['Returned to Avg', 'Did Not Return']
+values = [return_counts.get(True, 0), return_counts.get(False, 0)];
+
+# Plot pie chart
+plt.figure(figsize=(6, 6))
+plt.pie(values, labels=labels, autopct='%1.1f%%', startangle=90, colors=['#4CAF50', '#F44336']);
+plt.title('Egg Prices Returning to Yearly Average After Spike')
+plt.axis('equal');  # Equal aspect ratio ensures pie is drawn as a circle
+plt.tight_layout()
+plt.show()
+```
+  
+54.9% of egg price spikes above the yearly average eventually returned to that average, while 45.1% did not.
+
+Linked to earlier observations, this highlights a significant shift in egg price behavior over time. Historically, most price spikes were temporary, reflecting a clustering pattern where prices fluctuated around a stable annual mean. However, the substantial 45.1% of spikes that failed to revert—especially in recent years like 2022 to 2025—indicates a breakdown in this mean-reverting trend.
+
+In essence, these figures quantify the erosion of historical price clustering, showing how recent structural changes such as supply chain disruptions, inflation, and avian flu outbreaks have caused egg prices to remain elevated for prolonged periods, forming persistent high-price clusters that diverge from past patterns.
+
+## What the Clusters Reveal 
+
+Clustering provided a powerful lens through which to interpret the structural shifts, seasonal dynamics, and emerging pricing regimes in the egg market. By segmenting the data across time, year, and season, we uncovered distinct clusters that extended the story told by our descriptive, forecasting, and regression models—revealing how egg prices have evolved from decades of stability to an era defined by persistent volatility. This final layer of analysis emphasized not only the influence of inflation and external shocks but also the breakdown of mean-reverting behavior in recent years. These insights affirm that egg prices are no longer governed by simple trends, but by complex and evolving market conditions.
+
+__________

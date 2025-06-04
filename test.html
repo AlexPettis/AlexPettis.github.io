@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Eggcellent Analysis: Clustering the Carton – Part 4</title>
+
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Alex Pettis</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Undergraduate Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculus</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Calc_I.html">Calculus I</a>
+            </li>
+            <li>
+              <a href="Calc_II.html">Calculus II</a>
+            </li>
+            <li>
+              <a href="Calc_III.html">Calculus III</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Techniques_Proof.html">Techniques of Proof</a>
+        </li>
+        <li>
+          <a href="Linear_Algebra.html">Introduction to Linear Algebra</a>
+        </li>
+        <li>
+          <a href="Comp_Math.html">Computational Mathematics</a>
+        </li>
+        <li>
+          <a href="Math_Models.html">Discrete and Continuous Math Models</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistical Data Analysis</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Stat_Data_Analysis_I.html">Statistical Data Analysis I</a>
+            </li>
+            <li>
+              <a href="Stat_Data_Analysis_II.html">Statistical Data Analysis II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Statistical_Modeling.html">Statistical Modeling</a>
+        </li>
+        <li>
+          <a href="Sports_Modeling.html">Introduction to Modeling and Analysis in Sports</a>
+        </li>
+        <li>
+          <a href="Internship.html">Internship</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Math Courses</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="Modern_Algebra.html">Introduction to Modern Algebra</a>
+            </li>
+            <li>
+              <a href="Abstract_Linear_Algebra.html">Abstract Linear Algebra with Applications to Differential Equations</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Discrete.html">Discrete Mathematics</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Computer Science</a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="CS_I.html">Computer Science I</a>
+            </li>
+            <li>
+              <a href="CS_II.html">Computer Science II</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Intro_Systems.html">Introduction to Computer Systems</a>
+        </li>
+        <li>
+          <a href="Computer_Theory.html">Introduction to Theoretical Computer Science</a>
+        </li>
+        <li>
+          <a href="Database.html">Database</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Courses</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Spreadsheet_Analytics.html">Advanced Spreadsheet Analytics</a>
+        </li>
+        <li>
+          <a href="Economics_Sports.html">Economics of Sports</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Graduate Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Analytics</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Data_Management.html">Data Management</a>
+        </li>
+        <li>
+          <a href="Programming_Analytics.html">Programming for Business Analytics</a>
+        </li>
+        <li>
+          <a href="Op_Research.html">Operations Research</a>
+        </li>
+        <li>
+          <a href="Analysis_Methods.html">Problem Analysis and Quantitative Methods</a>
+        </li>
+        <li>
+          <a href="Exec_Skills.html">Executive Skills</a>
+        </li>
+        <li>
+          <a href="Web_Analytics.html">Web Analytics, Data Privacy, and Security</a>
+        </li>
+        <li>
+          <a href="Unstructured.html">Unstructured Data Analytics</a>
+        </li>
+        <li>
+          <a href="Project_Management.html">Project Management</a>
+        </li>
+        <li>
+          <a href="Time_Series.html">Forecasting and Time Series Models</a>
+        </li>
+        <li>
+          <a href="Econometrics.html">Applied Econometrics</a>
+        </li>
+        <li>
+          <a href="Blockchain.html">Global Blockchain for Business</a>
+        </li>
+        <li>
+          <a href="Analytics_Project.html">Applied Analytics Project</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MBA</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Accounting.html">Managerial Accounting</a>
+        </li>
+        <li>
+          <a href="Marketing.html">Marketing Application and Strategy</a>
+        </li>
+        <li>
+          <a href="Economics.html">Economics for Decision-Making</a>
+        </li>
+        <li>
+          <a href="Supply_Chain.html">Operations and Supply Chain Management</a>
+        </li>
+        <li>
+          <a href="Finance.html">Managerial Finance</a>
+        </li>
+        <li>
+          <a href="Management.html">Strategic Management</a>
+        </li>
+        <li>
+          <a href="FinTech.html">FinTech/InsureTech</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Resume.html">Resume</a>
+</li>
+<li>
+  <a href="Software.html">Software</a>
+</li>
+<li>
+  <a href="Blog_Posts.html">Blog Posts</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Eggcellent Analysis: Clustering the Carton
+– Part 4</h1>
+
+</div>
+
+
+<hr />
+<p>As we’ve seen, egg prices haven’t followed a straightforward
+trajectory. What once seemed like a stable grocery item has shown
+unexpected volatility, prompting deeper investigation. Through our
+descriptive analysis, we identified key pricing trends and structural
+shifts over time. Forecasting methods then helped us project future
+price movements, while regression analysis isolated the most influential
+drivers of these changes. Together, these approaches laid the groundwork
+for our clustering analysis—where we aim to uncover hidden patterns in
+pricing behavior that traditional models may overlook.</p>
+<div id="recap-of-previous-analyses" class="section level2">
+<h2>Recap of Previous Analyses</h2>
+<div id="descriptive-analysis" class="section level3">
+<h3>Descriptive Analysis</h3>
+<p>Past descriptive work highlighted a long-term upward trend in egg
+prices from 1980 through 2023, with early decades showing relative
+stability and recent years marked by increased volatility. Prices ranged
+broadly from $0.68 to nearly $5 per dozen, reflecting heightened market
+sensitivity to economic conditions and supply disruptions.</p>
+</div>
+<div id="forecasting-analysis" class="section level3">
+<h3>Forecasting Analysis</h3>
+<p>Time series models such as ARIMA(0,1,1) and the Drift method were
+applied to forecast future egg prices. These models consistently
+projected continued price increases, with ARIMA producing the best fit.
+However, all models indicated substantial uncertainty due to external
+shocks like inflation and pandemics.</p>
+</div>
+<div id="regression-analysis" class="section level3">
+<h3>Regression Analysis</h3>
+<p>We built a regression model using supply- and demand-side variables
+to explain egg price shifts. Bird flu and energy prices showed limited
+long-term impact. Key drivers were inflation (CPI), corn prices as feed
+costs, and real disposable personal income (RDPI). After refining for
+multicollinearity and adding interaction terms, inflation and consumer
+purchasing power emerged as the strongest long-term influencers.</p>
+</div>
+</div>
+<div id="transition-to-cluster-analysis" class="section level2">
+<h2>Transition to Cluster Analysis</h2>
+<p>Building on the foundational insights gained from the descriptive,
+forecasting, and regression analyses, the next step involves applying
+clustering techniques to uncover deeper patterns and structural shifts
+in egg price behavior over time. While previous analyses highlighted
+overall trends, key drivers, and forecasted price trajectories,
+clustering allows us to segment the data into meaningful groups based on
+similarities in price levels, volatility, and seasonality. This approach
+provides a more nuanced understanding of how egg prices have evolved
+through distinct market regimes and economic environments, setting the
+stage for more targeted interpretation and strategy.</p>
+</div>
+<div id="determining-the-optimal-number-of-clusters-the-elbow-method"
+class="section level2">
+<h2>Determining the Optimal Number of Clusters: The Elbow Method
+🔍📊</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-8-1.png" width="768" /></p>
+<p>To determine the optimal number of clusters for our analysis, we used
+the Elbow Method, which plots the Sum of Squared Errors (SSE) against
+different values of k — the number of clusters. SSE measures how tightly
+grouped the data points are within each cluster; lower SSE values
+indicate more cohesive clusters.</p>
+<p>As shown in the graph above, SSE drops sharply from 1 to 3 clusters,
+then begins to level off. This “elbow” — the point where adding more
+clusters yields diminishing returns in reducing SSE — typically signals
+the optimal cluster count.</p>
+<p>In our case, the bend occurs between 3 and 4 clusters, and we
+selected 4 clusters to better capture subtle distinctions in the data
+without overcomplicating the model. This balance allows us to uncover
+meaningful groupings, revealing deeper insights into egg price behaviors
+that traditional methods might miss. 🥚📈✨</p>
+</div>
+<div id="clustering-egg-prices-over-time-revealing-market-shifts"
+class="section level2">
+<h2>🥚⏳ Clustering Egg Prices Over Time: Revealing Market Shifts</h2>
+<p>After determining that four clusters best represent the underlying
+patterns in the data, we clustered egg prices by time to highlight how
+pricing behavior has evolved over the years. This approach groups
+similar time segments based on trends in price levels and volatility,
+revealing distinct periods in the egg market from 1980 through 2025.</p>
+<p>Cluster 0 covers the early 1980s through the early 2000s and is
+characterized by low, stable prices — reflecting a long period of
+minimal volatility and steady market conditions. Cluster 1 spans from
+the early 2000s into the mid-2010s, showing a gradual upward price
+trend, likely influenced by inflation and shifting economic factors, yet
+remaining relatively stable compared to later periods.</p>
+<p>Cluster 2 emerges post-2008 financial crisis, capturing a shift
+toward higher average prices and increased volatility. This period
+likely reflects rising production costs, economic recovery effects, and
+supply chain challenges. Cluster 3 represents the most recent years,
+especially the 2020s, featuring the highest prices and the most extreme
+fluctuations in the dataset. These dramatic changes are probably linked
+to the COVID-19 pandemic, inflation, and avian flu outbreaks disrupting
+both supply and demand.</p>
+<p>Clustering by time offers a structured lens into how egg prices have
+transitioned from decades of relative calm to a recent era marked by
+sharp increases and volatility.</p>
+</div>
+<div id="how-three-clusters-reveal-shifts-in-egg-price-trends-over-time"
+class="section level2">
+<h2>How Three Clusters Reveal Shifts in Egg Price Trends Over Time</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-12-4.png" width="1152" /></p>
+<p>Looking at the data through the lens of three clusters based on
+average price and price volatility (standard deviation) reveals distinct
+periods in egg price behavior. Cluster 0 (blue) represents years with
+low prices and low volatility, reflecting stable market conditions.
+Cluster 1 (orange) includes years with moderate prices and slightly
+higher volatility, indicating transitional or moderately unstable
+periods. Cluster 2 (green) stands out with significantly higher prices
+and extreme volatility, likely linked to recent economic shocks such as
+post-2020 inflation and supply chain disruptions. This classification
+highlights how egg prices have evolved over time, uncovering meaningful
+patterns that simple averages would overlook. The years grouped in
+Cluster 2, as clear outliers with both high prices and unpredictability,
+deserve particular attention in forecasting and policy
+considerations.</p>
+</div>
+<div
+id="time-based-clustering-reveals-distinct-eras-in-egg-price-trends"
+class="section level2">
+<h2>Time-Based Clustering Reveals Distinct Eras in Egg Price Trends</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-14-6.png" width="960" /></p>
+<p>Egg prices have been clustered by year to provide a time-series
+perspective on how pricing patterns evolved from 1980 to 2025. The
+x-axis represents the years, while the y-axis shows the average annual
+egg price. Each point is color-coded according to one of three clusters
+identified using K-Means clustering. Cluster 2 (yellow) includes the
+earliest years, roughly from 1980 through the early 2000s, characterized
+by low and stable prices and representing a baseline era before market
+volatility increased. Cluster 0 (purple) captures a transitional phase
+spanning the mid-1990s through the 2010s, marked by moderate price
+increases. Cluster 1 (teal) consists mainly of recent years, especially
+post-2015, with notable spikes in 2022–2023, which were likely impacted
+by inflation, supply chain disruptions, or avian flu outbreaks. This
+clustering not only segments the data into distinct pricing regimes but
+also reveals that recent high prices are not just part of a gradual
+upward trend, but rather belong to a separate, statistically distinct
+era. Such insights are valuable for forecasting, shaping policy, or
+understanding shifts in consumer behavior.</p>
+</div>
+<div id="how-egg-prices-evolvedseason-by-season" class="section level2">
+<h2>How Egg Prices Evolved—Season by Season</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-16-8.png" width="1152" /></p>
+<p>Clustered egg prices by season over time reveal how both seasonal and
+long-term pricing patterns have evolved. The x-axis spans from 1979 to
+2023, while the y-axis represents the average seasonal price for each
+year. Data points are color-coded by cluster (0–3), and shaped by
+season: Fall (●), Spring (✖), Summer (■), and Winter (✚).</p>
+<p>Cluster 0 (green) covers years prior to 2003, marked by low, stable
+prices—mostly under $1.50 across all seasons. Cluster 1 (orange),
+spanning from the mid-2000s to early 2020s, shows moderate increases,
+with prices generally between $1.50 and $3.00, possibly influenced by
+inflation or rising production costs. Cluster 3 (pink) represents a
+transitional phase from 2005 to 2020 with relatively stable prices
+slightly below $2.00. Cluster 2 (blue) includes 2022–2023 and stands out
+with extreme volatility and sharply elevated prices—some exceeding
+$5.50—likely driven by supply shocks like avian flu, inflation, and
+rising feed costs.</p>
+<p>The analysis also confirms seasonal effects: Winter and Spring often
+show higher prices than Summer and Fall, regardless of the overall price
+level. Rather than following a smooth upward trend, egg prices have
+shifted through distinct regimes. Clustering helps capture these
+structural shifts and seasonal dynamics—valuable for improving
+forecasts, shaping policy, and informing market strategies.</p>
+</div>
+<div id="seasonal-patterns-help-explain-cluster-behavior"
+class="section level2">
+<h2>Seasonal Patterns Help Explain Cluster Behavior</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-17-10.png" width="1152" /></p>
+<p>Average egg prices, aggregated by calendar month (1 = January, 12 =
+December), reveal a clear seasonal pattern: prices tend to peak in
+January, February, and December, while dipping during the summer months,
+especially from May through July.</p>
+<p>This seasonal trend helps contextualize the time-based clustering of
+egg prices. For example, periods that frequently fall into higher-priced
+clusters (like Cluster 3) often coincide with winter months, when prices
+naturally rise due to factors like holiday demand or colder-weather
+supply constraints. In contrast, the more stable, lower-priced clusters
+(such as Cluster 0 or 1) align with months that typically show less
+volatility—like those in summer.</p>
+<p>These patterns suggest that even within a given year, seasonality
+plays a significant role in shaping pricing behavior and may influence
+how certain time periods are grouped in cluster-based analysis.</p>
+</div>
+<div
+id="seasonal-patterns-in-egg-prices-monthly-averages-and-their-role-in-clustering"
+class="section level2">
+<h2>Seasonal Patterns in Egg Prices: Monthly Averages and Their Role in
+Clustering</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-20-12.png" width="1152" /></p>
+<p>The monthly average price of eggs, aggregated over all years in the
+dataset, is displayed along with two key reference lines: a green dashed
+line showing the overall average price across all months, and an orange
+dashed line marking one standard deviation above that average, helping
+to highlight unusually high prices. Egg prices tend to be highest in
+January, February, March, and December—months with averages near or
+above the overall mean—while May through September, especially June and
+July, typically have lower prices well below the average.</p>
+<p>These seasonal patterns support the trends observed in the clustering
+analysis. Months that consistently show above-average prices, especially
+near or above the one standard deviation line, are likely linked to
+high-price or volatile clusters. Conversely, the more stable,
+lower-priced months align with clusters characterized by less
+variability and lower prices. Together, these insights provide a clearer
+statistical context for how seasonality shapes the structure of egg
+price behavior over time.</p>
+</div>
+<div
+id="identifying-yearly-pricing-patterns-through-seasonal-clustering"
+class="section level2">
+<h2>Identifying Yearly Pricing Patterns Through Seasonal Clustering</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-22-14.png" width="1344" /></p>
+<p>Monthly egg prices are shown across multiple years, with each line
+representing a single year and the x-axis spanning from January to
+December. The y-axis shows prices in dollars. While most years follow a
+stable pattern with prices ranging between $0.80 and $2.50, a few years
+stand out with significant price spikes exceeding $6 in the early
+months—clear outliers in the dataset. Seasonal trends are evident, with
+some years showing price increases toward the end of the year, likely
+due to holiday demand, while others remain relatively flat or show minor
+fluctuations.</p>
+<p>These patterns highlight natural groupings within the data that
+clustering methods like K-means or hierarchical clustering can formally
+identify. By considering each year as a data point characterized by 12
+monthly price features, clustering helps group years with similar price
+behaviors and seasonal patterns. Such groupings are valuable for
+detecting anomalies, understanding pricing trends, and enhancing
+forecasting accuracy by recognizing years with comparable market
+dynamics.</p>
+</div>
+<div id="holiday-month-price-variability-and-outliers-in-egg-pricing"
+class="section level2">
+<h2>Holiday Month Price Variability and Outliers in Egg Pricing</h2>
+<p><img src="test_files/figure-html/unnamed-chunk-23-16.png" width="1152" /></p>
+<p>Egg prices during key holiday months show distinct distribution
+patterns across multiple years. The interquartile range (IQR) captures
+the middle 50% of prices, with median values generally stable between
+$0.90 and $1.30. However, notable outliers appear, especially in January
+and April, where prices in some years spike above $3, including one
+instance exceeding $6. While most years follow predictable pricing
+trends, these spikes suggest occasional deviations likely caused by
+supply disruptions or heightened demand. This variability aligns with
+clustering findings, indicating groups of years with typical price
+ranges and others with unusually high holiday prices. Recognizing these
+clusters helps explain abnormal pricing behavior and enhances
+forecasting accuracy.</p>
+</div>
+<div id="top-egg-price-years-across-all-months-reveal-distinct-clusters"
+class="section level2">
+<h2>Top Egg Price Years Across All Months Reveal Distinct Clusters</h2>
+<pre><code>## Top 3 Years for Month 1:
+## Year
+## 2025    4.953
+## 2023    4.823
+## 2024    2.522
+## 2016    2.328
+## 2008    2.175
+## Name: 1, dtype: float64 
+## 
+## Top 3 Years for Month 3:
+## Year
+## 2025    6.227
+## 2023    3.446
+## 2024    2.992
+## 2008    2.203
+## 2015    2.133
+## Name: 3, dtype: float64 
+## 
+## Top 3 Years for Month 4:
+## Year
+## 2023    3.270
+## 2024    2.864
+## 2022    2.520
+## 2014    2.119
+## 2018    2.081
+## Name: 4, dtype: float64 
+## 
+## Top 3 Years for Month 5:
+## Year
+## 2022    2.863
+## 2024    2.699
+## 2023    2.666
+## 2014    1.996
+## 2018    1.987
+## Name: 5, dtype: float64 
+## 
+## Top 3 Years for Month 7:
+## Year
+## 2024    3.080
+## 2022    2.936
+## 2015    2.570
+## 2023    2.094
+## 2008    2.011
+## Name: 7, dtype: float64 
+## 
+## Top 3 Years for Month 8:
+## Year
+## 2024    3.204
+## 2022    3.116
+## 2015    2.943
+## 2023    2.043
+## 2014    1.979
+## Name: 8, dtype: float64 
+## 
+## Top 3 Years for Month 10:
+## Year
+## 2022    3.419
+## 2024    3.370
+## 2015    2.808
+## 2023    2.072
+## 2012    1.960
+## Name: 10, dtype: float64 
+## 
+## Top 3 Years for Month 11:
+## Year
+## 2024    3.649
+## 2022    3.589
+## 2015    2.664
+## 2023    2.138
+## 2014    2.032
+## Name: 11, dtype: float64 
+## 
+## Top 3 Years for Month 12:
+## Year
+## 2022    4.250
+## 2024    4.146
+## 2015    2.751
+## 2023    2.507
+## 2014    2.210
+## Name: 12, dtype: float64</code></pre>
+<p>Top egg price years across various months reveal a clear clustering
+pattern centered on specific years—particularly 2022, 2023, and 2024.
+These years consistently rank among the highest price points across
+nearly every holiday month, indicating a distinct high-price cluster. In
+contrast, earlier years such as 2014 and 2015 appear sporadically but at
+generally lower price levels, representing a separate, lower-price
+cluster. This pattern suggests a structural shift or shock beginning
+around 2022, likely driven by factors like inflation, supply chain
+disruptions, or avian flu outbreaks. The repeated prominence of recent
+years reinforces the idea of temporal clustering, where certain periods
+experience systematically higher egg prices compared to others.</p>
+</div>
+<div id="patterns-of-price-persistence-and-mean-reversion-over-time"
+class="section level2">
+<h2>Patterns of Price Persistence and Mean Reversion Over Time</h2>
+<pre><code>##      Year  Month  Price  ...  Above_Yearly_Avg  Next_Month_Price  Returns_To_Avg
+## 0    1980      1  0.879  ...              True             0.774            True
+## 1    1980      2  0.774  ...             False             0.812            True
+## 2    1980      3  0.812  ...             False             0.797            True
+## 3    1980      4  0.797  ...             False             0.737            True
+## 4    1980      5  0.737  ...             False             0.731            True
+## ..    ...    ...    ...  ...               ...               ...             ...
+## 538  2024     11  3.649  ...              True             4.146           False
+## 539  2024     12  4.146  ...              True             4.953           False
+## 540  2025      1  4.953  ...             False             5.897           False
+## 541  2025      2  5.897  ...              True             6.227           False
+## 542  2025      3  6.227  ...              True               NaN           False
+## 
+## [543 rows x 7 columns]</code></pre>
+<p>Monthly egg prices from 1980 to 2025 include indicators showing when
+prices exceeded the yearly average (Above_Yearly_Avg), the price in the
+following month (Next_Month_Price), and whether prices returned to the
+yearly average afterward (Returns_To_Avg).</p>
+<p>Earlier years, such as 1980, typically exhibited price spikes above
+the yearly average that quickly reverted to the mean, indicating
+short-lived fluctuations tightly clustered around stable averages.
+However, beginning around 2022, prices not only surged significantly
+above the yearly average but also remained elevated for consecutive
+months without returning to typical levels. Notably, prices in late 2024
+and into 2025 stayed consistently above average, breaking from previous
+patterns.</p>
+<p>This shift highlights a structural change in price behavior, marking
+a break from historical clustering where prices oscillated around a
+steady mean. Instead, recent years form a distinct, persistent
+high-price cluster, reinforcing the idea of a new, elevated pricing
+regime emerging in the egg market.</p>
+<p><img src="test_files/figure-html/unnamed-chunk-27-18.png" width="576" /></p>
+<p>54.9% of egg price spikes above the yearly average eventually
+returned to that average, while 45.1% did not.</p>
+<p>Linked to earlier observations, this highlights a significant shift
+in egg price behavior over time. Historically, most price spikes were
+temporary, reflecting a clustering pattern where prices fluctuated
+around a stable annual mean. However, the substantial 45.1% of spikes
+that failed to revert—especially in recent years like 2022 to
+2025—indicates a breakdown in this mean-reverting trend.</p>
+<p>In essence, these figures quantify the erosion of historical price
+clustering, showing how recent structural changes such as supply chain
+disruptions, inflation, and avian flu outbreaks have caused egg prices
+to remain elevated for prolonged periods, forming persistent high-price
+clusters that diverge from past patterns.</p>
+</div>
+<div id="what-the-clusters-reveal" class="section level2">
+<h2>What the Clusters Reveal</h2>
+<p>Clustering provided a powerful lens through which to interpret the
+structural shifts, seasonal dynamics, and emerging pricing regimes in
+the egg market. By segmenting the data across time, year, and season, we
+uncovered distinct clusters that extended the story told by our
+descriptive, forecasting, and regression models—revealing how egg prices
+have evolved from decades of stability to an era defined by persistent
+volatility. This final layer of analysis emphasized not only the
+influence of inflation and external shocks but also the breakdown of
+mean-reverting behavior in recent years. These insights affirm that egg
+prices are no longer governed by simple trends, but by complex and
+evolving market conditions.</p>
+<hr />
+</div>
+
+<!--div id="footer">
+     <p><strong>Alex Pettis</strong></br>
+     Appalachian State University | Aug 2024</br>
+     MS Applied Data Analytics & MBA</br> 
+</p-->
+
+<div id="footer">
+     <p><strong>Alex Pettis</strong></br>
+     Appalachian State University | 2024</br>
+     MS Applied Data Analytics</br> 
+     MBA</br>
+</p>
+
+      
+        
+        <p>
+    <strong>Contact Information</strong><br />      
+    Phone: (704) 526-8883</br>
+    <a href="mailto:alexpettis@icloud.com">alexpettis@icloud.com</a><br>
+    <a href="https://www.linkedin.com/in/alexpettis">LinkedIn</a><br>
+    Mooresville, NC 28115 </br>
+		</p> 
+</div>
+
+<!--Alex Pettis
+Appalachian State University Fall 2022 
+Mathematics Major
+Computer Science and Statistics Minors
+Sports Analytics Certificate-->
+
+<!--Alex Pettis
+Appalachian State University | Summer 24
+MS in Applied Data Analytics and MBA-->
+
+<!--Alex Pettis
+     Appalachian State University | Summer 2024</br>
+     Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS</br>
+     Business Administration - Interdisciplinary Business Concentration, MBA-->
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
