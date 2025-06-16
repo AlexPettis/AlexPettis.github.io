@@ -1,0 +1,36 @@
+---
+title: "Eggcellent Analysis"
+output:
+  html_document:
+    css: "css.css"
+---
+
+__________
+
+## Overview
+
+This series explores the rising cost of eggs by examining historical price trends, key economic factors, forecasting models, and seasonal influences shaping this everyday expense.
+
+## Links
+
+[Eggcellent Analysis: Cracking the Code Behind Rising Egg Prices – Part 1](Egg_Analysis.html) - (3/14/25)
+
+* An analysis of the rising cost of eggs, examining historical trends, price patterns, and what the future may hold.
+
+[Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2](Egg_Forecast.html) - (4/1/25)
+
+* An analysis forecasting future egg prices based on historical trends and potential market influences.
+
+[Eggcellent Analysis: Unraveling the Drivers of Rising Egg Prices – Part 3](Egg_Regression.html) - (4/24/25)
+
+* An analysis on the factors that contribute to egg prices, highlighting key economic influences behind recent fluctuations.
+
+[Eggcellent Analysis: Clustering the Carton – Part 4](Egg_Clustering.html) - (6/4/25)
+
+* An analysis using clustering reveals egg price groups driven by seasonality and inflation.
+
+[Eggcellent Analysis: The Takeaway – Part 5](Egg_Overview) - (6/16/25)
+
+* An analysis of egg prices uncovers the economic forces behind recent surges — and what consumers can do to manage rising costs.
+
+__________

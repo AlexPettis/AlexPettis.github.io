@@ -1,0 +1,229 @@
+---
+title: "Eggcellent Analysis: The Takeaway - Part 5 (6/16/25)"
+output:
+  html_document:
+    css: "css.css"
+---
+
+__________
+
+
+Egg prices tell more than just a story about breakfast staples — they show how data, economic forces, and market behaviors shape what we pay at the grocery store. Here’s what the data exposed, what matters most for consumers, and how to use this knowledge to shop smarter in a changing market.
+
+# Insights from the Analysis Process
+One major takeaway is that not every transformation helps. Adjusting for inflation using the Consumer Price Index (CPI) initially seemed like a way to make comparisons fairer. However, this adjustment dampened sharp price movements — the very signals time series models rely on. In this case, inflation-adjusted data concealed the true volatility driving consumer costs. Raw price data — inflation and all — ultimately provided clearer signals. This highlighted a critical principle: not all data transformations improve clarity. Sometimes, simpler is better.
+
+We also saw how a single new data point can shake up a model. For instance, a sudden price jump in early 2025 disrupted existing trends and significantly altered the forecast. This showed just how sensitive time series models can be to new information — and why small changes can lead to big shifts in prediction accuracy.
+
+Crucially, how that data is added matters. We found that incorporating new data directly into the source file — rather than appending it dynamically in code — prevents duplicate entries, ensures consistency, and improves model performance. When a new row is hard-coded in a script, it can unintentionally be re-added each time the code runs, skewing results. Storing changes directly in the dataset simplifies the workflow, reduces errors, and ensures the model sees the new point as part of the historical record — not a future event. This small adjustment boosted our forecasting precision and helped maintain the integrity of the overall analysis.
+
+Lastly, we improved our workflow by shifting from Jupyter Notebooks to R Markdown. While Jupyter is great for exploration, it’s not ideal for producing cohesive, shareable results — especially on websites. R Markdown integrates code, outputs, and narrative more smoothly, making the process more efficient and reproducible.
+
+# Behind the Carton: What the Data Reveal
+Digging into monthly retail egg prices from 2000 through 2025 revealed several important trends and insights — not just about prices themselves, but about the deeper forces driving them.
+
+## Prices Are Rising — and Staying High
+For nearly two decades, egg prices hovered in a relatively narrow band: about $1.00 to $1.50 per dozen. That changed dramatically in 2020. Since then, prices have repeatedly spiked — hitting $4.82 in January 2023 and again nearing $4.50 in early 2025. Unlike past spikes, these recent increases haven’t fully receded. The data signals a permanent shift to a higher price baseline.
+
+```{r, echo = FALSE, message = FALSE, Warning = FALSE}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(lubridate)
+
+mydata <- read.csv("/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Egg Prices.csv")
+
+#head(mydata)
+
+mydata <- mydata %>% rename(Month = observation_date, Price = APU0000708111)
+
+mydata$Month <- as.Date(mydata$Month, format = "%Y-%m-%d")  # Adjust format if needed
+#tail(mydata)
+
+# Adjust volatility_periods to end at your last data date
+volatility_periods <- data.frame(
+  start = as.Date(c("1980-01-01", "2020-01-01", "2022-01-01")),
+  end   = as.Date(c("2019-12-31", "2021-12-31", "2025-02-01")),  # adjusted end date here
+  regime = c("Stable", "Rising", "Volatile")
+)
+
+# Plot
+ggplot() +
+  # Add shaded regions for regimes
+  geom_rect(data = volatility_periods,
+            aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, fill = regime),
+            alpha = 0.15) +
+  # Plot the price line
+  geom_line(data = mydata, aes(x = Month, y = Price), color = "darkblue", linewidth = 1) +
+  # Add dashed vertical lines at regime changes
+  geom_vline(xintercept = as.numeric(as.Date(c("2020-01-01", "2022-01-01"))),
+             linetype = "dashed", color = "grey40") +
+  # Define fill colors for regimes
+  scale_fill_manual(values = c("Stable" = "forestgreen", "Rising" = "goldenrod", "Volatile" = "firebrick")) +
+  # Format x-axis as years
+  scale_x_date(date_labels = "%Y", breaks = pretty_breaks(n = 10)) +
+  # Labels and title
+  labs(
+    title = "Monthly Egg Prices and Volatility Regimes (1980–Present)",
+    subtitle = "Shaded areas indicate market regimes: Stable, Rising, and Volatile",
+    x = "Year",
+    y = "Price (USD per dozen)",
+    fill = "Market Regime"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Volatility Has Increased Sharply
+From 2000–2019, price swings were rare and moderate — often tied to seasonal cycles. Post-2020, volatility nearly doubled. Price changes of over $0.50 within a few months have become common. This makes it harder for consumers to rely on past pricing patterns and adds unpredictability to grocery budgets.
+
+## Seasonality Still Matters, But Less So
+Egg prices still tend to rise in winter and early spring — around holidays like Thanksgiving and Easter — and dip in summer. However, since 2020, this seasonal cycle has been interrupted by broader market forces. The largest price surges in recent years have occurred outside the usual windows, suggesting external shocks now have greater influence than before.
+
+## Economic Indicators Tell the Real Story
+We tested a variety of potential drivers using correlation and regression analysis. Surprisingly, headline-grabbing issues like avian flu outbreaks and energy prices showed weak or inconsistent relationships with egg prices. Instead, the strongest correlations were:
+
+* Corn prices (as feed for hens): r ≈ 0.64
+
+* Inflation (CPI): r ≈ 0.59
+
+* Disposable income per capita: r ≈ 0.47
+
+These results suggest that egg prices are increasingly tethered to macroeconomic trends — not just food-specific supply chain disruptions.
+
+## The Market Now Operates in Shifting “Regimes”
+Using clustering analysis on smoothed monthly price movements, we uncovered three distinct pricing regimes:
+
+* Stable (2000–2019): Predictable prices with minor seasonal shifts
+
+* Rising (2020–2021): Clear upward trend with moderate volatility
+
+* Volatile (2022–present): High prices with large, irregular fluctuations
+
+Recognizing these regimes helps explain why strategies that worked pre-2020 (like stocking up before winter) may not be as effective today.
+
+## Forecasts Point Toward Continued Increases
+Time series models, including ARIMA and Holt-Winters exponential smoothing, project continued price growth — reaching around \$7.32 per dozen by 2028 and potentially surpassing \$10.00 by 2037 if current trends persist. While exact numbers vary by model, the direction is consistent: egg prices are not returning to past norms.
+
+# Why This Matters for Consumers
+The changing egg market isn’t just an economic curiosity — it affects everyone’s grocery bill. For consumers, this shifting landscape offers both challenges and opportunities:
+
+* Plan with New Norms in Mind: Low, steady prices are a thing of the past. Adjust your grocery budget to accommodate more persistent and possibly rising egg prices.
+
+* Buy Smarter by Season: Shopping just before peak holiday seasons — or stocking up during off-peak lulls — can lead to real savings. Shifting baking-heavy tasks to off-peak months helps too.
+
+* Use Forecasts to Get Ahead: While models don’t guarantee the future, they provide valuable directional insight. Use them to time purchases, negotiate bulk orders, or explore alternatives.
+
+* Understand Market Shifts to Stay Informed: Recognizing that we’re in a new, more volatile era of egg pricing helps you avoid surprises and make better-informed shopping decisions.
+
+* Support Smarter Policy: Since inflation and feed costs—not diseases or energy—drive prices the most, policies that address inflation and commodity pricing may be more effective for food prices than reactive supply chain fixes.
+
+# Take Charge of Your Egg Spending
+Egg prices are harder to predict than ever — but with the right tools, you can stay ahead. According to our projections, egg prices could more than triple from their pre-2020 levels by 2037. For an average household, this could mean spending $350–$400 more per year on eggs alone.
+
+```{r, warning = FALSE, message = FALSE, echo = FALSE}
+
+#mydata <- read.csv("/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Egg Prices.csv")
+
+# Filter for 2019
+mydata_2019 <- mydata %>% filter(format(Month, "%Y") == "2019")
+
+# Filter for 2023
+mydata_2023 <- mydata %>% filter(format(Month, "%Y") == "2023")
+
+# Step 1: Calculate average monthly price
+avg_2019 <- mean(mydata_2019$Price)
+avg_2023 <- mean(mydata_2023$Price)
+
+# Step 2: Estimate annual egg consumption
+dozens_per_month <- 4
+dozens_per_year <- dozens_per_month * 12
+
+# Step 3: Calculate annual spending for each year
+spending_2019 <- avg_2019 * dozens_per_year
+spending_2023 <- avg_2023 * dozens_per_year
+
+# Step 4: Find the difference
+spending_diff <- spending_2023 - spending_2019
+
+egg_forecast_2037 <- data.frame(
+  Month = as.Date(c(
+    "2037-01-01", "2037-02-01", "2037-03-01", "2037-04-01",
+    "2037-05-01", "2037-06-01", "2037-07-01", "2037-08-01",
+    "2037-09-01", "2037-10-01", "2037-11-01", "2037-12-01"
+  )),
+  Forecast = c(
+    10.688109, 10.759323, 10.716063, 10.762295,
+    10.641347, 10.571298, 10.610128, 10.659389,
+    10.742585, 10.722614, 10.771030, 10.957333
+  )
+)
+
+avg_2037 <- mean(egg_forecast_2037$Forecast)
+spending_2037 <- avg_2037 * dozens_per_year
+spending_diff_2037 <- spending_2037 - spending_2023
+
+#cat("2019 Annual Spending: $", round(spending_2019, 2), "\n")
+#cat("2023 Annual Spending: $", round(spending_2023, 2), "\n")
+#cat("2037 Annual Spending: $", round(spending_2037, 2), "\n")
+#cat("Additional Cost in 2023: $", round(spending_diff, 2), "\n")
+#cat("Additional Cost in 2037: $", round(spending_diff_2037, 2), "\n")
+
+
+# Create a data frame for plotting
+egg_spending <- data.frame(
+  Year = factor(c("2019", "2023", "2037")),
+  Annual_Spending = c(spending_2019, spending_2023, spending_2037)
+)
+
+# Plot the bar chart (tight version with padding for labels)
+ggplot(egg_spending, aes(x = Year, y = Annual_Spending, fill = Year)) +
+  geom_bar(stat = "identity", width = 0.6, show.legend = FALSE) +
+  geom_text(aes(label = paste0("$", round(Annual_Spending, 0))), 
+            vjust = -0.5, size = 5) +
+  labs(
+    title = "Estimated Annual Egg Spending per Household",
+    subtitle = "Assumes 4 dozen eggs purchased per month",
+    y = "Annual Spending ($)",
+    x = NULL
+  ) +
+  ylim(0, max(egg_spending$Annual_Spending) * 1.15) +  # Add space above tallest bar
+  theme_minimal() +
+  theme(
+    text = element_text(size = 14),
+    plot.title = element_text(face = "bold"),
+    plot.margin = margin(10, 20, 10, 20)  # top, right, bottom, left
+  ) +
+  scale_fill_manual(values = c("2019" = "#66c2a5", "2023" = "#fc8d62", "2037" = "#8da0cb"))
+
+```
+## Projected Household Impact
+
+* In 2019, annual spending on eggs was about $67.
+
+* By 2023, that spending had doubled to around $134.
+
+* In 2037, based on forecasted prices, annual spending could exceed $500 — nearly four times more than in 2023, and almost an 8x increase from 2019.
+
+## What This Means:
+Egg prices are rising sharply, and not just temporarily. If the current trend continues, consumers will pay substantially more for the same quantity of eggs.
+
+This sharp rise in spending underscores the growing budget burden of inflation in everyday grocery staples — especially for families that consume eggs regularly.
+
+It’s a clear visual of why consumers need to plan ahead, consider alternatives, and monitor food price trends more closely.
+
+## Tips to Combat the Rising Prices
+
+* Use these insights to your advantage:
+
+* Plan purchases around seasonal trends.
+
+* Avoid peak pricing periods.
+
+* Consider alternatives when prices spike.
+
+With just a few smart shifts, you can stretch your grocery dollars and navigate the new egg economy like a pro. Don’t get caught off guard — crack the code on egg prices and shop with confidence. In a market this unpredictable, being informed is no longer optional — it’s essential. Staying informed on price trends is your best bet for keeping eggs — and your budget — from cracking.
+
+__________

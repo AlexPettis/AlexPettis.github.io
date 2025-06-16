@@ -1,7 +1,11 @@
 ---
 title: "Blog Posts"
-output: html_document
+output: 
+  html_document:
+    css: "css.css"
 ---
+
+__________
 
 ## Welcome to My Blog
 
@@ -21,20 +25,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A dive into the differences between Data Analysts and Business Analysts, outlining their responsibilities, skills, and tools, and offering guidance on choosing the right career path.
 
-[Eggcellent Analysis: Cracking the Code Behind Rising Egg Prices – Part 1](Egg_Analysis.html) - (3/14/25)
+[Eggcellent Analysis](Egg.html) - (3/14/25)
 
-* An analysis of the rising cost of eggs, examining historical trends, price patterns, and what the future may hold.
-
-[Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2](Egg_Forecast.html) - (4/1/25)
-
-* An analysis forecasting future egg prices, driven by historical trends, price patterns, and potential market influences.
-
-[Eggcellent Analysis: Unraveling the Drivers of Rising Egg Prices – Part 3](Egg_Regression.html) - (4/24/25)
-
-* An analysis on the factors that contribute to egg prices, highlighting key economic influences behind recent fluctuations
-
-[Eggcellent Analysis: Clustering the Carton – Part 4](Egg_Clustering.html) - (6/4/25)
-
-* An analysis using clustering reveals egg price groups driven by seasonality and inflation.
+* An analysis of rising egg prices, this series takes readers on a data-driven journey through historical trends, economic drivers, predictive modeling, and seasonal patterns to uncover the factors behind this everyday cost.
 
 __________
