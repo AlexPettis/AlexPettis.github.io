@@ -3,7 +3,8 @@ title: "Alex Pettis"
 output:
   html_document:
     css: "css.css"
-    after_body: google-analytics.html
+    includes:
+      after_body: google_analytics.html
 ---
 
 <hr>
