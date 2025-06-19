@@ -3,8 +3,10 @@ title: "Random Numbers Code"
 output:
   html_document:
     css: "css.css"
-    include:
-      after_body: "C:\\Users\\alexp\\Desktop\\Website\\AlexPettis.github.io\\footer.html"
+    includes:
+      after_body:
+        - "footer.html"
+        - "google_analytics.html"
 ---
 
 ```{r setup, include=FALSE}
