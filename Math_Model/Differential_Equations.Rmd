@@ -3,6 +3,8 @@ title: "Differential Equations"
 output:
   html_document:
     css: "css.css"
+     includes:
+      after_body: google_analytics.html
 ---
 
 ```{r setup, include=FALSE}

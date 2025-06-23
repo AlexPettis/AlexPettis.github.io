@@ -3,6 +3,8 @@ title: 'Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2 (4/
 output:
   html_document:
     css: "css.css"
+     includes:
+      after_body: google_analytics.html
 ---
 
 __________
@@ -52,7 +54,7 @@ By applying these various techniques, we can refine our understanding of the for
 
 ```{r, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE}
 # Bring my CSV file and call it mydata
-mydata <- read.csv("/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Egg Prices.csv")
+mydata <- read.csv("/Users/alex/Desktop/Egg Prices.csv")
 
 #tail(mydata)
 ```
@@ -638,7 +640,7 @@ Based on the forecast from the ARIMA (0,1,2)(0,1,1) model, we can observe a grad
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 
 # Save forecast into a variable
-forecasted_data <- forecast(my_fit, h = 154L) |>  
+forecasted_data <- forecast(my_fit, h = 146L) |>  
   filter(.model == 'arima012011')  # Filter for the desired model
 
 # Check what data is being used

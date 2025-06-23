@@ -3,6 +3,8 @@ title: "Eggcellent Analysis: Cracking the Code Behind Rising Egg Prices – Part
 output:
   html_document:
     css: "css.css"
+     includes:
+      after_body: google_analytics.html
 ---
 
 Eggs are a breakfast staple in many households, whether scrambled, fried, or used in baking. They’ve been a reliable and affordable source of protein for decades, but if you’ve noticed prices climbing over the years, you’re not alone. A deep dive into historical egg prices reveals a steady increase, punctuated by sharp spikes—especially after 2020. Let’s break down the trends, examine price distribution, and consider what the future holds.
