@@ -3,6 +3,10 @@ title: "Discrete and Continuous Math Models"
 output:
   html_document:
     css: "css.css"
+    includes:
+      after_body:
+        - "footer.html"
+        - "google_analytics.html"
 ---
 
 ```{r setup, include=FALSE}
