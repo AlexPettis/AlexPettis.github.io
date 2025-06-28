@@ -3,7 +3,7 @@ title: "Eggcellent Analysis: Cracking the Code Behind Rising Egg Prices – Part
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 ---
 
