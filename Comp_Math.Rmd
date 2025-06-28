@@ -3,8 +3,10 @@ title: "Computational Mathematics"
 output:
   html_document:
     css: "css.css"
-     includes:
-      after_body: google_analytics.html
+    includes:
+      after_body:
+        - "footer.html"
+        - "google_analytics.html"
 ---
 
 ```{r setup, include=FALSE}
@@ -22,7 +24,7 @@ The provided python codes are both instructor and student made codes.
 
 ### Differential Equations Python Code
 
-[Differential Equations Python Code](Comp_Math/Diff_Equations/Diff_Equations_Python-Code.html)
+[Differential Equations Python Code](Comp_Math/Diff_Equations/Diff_Equations_Python_Code.html)
 
 ### Euler's Method Python Code
 
