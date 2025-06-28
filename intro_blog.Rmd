@@ -3,7 +3,7 @@ title: "Welcome to My Analytics Blog! (2/22/25)"
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 ---
 

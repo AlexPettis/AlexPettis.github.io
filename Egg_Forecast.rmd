@@ -3,7 +3,7 @@ title: 'Eggcellent Analysis: Forecasting the Future of Egg Prices – Part 2 (4/
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 ---
 

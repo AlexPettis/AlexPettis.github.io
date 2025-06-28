@@ -3,7 +3,7 @@ title: "Data Analyst vs. Business Analyst: What’s the Difference? (3/7/25)"
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 
 ---

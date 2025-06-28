@@ -3,7 +3,7 @@ title: "Eggcellent Analysis: Unraveling the Drivers of Rising Egg Prices – Par
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 ---
 

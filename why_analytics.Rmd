@@ -3,7 +3,7 @@ title: "My Journey: From Computer Science to Data Analytics and an MBA (2/24/25)
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 ---
 

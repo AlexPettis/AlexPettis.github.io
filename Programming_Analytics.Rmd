@@ -3,7 +3,7 @@ title: "Programming for Business Analytics"
 output:
   html_document:
     css: "css.css"
-     includes:
+    includes:
       after_body: google_analytics.html
 ---
 
