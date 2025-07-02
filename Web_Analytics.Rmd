@@ -4,7 +4,9 @@ output:
   html_document:
     css: "css.css"
     includes:
-      after_body: google_analytics.html
+      after_body:
+        - "footer.html"
+        - "google_analytics.html"
 ---
 
 ```{r setup, include=FALSE}
@@ -14,5 +16,48 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Course Description
 
 This course covers Internet technologies and tools that allow for the collection of consumer data including social networks, perform clickstream analysis, and conduct search engine optimization. In addition, concepts surrounding the privacy of data will be introduced, as well as how to effectively manage the security of information through log and event investigations. Other topics include but not limited to the ethical/moral implications that have emerged from areas like data profiling and relevant issues with data governance as it pertains to compliance and law.
+
+
+## Articles
+
+### Cybersecurity Fundamentals
+
+[Calling Virus “Act of War,” Insurer Refuses to Pay Ransomware Claim](https://www.toolbox.com/it-security/vulnerability-management/articles/calling-virus-act-of-war-insurer-refuses-to-pay-ransomware-claim/)
+
+[Cyber-insurance shock: Zurich refuses to foot NotPetya ransomware clean-up bill – and claims it's 'an act of war'](https://www.theregister.com/2019/01/11/notpetya_insurance_claim/)
+
+[Unsecured database exposes 85GB in security logs of major hotel chains](https://www.theregister.com/2019/01/11/notpetya_insurance_claim/)
+
+[US Nuclear Contractor Hit with Maze Ransomware, Data Leaked](https://www.zdnet.com/article/unsecured-database-exposes-security-logs-of-major-hotel-chains/)
+
+[You Did Change Your Password.. Didn't You?](https://nakedsecurity.sophos.com/2020/06/04/you-did-change-your-password-after-that-data-breach-didnt-you/)
+
+[Security Analytics: It's all about the data](https://www.csoonline.com/article/3412064/security-analytics-its-all-about-the-data.html)
+
+[Strategy Analytics: COVID-19 and Wireless Service](https://www.businesswire.com/news/home/20200521005094/en/%C2%A0Strategy-Analytics-COVID-19-Trigger-2.6-Decline-Global)
+
+[Robocalls are overwhelming hospitals and patients, threatening a new kind of health crisis](https://www.washingtonpost.com/technology/2019/06/17/robocalls-are-overwhelming-hospitals-patients-threatening-new-kind-health-crisis/)
+
+[6 Security Lessons for UCC Vendors From Zoombombing](https://www.toolbox.com/collaboration/unified-communications/articles/security-lessons-for-UCC-vendors-from-zoombombing/)
+
+[Google Sued by AZ for tracking users' locations](https://nakedsecurity.sophos.com/2020/05/29/google-sued-by-arizona-for-tracking-users-locations-in-spite-of-settings/)
+
+[Owners of DDos-for-Hire Service Get 6 Months of Community Service](https://krebsonsecurity.com/2020/06/owners-of-ddos-for-hire-service-vdos-get-6-months-community-service/)
+
+[To Understand Cyberattacks, Study the Attackers](https://www.itweb.co.za/content/j5alr7QaPwx7pYQk)
+
+[A 'Security First' Mindset Must Start in the C-Suite](https://www.helpnetsecurity.com/2021/05/06/email-security-human-issue/)
+
+### Security Incident and Event Management for Business Solutions
+
+[CPA Canada discloses data breach affecting 329,000 individuals](https://www.bleepingcomputer.com/news/security/cpa-canada-discloses-data-breach-affecting-329-000-individuals/?utm_content=bufferff43b&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
+
+[The Top Remote Workforce Cybersecurity Capabilities (For Social Distancing and Everything After)](https://solutionsreview.com/security-information-event-management/the-top-remote-workforce-cybersecurity-capabilities-for-social-distancing-and-everything-after/)
+
+[What Is SIEM and How Does It Enhance Threat Detection?](https://securityintelligence.com/articles/what-is-siem-and-how-does-it-enhance-threat-detection/)
+
+[What is SIEM and Why is it So Important?](https://www.dataversity.net/what-is-siem-and-why-is-it-so-important/)
+
+[What Is SIEM? A Brilliant Guide to the Basics](https://www.g2.com/articles/siem)
 
 __________
