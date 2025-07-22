@@ -11,7 +11,7 @@
 
 
 
-<title>Blog Posts</title>
+<title>Power BI vs. Tableau: A Hands-On Dashboarding Comparison</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -453,61 +453,269 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog Posts</h1>
+<h1 class="title toc-ignore">Power BI vs. Tableau: A Hands-On
+Dashboarding Comparison</h1>
 
 </div>
 
 
 <hr />
-<div id="welcome-to-my-blog" class="section level2">
-<h2>Welcome to My Blog</h2>
-<p>Here, I share insights on analytics, data science, and technology.
-Check out my latest posts below!</p>
-<div id="recent-posts" class="section level3">
-<h3>Recent Posts</h3>
-<p><a href="intro_blog.html">Welcome to My Analytics Blog!</a> -
-(2/22/25)</p>
-<ul>
-<li>A quick introduction to why I started this blog and what you can
-expect from future posts.</li>
-</ul>
-<p><a href="why_analytics.html">My Journey: From Computer Science to
-Data Analytics and an MBA</a> - (2/28/25)</p>
-<ul>
-<li>A look into how I transitioned from computer science to mathematics,
-pursued analytics, and added an MBA to bridge the gap between data and
-business.</li>
-</ul>
-<p><a href="da_vs_ba.html">Data Analyst vs. Business Analyst: What’s the
-Difference?</a> - (3/7/25)</p>
-<ul>
-<li>A dive into the differences between Data Analysts and Business
-Analysts, outlining their responsibilities, skills, and tools, and
-offering guidance on choosing the right career path.</li>
-</ul>
-<p><a href="Egg.html">Eggcellent Analysis</a> - (3/14/25)</p>
-<ul>
-<li>An analysis of rising egg prices, this series takes readers on a
-data-driven journey through historical trends, economic drivers,
-predictive modeling, and seasonal patterns to uncover the factors behind
-this everyday cost.</li>
-</ul>
-<p><a href="AI.html">AI: The Good, the Bad, and the Ugly</a> -
-(7/12/25)</p>
-<ul>
-<li>A look at how AI is accelerating innovation, reshaping jobs, and
-raising urgent questions about privacy, bias, and ethics, with
-reflections on where it’s headed next.</li>
-</ul>
-<p><a href="Viz_Compare.html">Power BI vs. Tableau: A Hands-On
-Dashboarding Comparison</a> - (7/22/25)</p>
-<ul>
-<li>A side-by-side comparison of Power BI and Tableau reveals key
-differences in dashboard design, sharing, filtering, and overall
-usability.</li>
-</ul>
-<hr />
+<p>Having used both visualization tools before for different projects, I
+started wondering which one was better overall. Not just feature by
+feature, but in terms of experience, usability, and results. So, I put
+them to the test.</p>
+<p>To do that, I built nearly identical dashboards in both platforms
+using the same dataset and visual goals. This post isn’t a generic
+comparison or marketing fluff. Instead, it’s a reflection of what stood
+out to me, what worked, what didn’t, and which tool gave me the better
+experience depending on the task.</p>
+<p>Explore the dashboards for yourself:</p>
+<div id="power-bi-dashboard" class="section level1">
+<h1>Power BI Dashboard</h1>
+<iframe title="Superstore Performance Snapshot" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bb02c8e8-1301-497a-82ba-927492a0692c&amp;autoAuth=true&amp;ctid=0f1fb691-2393-48df-971c-93aa52a95600" frameborder="0" allowFullScreen="true">
+</iframe>
+<p><br></p>
 </div>
+<div id="tableau-dashboard" class="section level1">
+<h1>Tableau Dashboard</h1>
+<iframe src="https://public.tableau.com/views/SuperstorePerformanceSnapshot/Dashboard1?:embed=y&amp;:showVizHome=no" width="1000" height="800" frameborder="0" scrolling="no">
+</iframe>
+<p><br></p>
+</div>
+<div id="sharing-and-embedding-tableau-wins-by-a-mile"
+class="section level1">
+<h1>Sharing and Embedding: Tableau Wins by a Mile</h1>
+<p>One of the biggest early differences was how easy it was to share my
+work. Tableau made public sharing seamless through Tableau Public. I was
+able to publish my dashboard, copy an embed link, and add it directly
+into an R Markdown blog post. No login or permissions required.</p>
+<p>Power BI, on the other hand, was far more restrictive. I couldn’t
+publicly embed my dashboard unless my admin explicitly allowed “Publish
+to web.” Even then, some links still required sign-in. For a project I
+wanted to make open and shareable, this was a huge blocker and tilted
+the scales heavily in Tableau’s favor.</p>
+</div>
+<div id="dashboard-building-structured-vs.-flexible"
+class="section level1">
+<h1>Dashboard Building: Structured vs. Flexible</h1>
+<p>One structural difference between the two platforms is how visuals
+are built. In Tableau, you build each visual on its own worksheet and
+then bring them together on a dashboard. This modular approach adds
+organization but slows down rapid iteration and layout testing.</p>
+<p>Power BI lets you create and position visuals directly on the
+dashboard canvas. That structure felt faster and more fluid when testing
+out design changes or adding last-minute charts. When it came to
+prototyping and speed, Power BI’s canvas model won out.</p>
+</div>
+<div id="dax-vs.-calculated-fields-simplicity-wins"
+class="section level1">
+<h1>DAX vs. Calculated Fields: Simplicity Wins</h1>
+<p>Another major contrast came with calculated fields. In Power BI,
+writing DAX formulas felt like writing mini programs. They were
+powerful, but often more complicated than necessary. To calculate
+something like Average Profit Margin, I had to explicitly use
+SUM(Profit)/SUM(Sales) in DAX or get an error.</p>
+<p>In Tableau, the same calculation was as simple as [Profit] / [Sales].
+No need to wrap things in aggregation or think about context too early.
+Tableau’s straightforward formula logic made it easier to explore ideas
+without fighting the syntax.</p>
+</div>
+<div id="kpi-cards-power-bi-feels-more-polished" class="section level1">
+<h1>KPI Cards: Power BI Feels More Polished</h1>
+<p>For quick at-a-glance metrics like Total Sales or Average Profit
+Margin, Power BI’s KPI card visuals were a highlight. They were easy to
+add, easy to style, and felt built for that use case. You could quickly
+drop in a value, adjust the font, and go.</p>
+<p>Tableau doesn’t have a dedicated KPI card visual. I created a similar
+effect using text marks, which worked, but it took more effort and never
+looked quite as refined as Power BI’s default card format.</p>
+</div>
+<div id="filters-and-slicers-design-vs.-depth" class="section level1">
+<h1>Filters and Slicers: Design vs. Depth</h1>
+<p>Both tools support dashboard filters well, but they differ in how
+they’re applied and displayed. Tableau gave me great design flexibility.
+I created a compact filter panel that looked clean and didn’t dominate
+the layout. Filters could be floated, styled, or hidden until needed.
+That made it ideal for storytelling and dashboard aesthetics.</p>
+<p>But Power BI gave me more functional control. I could filter by a
+field that wasn’t used in any visual, like Ship Mode, and still apply it
+across the report. That wasn’t easily doable in Tableau. Power BI’s
+slicers also supported a variety of formats like lists, dropdowns, and
+sliders. These came bundled in a clean vertical panel.</p>
+<p>TL;DR: Tableau was better for visual design. Power BI was better for
+filtering power.</p>
+</div>
+<div id="aggregation-top-n-logic-small-differences-big-impact"
+class="section level1">
+<h1>Aggregation &amp; Top N Logic: Small Differences, Big Impact</h1>
+<p>When analyzing quantities and sales by product, Tableau gave more
+consistent and predictable aggregation. At one point, a product
+(Cordless Phone) showed up in Power BI’s top 5 but not in Tableau’s. It
+turned out the Power BI version was filtered by sales, while Tableau was
+not.</p>
+<p>Once aligned, Tableau made it easier to understand how the numbers
+were being calculated, which helped with debugging.</p>
+<p>That said, Power BI had an advantage in Top N filtering. Selecting
+the top 5 items by sales took just a few clicks. Tableau could do it
+too, but required digging into filter menus. When speed matters, Power
+BI has the edge.</p>
+</div>
+<div id="formatting-and-layout-both-have-room-to-improve"
+class="section level1">
+<h1>Formatting and Layout: Both Have Room to Improve</h1>
+<p>Here’s where both platforms let me down a bit. White space management
+was tricky. In Tableau, I couldn’t easily eliminate excess padding
+between elements. In Power BI, visuals sometimes felt off in spacing or
+alignment, and slicers couldn’t be fully styled.</p>
+<p>Still, Tableau offered better label formatting. I could specify
+decimal precision, adjust alignment, and change font details inside text
+marks. Power BI’s formatting was more rigid. For instance, I couldn’t
+change slicer selection text color, which led to dark text on a dark
+background. Frustrating.</p>
+</div>
+<div id="dashboard-deep-dive-visual-comparison" class="section level1">
+<h1>Dashboard Deep Dive: Visual Comparison</h1>
+<div id="tableau-dashboard-1" class="section level2">
+<h2>Tableau Dashboard</h2>
+<div id="strengths" class="section level3">
+<h3>Strengths</h3>
+<ul>
+<li><p>Clean KPI row with Total Sales, Profit, Quantity, and Avg. Profit
+Margin</p></li>
+<li><p>Public embedding with no sign-in</p></li>
+<li><p>Responsive, scroll-free design</p></li>
+<li><p>Highlight table with diverging Blue-Teal color palette</p></li>
+<li><p>Filters for Region, Segment, Ship Mode, and Date</p></li>
+</ul>
+</div>
+<div id="limitations" class="section level3">
+<h3>Limitations</h3>
+<ul>
+<li><p>No native KPI card visual — used a text workaround</p></li>
+<li><p>Struggled to remove white space</p></li>
+<li><p>KPI layout (2 per row) felt awkward</p></li>
+</ul>
+</div>
+</div>
+<div id="power-bi-dashboard-1" class="section level2">
+<h2>Power BI Dashboard</h2>
+<div id="strengths-1" class="section level3">
+<h3>Strengths</h3>
+<ul>
+<li><p>Sharp KPI cards with large fonts and clean layout</p></li>
+<li><p>Stacked bar and treemap show segmentation well</p></li>
+<li><p>Unified slicer pane with four key filters</p></li>
+<li><p>Matrix visual offers clear profit margin by segment</p></li>
+</ul>
+</div>
+<div id="limitations-1" class="section level3">
+<h3>Limitations</h3>
+<ul>
+<li><p>Public embedding restricted by admin permissions</p></li>
+<li><p>Slicer text formatting limited (dark text on dark
+background)</p></li>
+<li><p>Some floating white space hard to eliminate</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="feature-summary-based-on-my-experience" class="section level1">
+<h1>Feature Summary: Based on My Experience</h1>
+<div style="font-size: 16px; line-height: 1.5;">
+<table>
+<colgroup>
+<col width="41%" />
+<col width="19%" />
+<col width="17%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Feature / Visual Element</th>
+<th align="center">Power BI ✅</th>
+<th align="center">Tableau ✅</th>
+<th align="center">My Preferred</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">KPI Cards</td>
+<td align="center">✅</td>
+<td align="center">Workaround</td>
+<td align="center">Power BI</td>
+</tr>
+<tr class="even">
+<td align="left">Filter Panel (Design)</td>
+<td align="center">⚠️</td>
+<td align="center">✅</td>
+<td align="center">Tableau</td>
+</tr>
+<tr class="odd">
+<td align="left">Filter by Unused Fields</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">Power BI</td>
+</tr>
+<tr class="even">
+<td align="left">Highlight Table / Matrix</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">Tie</td>
+</tr>
+<tr class="odd">
+<td align="left">Label Formatting</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+<td align="center">Tableau</td>
+</tr>
+<tr class="even">
+<td align="left">Public Embedding</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+<td align="center">Tableau</td>
+</tr>
+<tr class="odd">
+<td align="left">Top N Filtering</td>
+<td align="center">✅</td>
+<td align="center">⚠️</td>
+<td align="center">Power BI</td>
+</tr>
+<tr class="even">
+<td align="left">Color Palette Control</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">Tableau</td>
+</tr>
+<tr class="odd">
+<td align="left">White Space / Layout Issues</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+<td align="center">Tie</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="final-thoughts-which-tool-wins" class="section level1">
+<h1>Final Thoughts: Which Tool Wins?</h1>
+<p>Power BI impressed me with how fast and intuitive it was to build
+dashboards, add KPI cards, and experiment with filters. The flexibility
+to filter by fields not used in visuals, and the power of Top N
+filtering, made it a great choice for internal dashboards and
+exploratory analysis.</p>
+<p>But when it came time to publish and share, Tableau pulled ahead. The
+visual polish, public embedding, and easier calculated fields made it
+better for storytelling and presentation. Tableau just felt more in
+control, especially when design and format mattered.</p>
+</div>
+<div id="my-bottom-line" class="section level1">
+<h1>My Bottom Line</h1>
+<p>Use Power BI for internal tools, filter flexibility, and fast
+dashboard creation with built-in KPIs. Use Tableau for public-facing
+dashboards, clean visuals, and simpler calculated field logic.</p>
+<p>Both tools are excellent. But depending on your goal, one might fit
+your workflow better than the other.</p>
+<hr />
 </div>
 
 <!--div id="footer">
@@ -549,15 +757,6 @@ MS in Applied Data Analytics and MBA-->
      Master of Science in Applied Data Analytics - Interdisciplinary Analytics Concentration, MS</br>
      Business Administration - Interdisciplinary Business Concentration, MBA-->
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7EBFGNTPT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P7EBFGNTPT');
-</script>
 
 
 

@@ -37,4 +37,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A look at how AI is accelerating innovation, reshaping jobs, and raising urgent questions about privacy, bias, and ethics, with reflections on where it’s headed next. 
 
+[Power BI vs. Tableau: A Hands-On Dashboarding Comparison](Viz_Compare.html) - (7/22/25)
+
+* A side-by-side comparison of Power BI and Tableau reveals key differences in dashboard design, sharing, filtering, and overall usability. 
+
 __________

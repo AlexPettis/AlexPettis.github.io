@@ -1,0 +1,148 @@
+---
+title: "Power BI vs. Tableau: A Hands-On Dashboarding Comparison"
+output:
+  html_document:
+    css: "css.css"
+    after_body:
+      - "footer.html"
+      - "google_analytics.html"
+---
+
+__________
+
+Having used both visualization tools before for different projects, I started wondering which one was better overall. Not just feature by feature, but in terms of experience, usability, and results. So, I put them to the test.
+
+To do that, I built nearly identical dashboards in both platforms using the same dataset and visual goals. This post isn’t a generic comparison or marketing fluff. Instead, it’s a reflection of what stood out to me, what worked, what didn’t, and which tool gave me the better experience depending on the task.
+
+
+Explore the dashboards for yourself:
+
+
+# Power BI Dashboard
+
+<iframe title="Superstore Performance Snapshot" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bb02c8e8-1301-497a-82ba-927492a0692c&autoAuth=true&ctid=0f1fb691-2393-48df-971c-93aa52a95600" frameborder="0" allowFullScreen="true"></iframe>
+
+<br>
+
+# Tableau Dashboard
+
+<iframe src="https://public.tableau.com/views/SuperstorePerformanceSnapshot/Dashboard1?:embed=y&:showVizHome=no" 
+        width="1000" height="800" frameborder="0" scrolling="no"></iframe>
+
+
+<br>
+
+# Sharing and Embedding: Tableau Wins by a Mile
+One of the biggest early differences was how easy it was to share my work. Tableau made public sharing seamless through Tableau Public. I was able to publish my dashboard, copy an embed link, and add it directly into an R Markdown blog post. No login or permissions required.
+
+Power BI, on the other hand, was far more restrictive. I couldn’t publicly embed my dashboard unless my admin explicitly allowed "Publish to web." Even then, some links still required sign-in. For a project I wanted to make open and shareable, this was a huge blocker and tilted the scales heavily in Tableau’s favor.
+
+# Dashboard Building: Structured vs. Flexible
+One structural difference between the two platforms is how visuals are built. In Tableau, you build each visual on its own worksheet and then bring them together on a dashboard. This modular approach adds organization but slows down rapid iteration and layout testing.
+
+Power BI lets you create and position visuals directly on the dashboard canvas. That structure felt faster and more fluid when testing out design changes or adding last-minute charts. When it came to prototyping and speed, Power BI’s canvas model won out.
+
+# DAX vs. Calculated Fields: Simplicity Wins
+Another major contrast came with calculated fields. In Power BI, writing DAX formulas felt like writing mini programs. They were powerful, but often more complicated than necessary. To calculate something like Average Profit Margin, I had to explicitly use SUM(Profit)/SUM(Sales) in DAX or get an error.
+
+In Tableau, the same calculation was as simple as [Profit] / [Sales]. No need to wrap things in aggregation or think about context too early. Tableau’s straightforward formula logic made it easier to explore ideas without fighting the syntax.
+
+# KPI Cards: Power BI Feels More Polished
+For quick at-a-glance metrics like Total Sales or Average Profit Margin, Power BI’s KPI card visuals were a highlight. They were easy to add, easy to style, and felt built for that use case. You could quickly drop in a value, adjust the font, and go.
+
+Tableau doesn’t have a dedicated KPI card visual. I created a similar effect using text marks, which worked, but it took more effort and never looked quite as refined as Power BI’s default card format.
+
+# Filters and Slicers: Design vs. Depth
+Both tools support dashboard filters well, but they differ in how they’re applied and displayed. Tableau gave me great design flexibility. I created a compact filter panel that looked clean and didn’t dominate the layout. Filters could be floated, styled, or hidden until needed. That made it ideal for storytelling and dashboard aesthetics.
+
+But Power BI gave me more functional control. I could filter by a field that wasn’t used in any visual, like Ship Mode, and still apply it across the report. That wasn’t easily doable in Tableau. Power BI’s slicers also supported a variety of formats like lists, dropdowns, and sliders. These came bundled in a clean vertical panel.
+
+TL;DR: Tableau was better for visual design. Power BI was better for filtering power.
+
+# Aggregation & Top N Logic: Small Differences, Big Impact
+When analyzing quantities and sales by product, Tableau gave more consistent and predictable aggregation. At one point, a product (Cordless Phone) showed up in Power BI’s top 5 but not in Tableau’s. It turned out the Power BI version was filtered by sales, while Tableau was not.
+
+Once aligned, Tableau made it easier to understand how the numbers were being calculated, which helped with debugging.
+
+That said, Power BI had an advantage in Top N filtering. Selecting the top 5 items by sales took just a few clicks. Tableau could do it too, but required digging into filter menus. When speed matters, Power BI has the edge.
+
+# Formatting and Layout: Both Have Room to Improve
+Here’s where both platforms let me down a bit. White space management was tricky. In Tableau, I couldn’t easily eliminate excess padding between elements. In Power BI, visuals sometimes felt off in spacing or alignment, and slicers couldn’t be fully styled.
+
+Still, Tableau offered better label formatting. I could specify decimal precision, adjust alignment, and change font details inside text marks. Power BI’s formatting was more rigid. For instance, I couldn’t change slicer selection text color, which led to dark text on a dark background. Frustrating.
+
+# Dashboard Deep Dive: Visual Comparison
+## Tableau Dashboard
+### Strengths
+
+* Clean KPI row with Total Sales, Profit, Quantity, and Avg. Profit Margin
+
+* Public embedding with no sign-in
+
+* Responsive, scroll-free design
+
+* Highlight table with diverging Blue-Teal color palette
+
+* Filters for Region, Segment, Ship Mode, and Date
+
+### Limitations
+
+* No native KPI card visual — used a text workaround
+
+* Struggled to remove white space
+
+* KPI layout (2 per row) felt awkward
+
+## Power BI Dashboard
+### Strengths
+
+* Sharp KPI cards with large fonts and clean layout
+
+* Stacked bar and treemap show segmentation well
+
+* Unified slicer pane with four key filters
+
+* Matrix visual offers clear profit margin by segment
+
+### Limitations
+
+* Public embedding restricted by admin permissions
+
+* Slicer text formatting limited (dark text on dark background)
+
+* Some floating white space hard to eliminate
+
+# Feature Summary: Based on My Experience
+
+```{r, echo = FALSE, results = 'asis'}
+library(knitr)
+
+feature_summary <- data.frame(
+  `Feature / Visual Element` = c(
+    "KPI Cards", "Filter Panel (Design)", "Filter by Unused Fields",
+    "Highlight Table / Matrix", "Label Formatting", "Public Embedding",
+    "Top N Filtering", "Color Palette Control", "White Space / Layout Issues"
+  ),
+  `Power BI ✅` = c("✅", "⚠️", "✅", "✅", "❌", "❌", "✅", "✅", "❌"),
+  `Tableau ✅` = c("Workaround", "✅", "❌", "✅", "✅", "✅", "⚠️", "✅", "❌"),
+  `My Preferred` = c("Power BI", "Tableau", "Power BI", "Tie", "Tableau", "Tableau", "Power BI", "Tableau", "Tie")
+)
+
+# Print styled HTML output
+cat("<div style='font-size: 16px; line-height: 1.5;'>")
+print(kable(feature_summary, align = "lccc", col.names = c("Feature / Visual Element", "Power BI ✅", "Tableau ✅", "My Preferred")))
+cat("</div>")
+```
+
+# Final Thoughts: Which Tool Wins?
+Power BI impressed me with how fast and intuitive it was to build dashboards, add KPI cards, and experiment with filters. The flexibility to filter by fields not used in visuals, and the power of Top N filtering, made it a great choice for internal dashboards and exploratory analysis.
+
+But when it came time to publish and share, Tableau pulled ahead. The visual polish, public embedding, and easier calculated fields made it better for storytelling and presentation. Tableau just felt more in control, especially when design and format mattered.
+
+# My Bottom Line
+Use Power BI for internal tools, filter flexibility, and fast dashboard creation with built-in KPIs.
+Use Tableau for public-facing dashboards, clean visuals, and simpler calculated field logic.
+
+Both tools are excellent. But depending on your goal, one might fit your workflow better than the other.
+
+________________        
