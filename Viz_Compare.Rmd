@@ -18,7 +18,7 @@ To do that, I built nearly identical dashboards in both platforms using the same
 Explore the dashboards for yourself:
 
 
-# Power BI Dashboard
+# Power BI Dashboard^[To view this dashboard you must sign into Microsoft.]
 
 <iframe title="Superstore Performance Snapshot" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bb02c8e8-1301-497a-82ba-927492a0692c&autoAuth=true&ctid=0f1fb691-2393-48df-971c-93aa52a95600" frameborder="0" allowFullScreen="true"></iframe>
 
@@ -144,5 +144,3 @@ Use Power BI for internal tools, filter flexibility, and fast dashboard creation
 Use Tableau for public-facing dashboards, clean visuals, and simpler calculated field logic.
 
 Both tools are excellent. But depending on your goal, one might fit your workflow better than the other.
-
-________________        

@@ -3,6 +3,9 @@ title: "Economics for Decision-Making"
 output:
   html_document:
     css: "css.css"
+    after_body:
+      - "footer.html"
+      - "google_analytics.html"
 ---
 
 ```{r setup, include=FALSE}

@@ -3,8 +3,9 @@ title: "Courses"
 output:
   html_document:
     css: "css.css"
-    includes:
-      after_body: google_analytics.html
+    after_body:
+      - "footer.html"
+      - "google_analytics.html"
 ---
 
 This page houses all the relevant courses I have taken over the years related to my major of [Math](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11116&returnto=1505), minor in [Statistics](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11114&returnto=1505), and [Sports Analytics Certificate](http://bulletin.appstate.edu/preview_program.php?catoid=26&poid=11278&returnto=1505).
