@@ -39,6 +39,10 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 [Power BI vs. Tableau: A Hands-On Dashboarding Comparison](Viz_Compare.html) - (7/22/25)
 
-* A side-by-side comparison of Power BI and Tableau reveals key differences in dashboard design, sharing, filtering, and overall usability. 
+* A side-by-side comparison of Power BI and Tableau reveals key differences in dashboard design, sharing, filtering, and overall usability.
+
+[Why This Site](Why_Site.html) - (8/23/25)
+
+* A look at why I built this site to showcase my projects, track my growth, and share my learning in a dynamic, interactive way.
 
 __________
