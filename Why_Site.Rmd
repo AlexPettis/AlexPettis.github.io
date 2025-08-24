@@ -1,0 +1,192 @@
+---
+title: "Why This Site?"
+output:
+  html_document:
+    css: "css.css"
+    after_body:
+      - "footer.html"
+      - "google_analytics.html"
+---
+
+__________
+
+It all started in one of my statistics classes, where my professor hosted not just my course, but all of their courses on a website built with R Markdown. The organization, clarity, and interactivity immediately caught my attention. I remember thinking, “Wait… you can make a site like this with code?” That moment stuck with me, opening my eyes to new ways information can be shared and presented.
+
+This initial inspiration planted the seed for what would eventually grow into a much larger and more personal project.
+
+The next semester, having the same professor again, he mentioned the possibility of having us create our own site for a class assignment. That assignment never happened, but the idea stuck even more. Building a personal site lingered in my mind as a practical way to combine learning and showcase my work beyond traditional assignments. It made me seriously consider creating something that could represent my skills and progress in a more dynamic and accessible way.
+
+Eventually, I realized I wanted something similar, not just for coursework, but as a centralized place to showcase my projects and progress. I did not want a static resume or portfolio; I wanted something dynamic, interactive, and able to grow with me over time.
+
+With this motivation, the site became more than just a place to host coursework. It quickly grew into a dynamic hub for my skills and stories.
+
+## More Than Just a Website: It’s My Portfolio and Personal Resource
+
+This site is not just a website. It is my portfolio, a living collection of my skills, projects, and the stories behind them. It brings together data, analysis, and communication in one place, allowing anyone interested to see not only what I have done but how I approach problems and tell stories with data.
+
+Beyond showcasing my work to others, the site serves a vital personal role.
+
+### Personal Archive and Reference Tool 
+
+I often return to this site to revisit past projects, reread old notes, or look up how I solved particular problems. It acts as a personal archive and reference tool, reminding me of lessons learned and helping me build on previous work efficiently. This dual role makes it equally valuable to me and any visitor.
+
+For example, I have used the site to quickly pull up information on past projects directly relevant to roles I have applied for, which helped me tailor my applications and interview responses with concrete examples.
+
+## Courses and Resources 
+
+The site serves as a comprehensive archive of both my undergraduate and graduate coursework. It includes course descriptions, personal takeaways, and detailed walkthroughs of projects I completed.
+
+### Supporting Materials for Learning 
+
+These resources not only document my work but offer practical tools and insights for anyone interested.
+
+I include downloadable software links for tools used in class to help anyone replicate or learn alongside me. By organizing everything in one place, I have created a resource not just for myself but for others taking similar courses or working on related projects. It functions as a digital notebook, reference manual, and knowledge-sharing hub all in one.
+
+Whether preparing for a job interview, brushing up on techniques I used previously, or helping a peer with a concept I have worked through, all relevant materials are there, accessible and easy to search.
+
+## A Space to Tell My Story
+
+This site is more than a list of skills or a catalog of projects. It is a space to tell my story, professionally and personally. It reflects how I think, what I value, and how I have grown through data, analysis, and problem solving.
+
+### Approach to Analytics and Problem Solving 
+
+This narrative shows how I tackle challenges and continuously refine my analytical approach.
+
+It is not just about showing what I can do; it is about how I approach challenges and learn from experience. I use analytics not only to answer questions but to ask better ones. Each page tells a piece of that story, from the tools I have picked up to how I organize information and explain technical work to a broader audience.
+
+Whether you are a recruiter, analyst, professor, or simply curious, this site offers an inside look. It reveals not just my portfolio but the mindset behind my work.
+
+## Built for Growth
+
+The best part is this site’s flexibility and future-proof design. It is not a project I made once and left behind. Instead, I continually update, refine, and build upon it as I grow both personally and professionally.
+
+### Modular and Maintainable Design 
+
+This flexibility comes from a design focused on modularity and ease of maintenance.
+
+As I take new courses, complete projects, or gain new skills, I can easily add them. Whether embedding interactive dashboards, sharing research write-ups, or linking to tools I develop, everything is modular and easy to maintain. Built with R Markdown and version-controlled via Git, I am not limited by drag-and-drop templates or locked into a single platform.
+
+I have full control over the site’s structure, design, and content. This makes the site a natural extension of my development, a place where growth is both documented and encouraged.
+
+## Showing, Not Just Telling
+
+Anyone can claim they know how to analyze data or build predictive models. What truly sets someone apart is showing their work. That is exactly what this site allows me to do.
+
+### Project Lifecycle Transparency 
+
+By walking visitors through full project lifecycles, I demonstrate clarity and depth.
+
+Instead of just listing skills on a resume, I guide visitors through my thought process, from defining the problem, cleaning and exploring data, choosing the right model, visualizing results, to explaining outcomes clearly.
+
+It is about showing clarity, precision, and real-world understanding through data storytelling. Visitors can see my code, understand context, and even replicate the analysis if they want. That transparency is powerful for employers, collaborators, or anyone interested in learning from my work.
+
+## Behind the Scenes: How the Site Works
+
+Most websites are traditionally built with HTML, CSS, JavaScript, and sometimes PHP or other scripting languages. This usually requires writing and maintaining code in these languages, which can be time-consuming and complex, especially when frequently updating content or integrating dynamic data.
+
+### The R Markdown Advantage 
+
+Unlike traditional web development, my approach simplifies the process.
+
+With R Markdown, you do not need to be an expert coder to create and update a website. The .Rmd files let you write content in simple markdown syntax and embed code chunks in R or Python. When you knit the document, it runs the code and weaves results, plots, tables, and more seamlessly into the final webpage.
+
+### Updating Made Easy 
+
+Updating the site is straightforward. Open the relevant .Rmd file, edit, and knit again to regenerate the page. Traditional HTML sites require editing multiple files, adjusting CSS, and modifying JavaScript, which can be error-prone and time-consuming as sites grow.
+
+This means I can produce dynamic, data-driven content without coding HTML layouts, CSS styling, or JavaScript for interactivity. The R Markdown engine handles the heavy lifting. This approach suits data analysts and researchers who want their sites to double as analytical reports and portfolios.
+
+### Integrated Workflow with Git and GitHub 
+
+Because the site is version-controlled with Git and hosted via GitHub Pages, coding, content creation, and deployment integrate smoothly. This avoids managing separate front-end and back-end codebases or databases, common in traditional web development.
+
+In short, R Markdown and RStudio provide an efficient, scalable, and accessible way to build a professional site focused on sharing data work without deep web development skills. It combines simplicity, flexibility, and power.
+
+I write or edit content in .Rmd files using RStudio, combining text with R code, perfect for showing process and results. When ready, I knit the file, which runs the code and creates polished HTML pages.
+
+Once satisfied, I use RStudio’s Git interface to stage changes, commit, and push everything to GitHub. GitHub Pages then hosts the site and publishes updates live within seconds.
+
+```{r setup, include=TRUE, echo = FALSE, warning = FALSE}
+library(DiagrammeR)
+
+grViz("
+digraph rmd_to_github_detailed {
+  node [fontname = Helvetica, shape = box, style = filled, color = LightSkyBlue]
+
+  Edit [label = 'Edit .Rmd in RStudio']
+  Knit [label = 'Knit to HTML (runs R code + weaves output)']
+  HTML [label = 'Generated HTML + Assets']
+  GitStage [label = 'Stage & Commit changes via Git in RStudio']
+  Push [label = 'Push to GitHub Repository']
+  Serve [label = 'GitHub Pages Hosts & Serves Site']
+  Live [label = 'Website Live Online']
+
+  Edit -> Knit -> HTML -> GitStage -> Push -> Serve -> Live
+}
+")
+
+```
+
+## Site Insights with Google Analytics
+
+Recently, I added Google Analytics, a free tool that tracks and analyzes traffic. It shows how many people visit, what pages they view, how long they stay, and where they come from.
+
+### Global Reach and Visitor Behavior 
+
+The data reveals geographic diversity and varied visitor interests.
+
+Since adding Analytics, I have seen visitors worldwide, including the U.S., China, and the Philippines. It is fascinating to see people from different countries exploring my content.
+
+Some visitors are curious about tools I use, others check out projects I have shared, and some just want to learn something new. Google Analytics helps me understand what resonates and which parts engage visitors most. This insight guides me to improve the site and make it more useful.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+# Example data: Replace this with your GA data
+# Columns: Country (ISO 2-letter codes or country names), Visitors
+ga_data <- data.frame(
+  Country = c("United States", "China", "Philippines"),
+  Visitors = c(12, 8, 1)
+)
+
+# Load required libraries
+library(leaflet)
+library(rworldmap)   # For country polygons
+library(dplyr)
+
+# Get country centroids (latitude/longitude) for mapping
+world_map <- getMap(resolution = "low")
+centroids <- data.frame(
+  Country = world_map@data$NAME,
+  Longitude = coordinates(world_map)[,1],
+  Latitude = coordinates(world_map)[,2]
+)
+
+# Merge GA data with centroids
+map_data <- ga_data %>%
+  left_join(centroids, by = "Country")
+
+# Create interactive map
+leaflet(map_data) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    lng = ~Longitude,
+    lat = ~Latitude,
+    radius = ~sqrt(Visitors)/5,   # scale circle size
+    color = "blue",
+    fillOpacity = 0.6,
+    label = ~paste0(Country, ": ", Visitors, " visitors"),
+    labelOptions = labelOptions(direction = "auto")
+  )
+
+
+```
+
+## Final Thoughts
+
+This site is more than a project. It is the product of curiosity, growth, and a desire to share what I have learned in a way that is accessible, practical, and meaningful. Every section, from course notes to project write-ups, represents hours of effort, learning, and reflection. The site evolves alongside me.
+
+I built this site for many reasons, but most importantly, it is useful, to me and others. Whether you are here to explore a topic, find inspiration, or better understand my background, I hope you find value in what I have created. If it sparks an idea or helps you take the next step, then this site is doing exactly what I hoped.
+
+At its core, this site reflects my journey, driven by curiosity, passion for learning, and a commitment to share openly with anyone willing to explore alongside me.
+
+__________

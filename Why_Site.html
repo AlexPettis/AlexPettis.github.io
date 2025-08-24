@@ -11,7 +11,7 @@
 
 
 
-<title>Power BI vs. Tableau: A Hands-On Dashboarding Comparison</title>
+<title>Why This Site?</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -32,6 +32,18 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -453,277 +465,228 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Power BI vs. Tableau: A Hands-On
-Dashboarding Comparison</h1>
+<h1 class="title toc-ignore">Why This Site?</h1>
 
 </div>
 
 
 <hr />
-<p>Having used both visualization tools before for different projects, I
-started wondering which one was better overall. Not just feature by
-feature, but in terms of experience, usability, and results. So, I put
-them to the test.</p>
-<p>To do that, I built nearly identical dashboards in both platforms
-using the same dataset and visual goals. This post isn’t a generic
-comparison or marketing fluff. Instead, it’s a reflection of what stood
-out to me, what worked, what didn’t, and which tool gave me the better
-experience depending on the task.</p>
-<p>Explore the dashboards for yourself:</p>
-<div id="power-bi-dashboard" class="section level1">
-<h1>Power BI Dashboard<a href="#fn1" class="footnote-ref"
-id="fnref1"><sup>1</sup></a></h1>
-<iframe title="Superstore Performance Snapshot" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bb02c8e8-1301-497a-82ba-927492a0692c&amp;autoAuth=true&amp;ctid=0f1fb691-2393-48df-971c-93aa52a95600" frameborder="0" allowFullScreen="true">
-</iframe>
-<p><br></p>
-</div>
-<div id="tableau-dashboard" class="section level1">
-<h1>Tableau Dashboard</h1>
-<iframe src="https://public.tableau.com/views/SuperstorePerformanceSnapshot/Dashboard1?:embed=y&amp;:showVizHome=no" width="1000" height="800" frameborder="0" scrolling="no">
-</iframe>
-<p><br></p>
-</div>
-<div id="sharing-and-embedding-tableau-wins-by-a-mile"
-class="section level1">
-<h1>Sharing and Embedding: Tableau Wins by a Mile</h1>
-<p>One of the biggest early differences was how easy it was to share my
-work. Tableau made public sharing seamless through Tableau Public. I was
-able to publish my dashboard, copy an embed link, and add it directly
-into an R Markdown blog post. No login or permissions required.</p>
-<p>Power BI, on the other hand, was far more restrictive. I couldn’t
-publicly embed my dashboard unless my admin explicitly allowed “Publish
-to web.” Even then, some links still required sign-in. For a project I
-wanted to make open and shareable, this was a huge blocker and tilted
-the scales heavily in Tableau’s favor.</p>
-</div>
-<div id="dashboard-building-structured-vs.-flexible"
-class="section level1">
-<h1>Dashboard Building: Structured vs. Flexible</h1>
-<p>One structural difference between the two platforms is how visuals
-are built. In Tableau, you build each visual on its own worksheet and
-then bring them together on a dashboard. This modular approach adds
-organization but slows down rapid iteration and layout testing.</p>
-<p>Power BI lets you create and position visuals directly on the
-dashboard canvas. That structure felt faster and more fluid when testing
-out design changes or adding last-minute charts. When it came to
-prototyping and speed, Power BI’s canvas model won out.</p>
-</div>
-<div id="dax-vs.-calculated-fields-simplicity-wins"
-class="section level1">
-<h1>DAX vs. Calculated Fields: Simplicity Wins</h1>
-<p>Another major contrast came with calculated fields. In Power BI,
-writing DAX formulas felt like writing mini programs. They were
-powerful, but often more complicated than necessary. To calculate
-something like Average Profit Margin, I had to explicitly use
-SUM(Profit)/SUM(Sales) in DAX or get an error.</p>
-<p>In Tableau, the same calculation was as simple as [Profit] / [Sales].
-No need to wrap things in aggregation or think about context too early.
-Tableau’s straightforward formula logic made it easier to explore ideas
-without fighting the syntax.</p>
-</div>
-<div id="kpi-cards-power-bi-feels-more-polished" class="section level1">
-<h1>KPI Cards: Power BI Feels More Polished</h1>
-<p>For quick at-a-glance metrics like Total Sales or Average Profit
-Margin, Power BI’s KPI card visuals were a highlight. They were easy to
-add, easy to style, and felt built for that use case. You could quickly
-drop in a value, adjust the font, and go.</p>
-<p>Tableau doesn’t have a dedicated KPI card visual. I created a similar
-effect using text marks, which worked, but it took more effort and never
-looked quite as refined as Power BI’s default card format.</p>
-</div>
-<div id="filters-and-slicers-design-vs.-depth" class="section level1">
-<h1>Filters and Slicers: Design vs. Depth</h1>
-<p>Both tools support dashboard filters well, but they differ in how
-they’re applied and displayed. Tableau gave me great design flexibility.
-I created a compact filter panel that looked clean and didn’t dominate
-the layout. Filters could be floated, styled, or hidden until needed.
-That made it ideal for storytelling and dashboard aesthetics.</p>
-<p>But Power BI gave me more functional control. I could filter by a
-field that wasn’t used in any visual, like Ship Mode, and still apply it
-across the report. That wasn’t easily doable in Tableau. Power BI’s
-slicers also supported a variety of formats like lists, dropdowns, and
-sliders. These came bundled in a clean vertical panel.</p>
-<p>TL;DR: Tableau was better for visual design. Power BI was better for
-filtering power.</p>
-</div>
-<div id="aggregation-top-n-logic-small-differences-big-impact"
-class="section level1">
-<h1>Aggregation &amp; Top N Logic: Small Differences, Big Impact</h1>
-<p>When analyzing quantities and sales by product, Tableau gave more
-consistent and predictable aggregation. At one point, a product
-(Cordless Phone) showed up in Power BI’s top 5 but not in Tableau’s. It
-turned out the Power BI version was filtered by sales, while Tableau was
-not.</p>
-<p>Once aligned, Tableau made it easier to understand how the numbers
-were being calculated, which helped with debugging.</p>
-<p>That said, Power BI had an advantage in Top N filtering. Selecting
-the top 5 items by sales took just a few clicks. Tableau could do it
-too, but required digging into filter menus. When speed matters, Power
-BI has the edge.</p>
-</div>
-<div id="formatting-and-layout-both-have-room-to-improve"
-class="section level1">
-<h1>Formatting and Layout: Both Have Room to Improve</h1>
-<p>Here’s where both platforms let me down a bit. White space management
-was tricky. In Tableau, I couldn’t easily eliminate excess padding
-between elements. In Power BI, visuals sometimes felt off in spacing or
-alignment, and slicers couldn’t be fully styled.</p>
-<p>Still, Tableau offered better label formatting. I could specify
-decimal precision, adjust alignment, and change font details inside text
-marks. Power BI’s formatting was more rigid. For instance, I couldn’t
-change slicer selection text color, which led to dark text on a dark
-background. Frustrating.</p>
-</div>
-<div id="dashboard-deep-dive-visual-comparison" class="section level1">
-<h1>Dashboard Deep Dive: Visual Comparison</h1>
-<div id="tableau-dashboard-1" class="section level2">
-<h2>Tableau Dashboard</h2>
-<div id="strengths" class="section level3">
-<h3>Strengths</h3>
-<ul>
-<li><p>Clean KPI row with Total Sales, Profit, Quantity, and Avg. Profit
-Margin</p></li>
-<li><p>Public embedding with no sign-in</p></li>
-<li><p>Responsive, scroll-free design</p></li>
-<li><p>Highlight table with diverging Blue-Teal color palette</p></li>
-<li><p>Filters for Region, Segment, Ship Mode, and Date</p></li>
-</ul>
-</div>
-<div id="limitations" class="section level3">
-<h3>Limitations</h3>
-<ul>
-<li><p>No native KPI card visual — used a text workaround</p></li>
-<li><p>Struggled to remove white space</p></li>
-<li><p>KPI layout (2 per row) felt awkward</p></li>
-</ul>
+<p>It all started in one of my statistics classes, where my professor
+hosted not just my course, but all of their courses on a website built
+with R Markdown. The organization, clarity, and interactivity
+immediately caught my attention. I remember thinking, “Wait… you can
+make a site like this with code?” That moment stuck with me, opening my
+eyes to new ways information can be shared and presented.</p>
+<p>This initial inspiration planted the seed for what would eventually
+grow into a much larger and more personal project.</p>
+<p>The next semester, having the same professor again, he mentioned the
+possibility of having us create our own site for a class assignment.
+That assignment never happened, but the idea stuck even more. Building a
+personal site lingered in my mind as a practical way to combine learning
+and showcase my work beyond traditional assignments. It made me
+seriously consider creating something that could represent my skills and
+progress in a more dynamic and accessible way.</p>
+<p>Eventually, I realized I wanted something similar, not just for
+coursework, but as a centralized place to showcase my projects and
+progress. I did not want a static resume or portfolio; I wanted
+something dynamic, interactive, and able to grow with me over time.</p>
+<p>With this motivation, the site became more than just a place to host
+coursework. It quickly grew into a dynamic hub for my skills and
+stories.</p>
+<div
+id="more-than-just-a-website-its-my-portfolio-and-personal-resource"
+class="section level2">
+<h2>More Than Just a Website: It’s My Portfolio and Personal
+Resource</h2>
+<p>This site is not just a website. It is my portfolio, a living
+collection of my skills, projects, and the stories behind them. It
+brings together data, analysis, and communication in one place, allowing
+anyone interested to see not only what I have done but how I approach
+problems and tell stories with data.</p>
+<p>Beyond showcasing my work to others, the site serves a vital personal
+role.</p>
+<div id="personal-archive-and-reference-tool" class="section level3">
+<h3>Personal Archive and Reference Tool</h3>
+<p>I often return to this site to revisit past projects, reread old
+notes, or look up how I solved particular problems. It acts as a
+personal archive and reference tool, reminding me of lessons learned and
+helping me build on previous work efficiently. This dual role makes it
+equally valuable to me and any visitor.</p>
+<p>For example, I have used the site to quickly pull up information on
+past projects directly relevant to roles I have applied for, which
+helped me tailor my applications and interview responses with concrete
+examples.</p>
 </div>
 </div>
-<div id="power-bi-dashboard-1" class="section level2">
-<h2>Power BI Dashboard</h2>
-<div id="strengths-1" class="section level3">
-<h3>Strengths</h3>
-<ul>
-<li><p>Sharp KPI cards with large fonts and clean layout</p></li>
-<li><p>Stacked bar and treemap show segmentation well</p></li>
-<li><p>Unified slicer pane with four key filters</p></li>
-<li><p>Matrix visual offers clear profit margin by segment</p></li>
-</ul>
-</div>
-<div id="limitations-1" class="section level3">
-<h3>Limitations</h3>
-<ul>
-<li><p>Public embedding restricted by admin permissions</p></li>
-<li><p>Slicer text formatting limited (dark text on dark
-background)</p></li>
-<li><p>Some floating white space hard to eliminate</p></li>
-</ul>
-</div>
+<div id="courses-and-resources" class="section level2">
+<h2>Courses and Resources</h2>
+<p>The site serves as a comprehensive archive of both my undergraduate
+and graduate coursework. It includes course descriptions, personal
+takeaways, and detailed walkthroughs of projects I completed.</p>
+<div id="supporting-materials-for-learning" class="section level3">
+<h3>Supporting Materials for Learning</h3>
+<p>These resources not only document my work but offer practical tools
+and insights for anyone interested.</p>
+<p>I include downloadable software links for tools used in class to help
+anyone replicate or learn alongside me. By organizing everything in one
+place, I have created a resource not just for myself but for others
+taking similar courses or working on related projects. It functions as a
+digital notebook, reference manual, and knowledge-sharing hub all in
+one.</p>
+<p>Whether preparing for a job interview, brushing up on techniques I
+used previously, or helping a peer with a concept I have worked through,
+all relevant materials are there, accessible and easy to search.</p>
 </div>
 </div>
-<div id="feature-summary-based-on-my-experience" class="section level1">
-<h1>Feature Summary: Based on My Experience</h1>
-<div style="font-size: 16px; line-height: 1.5;">
-<table>
-<colgroup>
-<col width="41%" />
-<col width="19%" />
-<col width="17%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Feature / Visual Element</th>
-<th align="center">Power BI ✅</th>
-<th align="center">Tableau ✅</th>
-<th align="center">My Preferred</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">KPI Cards</td>
-<td align="center">✅</td>
-<td align="center">Workaround</td>
-<td align="center">Power BI</td>
-</tr>
-<tr class="even">
-<td align="left">Filter Panel (Design)</td>
-<td align="center">⚠️</td>
-<td align="center">✅</td>
-<td align="center">Tableau</td>
-</tr>
-<tr class="odd">
-<td align="left">Filter by Unused Fields</td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">Power BI</td>
-</tr>
-<tr class="even">
-<td align="left">Highlight Table / Matrix</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">Tie</td>
-</tr>
-<tr class="odd">
-<td align="left">Label Formatting</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">Tableau</td>
-</tr>
-<tr class="even">
-<td align="left">Public Embedding</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">Tableau</td>
-</tr>
-<tr class="odd">
-<td align="left">Top N Filtering</td>
-<td align="center">✅</td>
-<td align="center">⚠️</td>
-<td align="center">Power BI</td>
-</tr>
-<tr class="even">
-<td align="left">Color Palette Control</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">Tableau</td>
-</tr>
-<tr class="odd">
-<td align="left">White Space / Layout Issues</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">Tie</td>
-</tr>
-</tbody>
-</table>
+<div id="a-space-to-tell-my-story" class="section level2">
+<h2>A Space to Tell My Story</h2>
+<p>This site is more than a list of skills or a catalog of projects. It
+is a space to tell my story, professionally and personally. It reflects
+how I think, what I value, and how I have grown through data, analysis,
+and problem solving.</p>
+<div id="approach-to-analytics-and-problem-solving"
+class="section level3">
+<h3>Approach to Analytics and Problem Solving</h3>
+<p>This narrative shows how I tackle challenges and continuously refine
+my analytical approach.</p>
+<p>It is not just about showing what I can do; it is about how I
+approach challenges and learn from experience. I use analytics not only
+to answer questions but to ask better ones. Each page tells a piece of
+that story, from the tools I have picked up to how I organize
+information and explain technical work to a broader audience.</p>
+<p>Whether you are a recruiter, analyst, professor, or simply curious,
+this site offers an inside look. It reveals not just my portfolio but
+the mindset behind my work.</p>
 </div>
 </div>
-<div id="final-thoughts-which-tool-wins" class="section level1">
-<h1>Final Thoughts: Which Tool Wins?</h1>
-<p>Power BI impressed me with how fast and intuitive it was to build
-dashboards, add KPI cards, and experiment with filters. The flexibility
-to filter by fields not used in visuals, and the power of Top N
-filtering, made it a great choice for internal dashboards and
-exploratory analysis.</p>
-<p>But when it came time to publish and share, Tableau pulled ahead. The
-visual polish, public embedding, and easier calculated fields made it
-better for storytelling and presentation. Tableau just felt more in
-control, especially when design and format mattered.</p>
+<div id="built-for-growth" class="section level2">
+<h2>Built for Growth</h2>
+<p>The best part is this site’s flexibility and future-proof design. It
+is not a project I made once and left behind. Instead, I continually
+update, refine, and build upon it as I grow both personally and
+professionally.</p>
+<div id="modular-and-maintainable-design" class="section level3">
+<h3>Modular and Maintainable Design</h3>
+<p>This flexibility comes from a design focused on modularity and ease
+of maintenance.</p>
+<p>As I take new courses, complete projects, or gain new skills, I can
+easily add them. Whether embedding interactive dashboards, sharing
+research write-ups, or linking to tools I develop, everything is modular
+and easy to maintain. Built with R Markdown and version-controlled via
+Git, I am not limited by drag-and-drop templates or locked into a single
+platform.</p>
+<p>I have full control over the site’s structure, design, and content.
+This makes the site a natural extension of my development, a place where
+growth is both documented and encouraged.</p>
 </div>
-<div id="my-bottom-line" class="section level1">
-<h1>My Bottom Line</h1>
-<p>Use Power BI for internal tools, filter flexibility, and fast
-dashboard creation with built-in KPIs. Use Tableau for public-facing
-dashboards, clean visuals, and simpler calculated field logic.</p>
-<p>Both tools are excellent. But depending on your goal, one might fit
-your workflow better than the other.</p>
+</div>
+<div id="showing-not-just-telling" class="section level2">
+<h2>Showing, Not Just Telling</h2>
+<p>Anyone can claim they know how to analyze data or build predictive
+models. What truly sets someone apart is showing their work. That is
+exactly what this site allows me to do.</p>
+<div id="project-lifecycle-transparency" class="section level3">
+<h3>Project Lifecycle Transparency</h3>
+<p>By walking visitors through full project lifecycles, I demonstrate
+clarity and depth.</p>
+<p>Instead of just listing skills on a resume, I guide visitors through
+my thought process, from defining the problem, cleaning and exploring
+data, choosing the right model, visualizing results, to explaining
+outcomes clearly.</p>
+<p>It is about showing clarity, precision, and real-world understanding
+through data storytelling. Visitors can see my code, understand context,
+and even replicate the analysis if they want. That transparency is
+powerful for employers, collaborators, or anyone interested in learning
+from my work.</p>
+</div>
+</div>
+<div id="behind-the-scenes-how-the-site-works" class="section level2">
+<h2>Behind the Scenes: How the Site Works</h2>
+<p>Most websites are traditionally built with HTML, CSS, JavaScript, and
+sometimes PHP or other scripting languages. This usually requires
+writing and maintaining code in these languages, which can be
+time-consuming and complex, especially when frequently updating content
+or integrating dynamic data.</p>
+<div id="the-r-markdown-advantage" class="section level3">
+<h3>The R Markdown Advantage</h3>
+<p>Unlike traditional web development, my approach simplifies the
+process.</p>
+<p>With R Markdown, you do not need to be an expert coder to create and
+update a website. The .Rmd files let you write content in simple
+markdown syntax and embed code chunks in R or Python. When you knit the
+document, it runs the code and weaves results, plots, tables, and more
+seamlessly into the final webpage.</p>
+</div>
+<div id="updating-made-easy" class="section level3">
+<h3>Updating Made Easy</h3>
+<p>Updating the site is straightforward. Open the relevant .Rmd file,
+edit, and knit again to regenerate the page. Traditional HTML sites
+require editing multiple files, adjusting CSS, and modifying JavaScript,
+which can be error-prone and time-consuming as sites grow.</p>
+<p>This means I can produce dynamic, data-driven content without coding
+HTML layouts, CSS styling, or JavaScript for interactivity. The R
+Markdown engine handles the heavy lifting. This approach suits data
+analysts and researchers who want their sites to double as analytical
+reports and portfolios.</p>
+</div>
+<div id="integrated-workflow-with-git-and-github"
+class="section level3">
+<h3>Integrated Workflow with Git and GitHub</h3>
+<p>Because the site is version-controlled with Git and hosted via GitHub
+Pages, coding, content creation, and deployment integrate smoothly. This
+avoids managing separate front-end and back-end codebases or databases,
+common in traditional web development.</p>
+<p>In short, R Markdown and RStudio provide an efficient, scalable, and
+accessible way to build a professional site focused on sharing data work
+without deep web development skills. It combines simplicity,
+flexibility, and power.</p>
+<p>I write or edit content in .Rmd files using RStudio, combining text
+with R code, perfect for showing process and results. When ready, I knit
+the file, which runs the code and creates polished HTML pages.</p>
+<p>Once satisfied, I use RStudio’s Git interface to stage changes,
+commit, and push everything to GitHub. GitHub Pages then hosts the site
+and publishes updates live within seconds.</p>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0d02b62f30d5a72c0a4f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0d02b62f30d5a72c0a4f">{"x":{"diagram":"\ndigraph rmd_to_github_detailed {\n  node [fontname = Helvetica, shape = box, style = filled, color = LightSkyBlue]\n\n  Edit [label = \"Edit .Rmd in RStudio\"]\n  Knit [label = \"Knit to HTML (runs R code + weaves output)\"]\n  HTML [label = \"Generated HTML + Assets\"]\n  GitStage [label = \"Stage & Commit changes via Git in RStudio\"]\n  Push [label = \"Push to GitHub Repository\"]\n  Serve [label = \"GitHub Pages Hosts & Serves Site\"]\n  Live [label = \"Website Live Online\"]\n\n  Edit -> Knit -> HTML -> GitStage -> Push -> Serve -> Live\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="site-insights-with-google-analytics" class="section level2">
+<h2>Site Insights with Google Analytics</h2>
+<p>Recently, I added Google Analytics, a free tool that tracks and
+analyzes traffic. It shows how many people visit, what pages they view,
+how long they stay, and where they come from.</p>
+<div id="global-reach-and-visitor-behavior" class="section level3">
+<h3>Global Reach and Visitor Behavior</h3>
+<p>The data reveals geographic diversity and varied visitor
+interests.</p>
+<p>Since adding Analytics, I have seen visitors worldwide, including the
+U.S., China, and the Philippines. It is fascinating to see people from
+different countries exploring my content.</p>
+<p>Some visitors are curious about tools I use, others check out
+projects I have shared, and some just want to learn something new.
+Google Analytics helps me understand what resonates and which parts
+engage visitors most. This insight guides me to improve the site and
+make it more useful.</p>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f5d1ef67d50014f20a00" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f5d1ef67d50014f20a00">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[39.5265449695433,36.61687351617311,15.95690921993068],[-99.14386770818274,103.7974069102164,121.4155302810679],[0.6928203230275509,0.565685424949238,0.2],null,null,{"interactive":true,"className":"","stroke":true,"color":"blue","weight":5,"opacity":0.5,"fill":true,"fillColor":"blue","fillOpacity":0.6},null,null,null,null,["United States: 12 visitors","China: 8 visitors","Philippines: 1 visitors"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[15.95690921993068,39.5265449695433],"lng":[-99.14386770818274,121.4155302810679]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="final-thoughts" class="section level2">
+<h2>Final Thoughts</h2>
+<p>This site is more than a project. It is the product of curiosity,
+growth, and a desire to share what I have learned in a way that is
+accessible, practical, and meaningful. Every section, from course notes
+to project write-ups, represents hours of effort, learning, and
+reflection. The site evolves alongside me.</p>
+<p>I built this site for many reasons, but most importantly, it is
+useful, to me and others. Whether you are here to explore a topic, find
+inspiration, or better understand my background, I hope you find value
+in what I have created. If it sparks an idea or helps you take the next
+step, then this site is doing exactly what I hoped.</p>
+<p>At its core, this site reflects my journey, driven by curiosity,
+passion for learning, and a commitment to share openly with anyone
+willing to explore alongside me.</p>
 <hr />
-</div>
-<div class="footnotes footnotes-end-of-document">
-<hr />
-<ol>
-<li id="fn1"><p>To view this dashboard you must sign into Microsoft.<a
-href="#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
 
 <!--div id="footer">
