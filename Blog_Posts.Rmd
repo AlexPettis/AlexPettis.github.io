@@ -45,4 +45,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A look at why I built this site to showcase my projects, track my growth, and share my learning in a dynamic, interactive way.
 
+[Finding Growth Through Data: My Ripple Fiber Power BI Project](Ripple_Fiber.html) - (9/16/25)
+
+* A deep dive into building a Power BI dashboard to analyze Ripple Fiber’s broadband coverage, benchmark competitors, and uncover key growth opportunities.
+
 __________

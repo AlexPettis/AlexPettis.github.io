@@ -1,0 +1,73 @@
+---
+title: "Finding Growth Through Data: My Ripple Fiber Power BI Project"
+output:
+  html_document:
+    css: "css.css"
+    includes:
+      after_body:
+        - "footer.html"
+        - "google_analytics.html"
+---
+
+__________
+
+I was preparing for an upcoming interview with Ripple Fiber and wanted to sharpen my Power BI skills on something directly relevant.
+Instead of using a generic practice file, I pulled together a mock dataset that mimics county-level broadband coverage: households, providers, and market gaps similar to what I might see on the job.
+It was the perfect way to practice analysis while exploring a topic I genuinely care about.
+
+What began as interview prep quickly became more than practice.
+I set out to build a Power BI dashboard that could highlight Ripple Fiber’s current footprint, benchmark it against competitors, and reveal where the biggest growth opportunities lie.
+
+## From Raw Tables to a Living Dashboard
+
+The dataset listed every county, the number of households, and broadband coverage for each provider including Ripple and its competitors.
+
+I opened Power BI and began shaping the data with Power Query, promoting headers, cleaning up columns, and adding calculated fields to turn household counts into meaningful percentages.
+Then came DAX, where I built measures like Ripple Coverage %, Competitor Gap %, and Potential Market %. Each metric transformed rows of numbers into insight.
+
+## Building the View
+
+The dashboard grew page by page:
+
+* Market Overview with KPI cards and a coverage map for a quick snapshot.
+
+* Ripple vs. Competitors using clustered bars and tables to show where rivals dominate.
+
+* Growth Opportunities highlighting counties with large populations but low Ripple penetration.
+
+* Executive Summary tying it all together with key KPIs and a focused map.
+
+Interactive slicers made everything dynamic so any county, provider, or technology could be explored instantly.
+
+## What the Data Said
+
+When the visuals came alive, the story was clear:
+
+* Ripple Coverage %: 8.31% — fewer than one in ten households reached.
+
+* Competitor Gap %: 39% — competitors own nearly five times the footprint.
+
+* Potential Market %: 91.69% — a massive untapped audience.
+
+Maps highlighted Ripple’s stronger counties: Watauga, New Hanover, Alamance, Iredell, Gaston, Johnston, Cumberland, Mecklenburg, Forsyth, and Buncombe.
+Light blue areas showed vast regions still open for expansion.
+
+## Why It Matters
+
+Seeing these numbers on a page is one thing.
+Watching them play out on an interactive map where a single click can reveal the competitive landscape is different.
+This dashboard does more than report statistics. It guides strategy and helps identify exactly where Ripple can focus to close the 91 percent gap.
+
+## Looking Back
+
+What started as a dataset became a decision-making tool.
+This project reminded me why I love analytics: taking raw information, shaping it, and telling a story that sparks action.
+It is more than a dashboard. It is a blueprint for growth and a reminder of how data visualization can turn questions into clear direction.
+
+## Dashboard^[This dashboard is currently provided as a static PDF. It will be updated to an interactive version when possible.]
+
+Below is a static version of the Ripple Fiber dashboard I built to explore county-level broadband coverage, benchmark against competitors, and identify growth opportunities. I do have an interactive version, but due to Power BI web service limitations, I am currently sharing the PDF. This version still highlights key metrics and insights, and I plan to make the interactive dashboard available when possible.
+
+```{r, echo = FALSE, results ='asis'}
+cat('<iframe src="Ripple Fiber.pdf" width="100%" height="600"></iframe>')
+```
