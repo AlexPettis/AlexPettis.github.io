@@ -49,4 +49,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * A deep dive into building a Power BI dashboard to analyze Ripple Fiber’s broadband coverage, benchmark competitors, and uncover key growth opportunities.
 
+[Aptly Charlotte: By the Bedroom, By the Numbers - Part 1](Apt_Desc_Stats.html) - (10/10/25)
+
+* An analysis of Charlotte’s rental market, examining descriptive statistics, rent variability, PPSF trends, amenity patterns, unit size dynamics, outlier behavior, and price correlations.
+
 __________
