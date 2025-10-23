@@ -53,4 +53,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * An analysis of Charlotte’s rental market, examining descriptive statistics, rent variability, PPSF trends, amenity patterns, unit size dynamics, outlier behavior, and price correlations.
 
+[Aptly Charlotte: The Shape of Rent - Part 2](Apt_Geospacial.html) - (10/22/25)
+
+* An exploration of Charlotte’s rental geography, uncovering spatial clustering, PPSF gradients, neighborhood segmentation, pricing outliers, and the locational logic behind market behavior.
+
 __________
