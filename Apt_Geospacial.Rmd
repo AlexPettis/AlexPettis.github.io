@@ -1,5 +1,5 @@
 ---
-title: "Aptly Charlotte: The Shape of Rent - Part 1"
+title: "Aptly Charlotte: The Shape of Rent - Part 2"
 output:
   html_document:
     css: "css.css"
