@@ -57,4 +57,8 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 * An exploration of Charlotte’s rental geography, uncovering spatial clustering, PPSF gradients, neighborhood segmentation, pricing outliers, and the locational logic behind market behavior.
 
+[Apylt Charlotte: The Blueprint of Price - Part 3](Apt_Reg.html) - (10/30/25)
+
+* An analysis of Charlotte’s apartment complexes reveals the internal mechanics of rental pricing, offering a property-level view of how layout, amenities, rent, and location interact to shape value.
+
 __________
