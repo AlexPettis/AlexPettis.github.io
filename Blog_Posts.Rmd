@@ -63,6 +63,6 @@ Here, I share insights on analytics, data science, and technology. Check out my 
 
 [Aptly Charlotte: Branches of Value, Paths of Price – Part 4](Apt_Decision.html) - (11/25/25)
 
-*An examination of Charlotte’s rental landscape reveals the branching logic of value segmentation, offering a rule‑based view of how thresholds in size, amenities, and neighborhood context interact to define price per square foot.
+* An examination of Charlotte’s rental landscape reveals the branching logic of value segmentation, offering a rule‑based view of how thresholds in size, amenities, and neighborhood context interact to define price per square foot.
 
 __________
